@@ -10,7 +10,7 @@
     {{-- BREADCUMBS --}}
     <div aria-label="breadcrumb p-5">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#" class="text-dark">Izin Belajar</a></li>
+            <li class="breadcrumb-item"><a href="#" class="text-dark">Tugas Belajar</a></li>
             <li class="breadcrumb-item active"><a href="#" class="text-dark active">Pengajuan</a></li>
         </ol>
     </div>
@@ -99,6 +99,13 @@
                         </div>
                     </div>
                 </div>
+                <div class="mb-3 row">
+                    <label for="" class="col-sm-3 col-form-label">Tautan Informasi Beasiswa</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="link_beasiswa" name="link_beasiswa"
+                            placeholder="Tautan Informasi Beasiswa">
+                    </div>
+                </div>
             </div>
         </div>
         {{-- DATA INSTITUSI --}}
@@ -120,26 +127,12 @@
                             placeholder="Transkrip Nilai">
                     </div>
                 </div>
-                <div class="mb-3 row">
-                    <label for="" class="col-sm-3 col-form-label">Surat Pernyataan</label>
-                    <div class="col-sm-9">
-                        <input type="file" class="form-control" id="surat_pernyataan" name="surat_pernyataan"
-                            placeholder="Surat Pernyataan">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="" class="col-sm-3 col-form-label">Surat Permohonan</label>
-                    <div class="col-sm-9">
-                        <input type="file" class="form-control" id="surat_permohonan" name="surat_permohonan"
-                            placeholder="Surat Permohonan">
-                    </div>
-                </div>
             </div>
         </div>
         {{-- BERKAS PRIBADI --}}
 
         {{-- BERKAS KEPROFESIAN --}}
-        <div class="card justify-content-center shadow-sm my-5">
+        <div class="card justify-content-center shadow-sm mt-5 mb-4">
             <h5 class="card-header px-5">Berkas Keprofesian</h5>
             <div class="card-body px-5">
                 <div class="mb-3 row">
@@ -163,45 +156,9 @@
                             placeholder="Penilaian Prestasi Kinerja Pegawai">
                     </div>
                 </div>
-                <div class="mb-3 row">
-                    <label for="" class="col-sm-3 col-form-label">Uraian Tugas</label>
-                    <div class="col-sm-9">
-                        <input type="file" class="form-control" id="uraian_tugas" name="uraian_tugas"
-                            placeholder="Uraian Tugas">
-                    </div>
-                </div>
             </div>
         </div>
         {{-- BERKAS KEPROFESIAN --}}
-
-        {{-- BERKAS INSTITUSI TUJUAN --}}
-        <div class="card justify-content-center shadow-sm mt-5 mb-4">
-            <h5 class="card-header px-5">Berkas Institusi Tujuan</h5>
-            <div class="card-body px-5">
-                <div class="mb-3 row">
-                    <label for="" class="col-sm-3 col-form-label">Surat Keterangan Kelas Reguler</label>
-                    <div class="col-sm-9">
-                        <input type="file" class="form-control" id="sk_kelas_reguler" name="sk_kelas_reguler"
-                            placeholder="Surat Keterangan Kelas Reguler">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="" class="col-sm-3 col-form-label">Jadwal Kelas Reguler</label>
-                    <div class="col-sm-9">
-                        <input type="file" class="form-control" id="jadwal_kelas_reguler" name="jadwal_kelas_reguler"
-                            placeholder="Jadwal Kelas Reguler">
-                    </div>
-                </div>
-                <div class="mb-3 row d-flex align-items-center">
-                    <label for="" class="col-sm-3 col-form-label">Akreditasi Jurusan/Kampus</label>
-                    <div class="col-sm-9">
-                        <input type="file" class="form-control" id="file_akreditasi_institusi"
-                            name="file_akreditasi_institusi" placeholder="Akreditasi Jurusan/Kampus">
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- BERKAS INSTITUSI TUJUAN --}}
 
         {{-- BUTTON SUBMIT --}}
         <div class="w-100 d-flex justify-content-end">

@@ -9,8 +9,8 @@
 <div class="p-5 main-content">
     <div class="syarat">
         <div class="card justify-content-center shadow-sm">
-            <h5 class="card-header">Syarat Pengajuan Umum</h5>
-            <div class="card-body">
+            <h5 class="card-header px-5">Syarat Pengajuan Umum</h5>
+            <div class="card-body px-5">
                 <p class="card-text ml-3">1.&nbsp;&nbsp;Telah Bekerja Minimal 4 Tahun Sejak Pengangkatan Sebagai Pegawai
                     Negeri Sipil.</p>
                 <p class="card-text ml-3">2.&nbsp;&nbsp;Setiap Unsur Penilaian dalam SKP Minimal Baik dalam 3 Tahun
@@ -34,8 +34,8 @@
 
     <div class="pendukung my-4">
         <div class="card justify-content-center shadow-sm">
-            <h5 class="card-header">Contoh Dokumen Pendukung</h5>
-            <div class="card-body">
+            <h5 class="card-header px-5">Contoh Dokumen Pendukung</h5>
+            <div class="card-body px-5">
                 <div class="d-block justify-content-center">
                     <a href="#"><img src="{{ asset('assets/images/Surat Pernyataan.png') }}" alt=""></a>
                     <a href="#"><img src="{{ asset('assets/images/Surat Pernyataan.png') }}" alt=""></a>
@@ -47,8 +47,8 @@
 
     <div class="rekomendasi">
         <div class="card justify-content-center shadow-sm">
-            <h5 class="card-header">Rekomendasi Kampus</h5>
-            <div class="card-body">
+            <h5 class="card-header px-5">Rekomendasi Kampus</h5>
+            <div class="card-body px-5">
                 <div class="d-block justify-content-center">
                     <a href="#"><img src="{{ asset('assets/images/Surat Pernyataan.png') }}" alt=""></a>
                     <a href="#"><img src="{{ asset('assets/images/Surat Pernyataan.png') }}" alt=""></a>
