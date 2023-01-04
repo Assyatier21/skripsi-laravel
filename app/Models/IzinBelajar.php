@@ -11,4 +11,8 @@ class IzinBelajar extends Model
     protected $table = "pengajuan_izin_belajar";
     public $timestamps = false;
     protected $guarded = ['id'];
+
+    public function user(){
+          return $this->belongsTo(User::class, 'nip');
+    }
 }

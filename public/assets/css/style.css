@@ -1,0 +1,22 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+}
+.app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+a,
+a:link {
+    text-decoration: none !important;
+    color: white;
+}
+a.active {
+    color: #00b579 !important;
+}
+a:hover {
+    color: #00b579 !important;
+    transition: 0.3s;
+}
