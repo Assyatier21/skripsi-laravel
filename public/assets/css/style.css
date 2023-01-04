@@ -17,6 +17,7 @@ a.active {
     color: #00b579 !important;
 }
 a:hover {
+    cursor: pointer !important;
     color: #00b579 !important;
     transition: 0.3s;
 }

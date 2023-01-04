@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-dark text-light">
+<footer class="text-center text-lg-start bg-light text-dark" style="border-top: solid 1px #d5d5d5">
     <section>
         <div class="container text-center text-md-start mt-5">
             <div class="row mt-3">
