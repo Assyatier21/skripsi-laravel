@@ -19,6 +19,9 @@ Route::get('/', function () {
 Route::get('/izin-belajar', function () {
     return view('user.izin-belajar.informasi');
 });
+Route::get('/izin-belajar/pengajuan', function () {
+    return view('user.izin-belajar.pengajuan');
+});
 
 // Auth::routes();
 
