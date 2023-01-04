@@ -1,0 +1,57 @@
+.row-content {
+    display: flex;
+    /* flex-direction: row; */
+}
+
+.profil .card {
+    border-radius: 15px;
+}
+
+.profil .card .card-img-top {
+    height: 300px;
+    border-radius: 15px !important;
+    object-fit: cover;
+}
+.form-control:focus,
+.form-check-input:focus {
+    border-color: #198754 !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0) !important;
+}
+.form-check-input[type="radio"]:checked {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+}
+.w-x {
+    width: 70%;
+}
+.card .card-header {
+    background-color: #198754;
+    border-radius: 20px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: #ffffff;
+    color: #ffffff;
+}
+.btn-success.submit {
+    width: 200px !important;
+}
+@media only screen and (max-width: 991px) {
+    .row-content {
+        display: flex;
+        flex-direction: column;
+    }
+    .profil .card {
+        text-align: center !important;
+    }
+    .profil .card .card-img-top {
+        max-width: 300px;
+        width: 100%;
+        height: 300px;
+        border-radius: 15px !important;
+        object-fit: cover;
+    }
+    .w-x {
+        width: 100%;
+        margin-top: 2rem;
+    }
+}

@@ -34,11 +34,11 @@
                     <div class="col-sm-9">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="akreditas" id="akreditasi_a" value="A">
-                            <label class="form-check-label" for="inlineRadio1">A</label>
+                            <label class="form-check-label" for="">A</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="akreditas" id="akreditasi_b" value="B">
-                            <label class="form-check-label" for="inlineRadio2">B</label>
+                            <label class="form-check-label" for="">B</label>
                         </div>
                     </div>
                 </div>

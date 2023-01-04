@@ -30,6 +30,12 @@ Route::get('/izin-belajar/pengajuan', function () {
 Route::get('/tugas-belajar/pengajuan', function () {
     return view('user.tugas-belajar.pengajuan');
 });
+Route::get('/pengajuanku', function () {
+    return view('user.pengajuanku');
+});
+Route::get('/profil', function () {
+    return view('user.profil');
+});
 
 // Auth::routes();
 
