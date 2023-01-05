@@ -39,6 +39,12 @@ Route::get('/profil', function () {
 Route::get('/notifikasi', function () {
     return view('user.notifikasi');
 });
+
+Route::prefix('admin')->group(function () {
+    Route::get('/beranda', function () {
+        return view('admin.beranda');
+    });  
+});
 // Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

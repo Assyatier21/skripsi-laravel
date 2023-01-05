@@ -30,7 +30,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item active" href="#"><i class="fa-solid fa-user me-2"></i>Profil</a>
                         </li>
-                        <li class="text-dark"><a class="dropdown-item" href="#">
+                        <li class="text-dark"><a class="dropdown-item notification" href="#">
                                 <i class="fa-solid fa-bell me-2 position-relative" type="button">
                                     <span
                                         class="position-absolute top-0 start-150 translate-middle badge rounded-pill bg-danger"
@@ -44,7 +44,7 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#"><i
+                        <li><a class="dropdown-item notification" href="#"><i
                                     class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a>
                         </li>
                     </ul>
