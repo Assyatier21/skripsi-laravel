@@ -22,6 +22,5 @@
             <img src="{{ asset('assets/images/banner -1.jpeg') }}" alt="">
         </a>
     </div>
-
 </div>
 @endsection

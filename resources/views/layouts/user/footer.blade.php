@@ -7,7 +7,7 @@
                     <h6 class="text-uppercase fw-bold mb-4">
                         <i class="fas fa-gem text-uppercase me-3"></i>Tentang Kami
                     </h6>
-                    <p>
+                    <p style="text-align: justify" class="desc-footer">
                         SI-DILAN merupakan website khusus pegawai didalam rumah sakit
                         Siti Fatimah yang digunakan dalam rangka mengembangkan mutu dan
                         kualitas dari pegawai agar bisa membuat rumah sakit bisa

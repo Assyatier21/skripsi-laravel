@@ -22,7 +22,36 @@
                 </li>
             </ul>
             <div>
-                <button class="btn btn-success">Button</button>
+                <div class="dropdown">
+                    <div class="text-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Muhammad Sholeh
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item active" href="#"><i class="fa-solid fa-user me-2"></i>Profil</a>
+                        </li>
+                        <li class="text-dark"><a class="dropdown-item" href="#">
+                                <i class="fa-solid fa-bell me-2 position-relative" type="button">
+                                    <span
+                                        class="position-absolute top-0 start-150 translate-middle badge rounded-pill bg-danger"
+                                        style="font-size: 6px">
+                                        5
+                                    </span>
+                                </i>
+                                Notifikasi
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i
+                                    class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a>
+                        </li>
+                    </ul>
+                </div>
+                {{-- <a href="" class="w-100">
+                    <button class="btn btn-success w-100">Masuk</button>
+                </a> --}}
             </div>
         </div>
     </div>

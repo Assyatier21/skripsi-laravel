@@ -14,6 +14,10 @@ a:link {
     text-decoration: none !important;
     color: white;
 }
+a.notification,
+a:link {
+    color: #212529;
+}
 a.active {
     color: #00b579 !important;
 }
@@ -21,4 +25,16 @@ a:hover {
     cursor: pointer !important;
     color: #00b579 !important;
     transition: 0.3s;
+}
+.dropdown-item.active {
+    color: white !important;
+    background-color: #00b579 !important;
+}
+.desc-footer {
+    padding-right: 3rem;
+}
+@media only screen and (max-width: 991px) {
+    .desc-footer {
+        padding-right: 0rem;
+    }
 }

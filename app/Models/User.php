@@ -16,6 +16,10 @@ class User extends Authenticatable
 
     protected $hidden = ['password'];
 
+    public function pengajuanku(){
+          return $this->hasMany(Pengajuanku::class, 'nip');
+    }
+
     public function notifikasi(){
           return $this->hasMany(Notifikasi::class, 'nip');
     }

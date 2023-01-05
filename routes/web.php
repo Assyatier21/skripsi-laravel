@@ -36,7 +36,9 @@ Route::get('/pengajuanku', function () {
 Route::get('/profil', function () {
     return view('user.profil');
 });
-
+Route::get('/notifikasi', function () {
+    return view('user.notifikasi');
+});
 // Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
