@@ -36,8 +36,8 @@ a:hover {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0) !important;
 }
 .form-check-input[type="radio"]:checked {
-    background-color: #198754 !important;
-    border-color: #198754 !important;
+    background-color: #00b579 !important;
+    border-color: #00b579 !important;
 }
 .desc-footer {
     padding-right: 3rem;

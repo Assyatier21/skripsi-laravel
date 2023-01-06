@@ -28,7 +28,7 @@
                         <td>Muhammad Sholeh</td>
                         <td>20 Maret 2023</td>
                         <td>
-                            <a href="#" style="text-decoration: underline">
+                            <a href="{{ route('admin.tugas-belajar.verifikasi') }}" class="text-dark">
                                 <i class="fa-solid fa-eye me-2"></i>Lihat</a>
                         </td>
                         <td>

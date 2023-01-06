@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary p-4" data-bs-theme="light"
     style="border-bottom: 1px solid #d5d5d5">
     <div class="container-fluid">
-        <a class="navbar-brand fw-bolder text-dark" href="#">SKRIPSI</a>
+        <a class="navbar-brand fw-bolder text-dark" href="{{ route('beranda') }}">SKRIPSI</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,16 +9,20 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active text-dark" aria-current="page" href="#">Beranda</a>
+                    <a class="nav-link text-dark {{ Request::is('/') ? 'active' : '' }}" aria-current="page"
+                        href="{{ route('beranda') }}">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" aria-current="page" href="#">Tugas Belajar</a>
+                    <a class="nav-link text-dark {{ Request::is('tugas-belajar*') ? 'active' : '' }}"
+                        aria-current="page" href="{{ route('user.tugas-belajar.informasi') }}">Tugas Belajar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" aria-current="page" href="#">Izin Belajar</a>
+                    <a class="nav-link text-dark {{ Request::is('izin-belajar*') ? 'active' : '' }}" aria-current="page"
+                        href="{{ route('user.izin-belajar.informasi') }}">Izin Belajar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" aria-current="page" href="#">Pengajuanku</a>
+                    <a class="nav-link text-dark {{ Request::is('pengajuanku') ? 'active' : '' }}" aria-current="page"
+                        href="{{ route('user.pengajuanku') }}">Pengajuanku</a>
                 </li>
             </ul>
             <div>
@@ -28,9 +32,12 @@
                         Muhammad Sholeh
                     </div>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item active" href="#"><i class="fa-solid fa-user me-2"></i>Profil</a>
+                        <li><a class="dropdown-item {{ Request::is('profil') ? 'active' : '' }}"
+                                href="{{ route('user.profil') }}"><i class="fa-solid fa-user me-2"></i>Profil</a>
                         </li>
-                        <li class="text-dark"><a class="dropdown-item notification" href="#">
+                        <li class="text-dark"><a
+                                class="dropdown-item notification {{ Request::is('notifikasi') ? 'active' : '' }}"
+                                href="{{ route('user.notifikasi') }}">
                                 <i class="fa-solid fa-bell me-2 position-relative" type="button">
                                     <span
                                         class="position-absolute top-0 start-150 translate-middle badge rounded-pill bg-danger"

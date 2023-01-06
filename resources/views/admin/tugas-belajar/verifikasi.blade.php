@@ -6,6 +6,10 @@
     .btn.w-10 {
         width: 10% !important;
     }
+
+    .text-success {
+        color: #00b579 !important;
+    }
 </style>
 @endsection
 
@@ -14,8 +18,9 @@
     {{-- BREADCUMBS --}}
     <div aria-label="breadcrumb p-5">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#" class="text-dark">Tugas Belajar</a></li>
-            <li class="breadcrumb-item active"><a href="#" class="text-dark active">Verifikasi Pengajuan</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.tugas-belajar.index') }}" class="text-dark">Tugas
+                    Belajar</a></li>
+            <li class="breadcrumb-item active text-success">Verifikasi Pengajuan</li>
         </ol>
     </div>
     {{-- BREADCUMBS --}}
