@@ -48,6 +48,19 @@ Route::prefix('admin')->group(function () {
     Route::get('/beranda', function () {
         return view('admin.beranda');
     });  
+        
+    Route::get('/izin-belajar', function () {
+        return view('admin.izin-belajar.index');
+    });
+
+    Route::get('/izin-belajar/verifikasi', function () {
+        return view('admin.izin-belajar.verifikasi');
+    });
+   
+    Route::get('/tugas-belajar', function () {
+        return view('admin.tugas-belajar.index');
+    });
+
 });
 // Auth::routes();
 
