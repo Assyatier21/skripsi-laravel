@@ -1,5 +1,5 @@
 @extends('layouts.user.app')
-@section('title', 'Pengajuan Izin Belajar')
+@section('title', 'Pengajuan Tugas Belajar')
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/css/user/izin_belajar.css') }}">
@@ -63,7 +63,7 @@
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Program Studi</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="program_studi" name="rogram_studi"
+                        <input type="text" class="form-control" id="program_studi" name="program_studi"
                             placeholder="Program Studi">
                     </div>
                 </div>

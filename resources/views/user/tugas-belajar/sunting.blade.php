@@ -1,5 +1,5 @@
 @extends('layouts.user.app')
-@section('title', 'Pengajuan Izin Belajar')
+@section('title', 'Edit Pengajuan Tugas Belajar')
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/css/user/izin_belajar.css') }}">
@@ -10,8 +10,8 @@
     {{-- BREADCUMBS --}}
     <div aria-label="breadcrumb p-5">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#" class="text-dark">Izin Belajar</a></li>
-            <li class="breadcrumb-item active"><a href="#" class="text-dark active">Pengajuan</a></li>
+            <li class="breadcrumb-item"><a href="#" class="text-dark">Tugas Belajar</a></li>
+            <li class="breadcrumb-item active"><a href="#" class="text-dark active">Edit Pengajuan</a></li>
         </ol>
     </div>
     {{-- BREADCUMBS --}}
@@ -26,14 +26,15 @@
                     <label for="" class="col-sm-3 col-form-label">Nama Institusi Pendidikan</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="institusi_pendidikan" name="institusi_pendidikan"
-                            placeholder="Nama Institusi Pendidikan">
+                            value="Universitas Sriwijaya">
                     </div>
                 </div>
                 <div class="mb-1 row d-flex align-items-center">
                     <label for="" class="col-sm-3 col-form-label">Akreditasi</label>
                     <div class="col-sm-9">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="akreditas" id="akreditasi_a" value="A">
+                            <input class="form-check-input" type="radio" name="akreditas" id="akreditasi_a" value="A"
+                                checked>
                             <label class="form-check-label" for="">A</label>
                         </div>
                         <div class="form-check form-check-inline">
@@ -45,33 +46,33 @@
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Alamat</label>
                     <div class="col-sm-9">
-                        <textarea name="alamat" id="alamat" class="form-control"></textarea>
+                        <textarea name="alamat" id="alamat"
+                            class="form-control">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus molestias sint in dolores sequi, eos cum ex, laudantium praesentium a quam, minima eligendi esse corrupti iure voluptas repellat dolor voluptatum?</textarea>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Nomor Telepon</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="no_telp" name="no_telp" placeholder="Nomor Telepon">
+                        <input type="text" class="form-control" id="no_telp" name="no_telp" value="087786355690">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Jurusan</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="jurusan" name="jurusan" placeholder="Jurusan">
+                        <input type="text" class="form-control" id="jurusan" name="jurusan" value="Teknik Informatika">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Program Studi</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="program_studi" name="program_studi"
-                            placeholder="Program Studi">
+                            value="Informatika Reguler">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Tahun Ajaran</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="tahun_ajaran" name="tahun_ajaran"
-                            placeholder="Tahun Ajaran">
+                        <input type="text" class="form-control" id="tahun_ajaran" name="tahun_ajaran" value="2022">
                     </div>
                 </div>
                 <div class="mb-1 row">
@@ -79,7 +80,7 @@
                     <div class="col-sm-9 d-flex align-items-center">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="jenjang_pendidikan"
-                                id="jenjang_pendidikan_s1" value="S1">
+                                id="jenjang_pendidikan_s1" value="S1" checked>
                             <label class="form-check-label">Strata-1</label>
                         </div>
                         <div class="form-check form-check-inline">
@@ -99,6 +100,13 @@
                         </div>
                     </div>
                 </div>
+                <div class="mb-3 row">
+                    <label for="" class="col-sm-3 col-form-label">Tautan Informasi Beasiswa</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="link_beasiswa" name="link_beasiswa"
+                            value="github.com">
+                    </div>
+                </div>
             </div>
         </div>
         {{-- DATA INSTITUSI --}}
@@ -110,28 +118,13 @@
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Ijazah Terakhir</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="ijazah" name="ijazah" placeholder="Ijazah Terakhir">
+                        <input type="file" class="form-control" id="ijazah" name="ijazah" value="">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Transkrip Nilai</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="transkrip_nilai" name="transkrip_nilai"
-                            placeholder="Transkrip Nilai">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="" class="col-sm-3 col-form-label">Surat Pernyataan</label>
-                    <div class="col-sm-9">
-                        <input type="file" class="form-control" id="surat_pernyataan" name="surat_pernyataan"
-                            placeholder="Surat Pernyataan">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="" class="col-sm-3 col-form-label">Surat Permohonan</label>
-                    <div class="col-sm-9">
-                        <input type="file" class="form-control" id="surat_permohonan" name="surat_permohonan"
-                            placeholder="Surat Permohonan">
+                        <input type="file" class="form-control" id="transkrip_nilai" name="transkrip_nilai" value="">
                     </div>
                 </div>
             </div>
@@ -139,69 +132,30 @@
         {{-- BERKAS PRIBADI --}}
 
         {{-- BERKAS KEPROFESIAN --}}
-        <div class="card justify-content-center shadow-sm my-5">
+        <div class="card justify-content-center shadow-sm mt-5 mb-4">
             <h5 class="card-header px-5">Berkas Keprofesian</h5>
             <div class="card-body px-5">
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Surat Keterangan Pegawai Negeri Sipil</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="sk_pns" name="sk_pns"
-                            placeholder="Surat Keterangan Pegawai Negeri Sipil">
+                        <input type="file" class="form-control" id="sk_pns" name="sk_pns" value="">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Surat Keterangan Terakhir</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="sk_terakhir" name="sk_terakhir"
-                            placeholder="Surat Keterangan Terakhir">
+                        <input type="file" class="form-control" id="sk_terakhir" name="sk_terakhir" value="">
                     </div>
                 </div>
                 <div class="mb-3 row d-flex align-items-center">
                     <label for="" class="col-sm-3 col-form-label">Penilaian Prestasi Kinerja Pegawai</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="ppkp" name="ppkp"
-                            placeholder="Penilaian Prestasi Kinerja Pegawai">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="" class="col-sm-3 col-form-label">Uraian Tugas</label>
-                    <div class="col-sm-9">
-                        <input type="file" class="form-control" id="uraian_tugas" name="uraian_tugas"
-                            placeholder="Uraian Tugas">
+                        <input type="file" class="form-control" id="ppkp" name="ppkp" value="">
                     </div>
                 </div>
             </div>
         </div>
         {{-- BERKAS KEPROFESIAN --}}
-
-        {{-- BERKAS INSTITUSI TUJUAN --}}
-        <div class="card justify-content-center shadow-sm mt-5 mb-4">
-            <h5 class="card-header px-5">Berkas Institusi Tujuan</h5>
-            <div class="card-body px-5">
-                <div class="mb-3 row">
-                    <label for="" class="col-sm-3 col-form-label">Surat Keterangan Kelas Reguler</label>
-                    <div class="col-sm-9">
-                        <input type="file" class="form-control" id="sk_kelas_reguler" name="sk_kelas_reguler"
-                            placeholder="Surat Keterangan Kelas Reguler">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="" class="col-sm-3 col-form-label">Jadwal Kelas Reguler</label>
-                    <div class="col-sm-9">
-                        <input type="file" class="form-control" id="jadwal_kelas_reguler" name="jadwal_kelas_reguler"
-                            placeholder="Jadwal Kelas Reguler">
-                    </div>
-                </div>
-                <div class="mb-3 row d-flex align-items-center">
-                    <label for="" class="col-sm-3 col-form-label">Akreditasi Jurusan/Kampus</label>
-                    <div class="col-sm-9">
-                        <input type="file" class="form-control" id="file_akreditasi_institusi"
-                            name="file_akreditasi_institusi" placeholder="Akreditasi Jurusan/Kampus">
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- BERKAS INSTITUSI TUJUAN --}}
 
         {{-- BUTTON SUBMIT --}}
         <div class="w-100 d-flex justify-content-end">

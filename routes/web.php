@@ -16,19 +16,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('beranda');
 });
-
 Route::get('/izin-belajar', function () {
     return view('user.izin-belajar.informasi');
 });
 Route::get('/tugas-belajar', function () {
     return view('user.tugas-belajar.informasi');
 });
-
 Route::get('/izin-belajar/pengajuan', function () {
     return view('user.izin-belajar.pengajuan');
 });
+Route::get('/izin-belajar/pengajuan/edit', function () {
+    return view('user.izin-belajar.sunting');
+});
 Route::get('/tugas-belajar/pengajuan', function () {
     return view('user.tugas-belajar.pengajuan');
+});
+Route::get('/tugas-belajar/pengajuan/edit', function () {
+    return view('user.tugas-belajar.sunting');
 });
 Route::get('/pengajuanku', function () {
     return view('user.pengajuanku');
