@@ -61,6 +61,11 @@ Route::prefix('admin')->group(function () {
         return view('admin.tugas-belajar.index');
     });
 
+    Route::get('/tugas-belajar/verifikasi', function () {
+        return view('admin.tugas-belajar.verifikasi');
+    });
+   
+
 });
 // Auth::routes();
 

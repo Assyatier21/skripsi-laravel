@@ -1,5 +1,5 @@
 @extends('layouts.admin.app')
-@section('title', 'Verifikasi Izin Belajar')
+@section('title', 'Verifikasi Tugas Belajar')
 
 @section('css')
 <style>
@@ -14,7 +14,7 @@
     {{-- BREADCUMBS --}}
     <div aria-label="breadcrumb p-5">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#" class="text-dark">Izin Belajar</a></li>
+            <li class="breadcrumb-item"><a href="#" class="text-dark">Tugas Belajar</a></li>
             <li class="breadcrumb-item active"><a href="#" class="text-dark active">Verifikasi Pengajuan</a></li>
         </ol>
     </div>
@@ -29,7 +29,7 @@
                 <label for="" class="col-sm-3 col-form-label">Nama Institusi Pendidikan</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="institusi_pendidikan" name="institusi_pendidikan"
-                        value="Institusi">
+                        value="Universitas Sriwijaya">
                 </div>
             </div>
             <div class="mb-1 row d-flex align-items-center">
@@ -50,7 +50,7 @@
                 <label for="" class="col-sm-3 col-form-label">Alamat</label>
                 <div class="col-sm-9">
                     <textarea name="alamat" id="alamat"
-                        class="form-control">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor provident assumenda possimus laborum sint vero excepturi distinctio in culpa explicabo ducimus quis incidunt natus, voluptatum consectetur sed beatae et pariatur!</textarea>
+                        class="form-control">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus molestias sint in dolores sequi, eos cum ex, laudantium praesentium a quam, minima eligendi esse corrupti iure voluptas repellat dolor voluptatum?</textarea>
                 </div>
             </div>
             <div class="mb-3 row">
@@ -75,7 +75,7 @@
             <div class="mb-3 row">
                 <label for="" class="col-sm-3 col-form-label">Tahun Ajaran</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="tahun_ajaran" name="tahun_ajaran" value="2018">
+                    <input type="text" class="form-control" id="tahun_ajaran" name="tahun_ajaran" value="2022">
                 </div>
             </div>
             <div class="mb-1 row">
@@ -103,6 +103,12 @@
                     </div>
                 </div>
             </div>
+            <div class="mb-3 row">
+                <label for="" class="col-sm-3 col-form-label">Tautan Informasi Beasiswa</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="link_beasiswa" name="link_beasiswa" value="github.com">
+                </div>
+            </div>
         </div>
     </div>
     {{-- DATA INSTITUSI --}}
@@ -124,28 +130,6 @@
             </div>
             <div class="mb-3 row">
                 <label for="" class="col-sm-3 col-form-label">Transkrip Nilai</label>
-                <div class="col-sm-9">
-                    <a href="#" target="_blank">
-                        <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
-                            <i class="fa-solid fa-eye me-2"></i>
-                            <p class="m-0">Lihat Berkas</p>
-                        </button>
-                    </a>
-                </div>
-            </div>
-            <div class="mb-3 row">
-                <label for="" class="col-sm-3 col-form-label">Surat Pernyataan</label>
-                <div class="col-sm-9">
-                    <a href="#" target="_blank">
-                        <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
-                            <i class="fa-solid fa-eye me-2"></i>
-                            <p class="m-0">Lihat Berkas</p>
-                        </button>
-                    </a>
-                </div>
-            </div>
-            <div class="mb-3 row">
-                <label for="" class="col-sm-3 col-form-label">Surat Permohonan</label>
                 <div class="col-sm-9">
                     <a href="#" target="_blank">
                         <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
@@ -196,61 +180,9 @@
                     </a>
                 </div>
             </div>
-            <div class="mb-3 row">
-                <label for="" class="col-sm-3 col-form-label">Uraian Tugas</label>
-                <div class="col-sm-9">
-                    <a href="#" target="_blank">
-                        <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
-                            <i class="fa-solid fa-eye me-2"></i>
-                            <p class="m-0">Lihat Berkas</p>
-                        </button>
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
     {{-- BERKAS KEPROFESIAN --}}
-
-    {{-- BERKAS INSTITUSI TUJUAN --}}
-    <div class="card justify-content-center shadow-sm mt-5 mb-4">
-        <h5 class="card-header px-5">Berkas Institusi Tujuan</h5>
-        <div class="card-body px-5">
-            <div class="mb-3 row">
-                <label for="" class="col-sm-3 col-form-label">Surat Keterangan Kelas Reguler</label>
-                <div class="col-sm-9">
-                    <a href="#" target="_blank">
-                        <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
-                            <i class="fa-solid fa-eye me-2"></i>
-                            <p class="m-0">Lihat Berkas</p>
-                        </button>
-                    </a>
-                </div>
-            </div>
-            <div class="mb-3 row">
-                <label for="" class="col-sm-3 col-form-label">Jadwal Kelas Reguler</label>
-                <div class="col-sm-9">
-                    <a href="#" target="_blank">
-                        <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
-                            <i class="fa-solid fa-eye me-2"></i>
-                            <p class="m-0">Lihat Berkas</p>
-                        </button>
-                    </a>
-                </div>
-            </div>
-            <div class="mb-3 row d-flex align-items-center">
-                <label for="" class="col-sm-3 col-form-label">Akreditasi Jurusan/Kampus</label>
-                <div class="col-sm-9">
-                    <a href="#" target="_blank">
-                        <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
-                            <i class="fa-solid fa-eye me-2"></i>
-                            <p class="m-0">Lihat Berkas</p>
-                        </button>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{-- BERKAS INSTITUSI TUJUAN --}}
 
     {{-- BUTTON SUBMIT --}}
     <div class="w-100 d-flex justify-content-center">
@@ -272,7 +204,7 @@
                         <div class="modal-body">
                             <textarea name="alasan2" maxlength="150" required class="w-100 form-control" id="alasan2"
                                 rows="5"></textarea>
-                            <small class="text-danger">* Masukkan Alasan Anda Menolak Pengajuan Izin Belajar
+                            <small class="text-danger">* Masukkan Alasan Anda Menolak Pengajuan Tugas Belajar
                                 Diatas!</small>
                         </div>
                         <div class="modal-footer">
