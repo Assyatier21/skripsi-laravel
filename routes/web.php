@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\IndexAdminController;
+use App\Http\Controllers\IzinBelajarUserController;
+use App\Http\Controllers\IzinBelajarAdminController;
+use App\Http\Controllers\TugasBelajarUserController;
+use App\Http\Controllers\TugasBelajarAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,60 +19,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('beranda');
-});
-Route::get('/izin-belajar', function () {
-    return view('user.izin-belajar.informasi');
-});
-Route::get('/tugas-belajar', function () {
-    return view('user.tugas-belajar.informasi');
-});
-Route::get('/izin-belajar/pengajuan', function () {
-    return view('user.izin-belajar.pengajuan');
-});
-Route::get('/izin-belajar/pengajuan/edit', function () {
-    return view('user.izin-belajar.sunting');
-});
-Route::get('/tugas-belajar/pengajuan', function () {
-    return view('user.tugas-belajar.pengajuan');
-});
-Route::get('/tugas-belajar/pengajuan/edit', function () {
-    return view('user.tugas-belajar.sunting');
-});
-Route::get('/pengajuanku', function () {
-    return view('user.pengajuanku');
-});
-Route::get('/profil', function () {
-    return view('user.profil');
-});
-Route::get('/notifikasi', function () {
-    return view('user.notifikasi');
-});
+Route::get('/', [IndexController::class, 'index'])->name('beranda');
+
+//--------------[ ROUTE NAVBAR ]-------------//
+Route::get('/pengajuanku', [IndexController::class, 'pengajuanku'])->name('user.pengajuanku');
+Route::get('/notifikasi', [IndexController::class, 'notifikasi'])->name('user.notifikasi');
+Route::get('/profil', [IndexController::class, 'profil'])->name('user.profil');
+//--------------[ ROUTE NAVBAR ]-------------//
+
+//--------------[ ROUTE IZIN BELAJAR ]-------------//
+Route::get('/izin-belajar', [IzinBelajarUserController::class, 'informasi'])->name('user.izin-belajar.informasi');
+Route::get('/izin-belajar/pengajuan', [IzinBelajarUserController::class, 'pengajuan'])->name('user.izin-belajar.pengajuan');
+Route::get('/izin-belajar/edit', [IzinBelajarUserController::class, 'sunting'])->name('user.izin-belajar.edit');
+//--------------[ ROUTE IZIN BELAJAR ]-------------//
+
+//--------------[ ROUTE TUGAS BELAJAR ]-------------//
+Route::get('/tugas-belajar', [TugasBelajarUserController::class, 'informasi'])->name('user.tugas-belajar.informasi');
+Route::get('/tugas-belajar/pengajuan', [TugasBelajarUserController::class, 'pengajuan'])->name('user.tugas-belajar.pengajuan');
+Route::get('/tugas-belajar/edit', [TugasBelajarUserController::class, 'sunting'])->name('user.izin-belajar.edit');
+//--------------[ ROUTE TUGAS BELAJAR ]-------------//
+
 
 Route::prefix('admin')->group(function () {
-    Route::get('/beranda', function () {
-        return view('admin.beranda');
-    });  
-        
-    Route::get('/izin-belajar', function () {
-        return view('admin.izin-belajar.index');
-    });
+    Route::get('/beranda', [IndexAdminController::class, 'index'])->name('beranda');
 
-    Route::get('/izin-belajar/verifikasi', function () {
-        return view('admin.izin-belajar.verifikasi');
-    });
-   
-    Route::get('/tugas-belajar', function () {
-        return view('admin.tugas-belajar.index');
-    });
+    Route::get('/izin-belajar', [IzinBelajarAdminController::class, 'index'])->name('izin-belajar.index');
+    Route::get('/izin-belajar/verifikasi', [IzinBelajarAdminController::class, 'verifikasi'])->name('izin-belajar.verifikasi');
 
-    Route::get('/tugas-belajar/verifikasi', function () {
-        return view('admin.tugas-belajar.verifikasi');
-    });
-   
-
+    Route::get('/tugas-belajar', [TugasBelajarAdminController::class, 'index'])->name('tugas-belajar.index');
+    Route::get('/tugas-belajar/verifikasi', [TugasBelajarAdminController::class, 'verifikasi'])->name('tugas-belajar.verifikasi');
 });
-// Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
