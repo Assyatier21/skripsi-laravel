@@ -21,16 +21,16 @@
                         Navigasi
                     </h6>
                     <p>
-                        <a href="#" class="text-reset">Beranda</a>
+                        <a href="{{ route('user.beranda') }}" class="text-reset">Beranda</a>
                     </p>
                     <p>
-                        <a href="#" class="text-reset">Tugas Belajar</a>
+                        <a href="{{ route('user.tugas-belajar.informasi') }}" class="text-reset">Tugas Belajar</a>
                     </p>
                     <p>
-                        <a href="#" class="text-reset">Izin Belajar</a>
+                        <a href="{{ route('user.izin-belajar.informasi') }}" class="text-reset">Izin Belajar</a>
                     </p>
                     <p>
-                        <a href="#" class="text-reset">Pengajuanku</a>
+                        <a href="{{ route('user.pengajuanku') }}" class="text-reset">Pengajuanku</a>
                     </p>
                 </div>
                 @endif
