@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
@@ -24,6 +25,9 @@ Route::get('/', [IndexController::class, 'guest_dashboard'])->name('guest.dashbo
 
 Route::get('/login', [LoginController::class, 'get_login'])->name('user.login');
 Route::post('/login', [LoginController::class, 'login'])->name('user.post.login');
+
+Route::get('/admin/login', [AdminAuthController::class, 'get_login'])->name('admin.login');
+Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.post.login');
 
 Route::middleware(['auth'])->group(function () {
     //--------------[ ROUTE NAVBAR ]-------------//
@@ -57,5 +61,7 @@ Route::prefix('admin')->group(function () {
 
         Route::get('/tugas-belajar', [TugasBelajarAdminController::class, 'index'])->name('admin.tugas-belajar.index');
         Route::get('/tugas-belajar/verifikasi', [TugasBelajarAdminController::class, 'verifikasi'])->name('admin.tugas-belajar.verifikasi');
+
+        Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
     });
 });

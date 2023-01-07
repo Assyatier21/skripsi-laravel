@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>SKRIPSI - Login Karyawan</title>
+    <title>SKRIPSI - Login Admin</title>
 
     <!-- Style -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
@@ -39,7 +39,7 @@
                 </div>
                 @endif
                 <div class="card my-5 shadow-lg">
-                    <form class="card-body cardbody-color p-lg-5" action="{{ route('user.post.login') }}" method="POST">
+                    <form class="card-body cardbody-color p-lg-5" action="{{ route('admin.login') }}" method="POST">
                         @csrf
                         <div class="text-center mb-4">
                             <img src="{{ asset('assets/images/logo dilan.png') }}" class="img-fluid" alt=" profile">
@@ -47,10 +47,10 @@
 
                         <div class="mb-3">
                             <div class="d-flex justify-content-between">
-                                <label class="form-label" for="password">Nomor Induk Pegawai</label>
+                                <label class="form-label" for="password">Username</label>
                             </div>
-                            <input type="text" class="form-control" id="nip" name="nip" aria-describedby="emailHelp"
-                                placeholder="Nomor Induk Pegawai">
+                            <input type="text" class="form-control" id="username" name="username"
+                                aria-describedby="emailHelp" placeholder="Username">
                         </div>
                         <div class="mb-3">
                             <div class="form-password-toggle mb-3">

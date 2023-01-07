@@ -34,8 +34,13 @@
                         Administrator System
                     </div>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item notification" href="#"><i
-                                    class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a>
+                        <li><a class="dropdown-item notification" href="{{ route('admin.logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class=" fa-solid fa-right-from-bracket me-2"></i>Keluar</a>
+                            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST"
+                                style="display: none;">
+                                @csrf
+                            </form>
                         </li>
                     </ul>
                 </div>
