@@ -15,6 +15,7 @@
                     </p>
                 </div>
 
+                @if (auth()->check())
                 <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
                     <h6 class="text-uppercase fw-bold mb-4">
                         Navigasi
@@ -32,6 +33,7 @@
                         <a href="#" class="text-reset">Pengajuanku</a>
                     </p>
                 </div>
+                @endif
 
                 <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
                     <h6 class="text-uppercase fw-bold mb-4">Hubungi Kami</h6>

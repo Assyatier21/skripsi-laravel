@@ -1,16 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary p-4" data-bs-theme="light"
     style="border-bottom: 1px solid #d5d5d5">
     <div class="container-fluid">
-        <a class="navbar-brand fw-bolder text-dark" href="{{ route('beranda') }}">SKRIPSI</a>
+        <a class="navbar-brand fw-bolder text-dark" href="{{ route('user.beranda') }}">SKRIPSI</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                @if (auth()->check())
                 <li class="nav-item">
-                    <a class="nav-link text-dark {{ Request::is('/') ? 'active' : '' }}" aria-current="page"
-                        href="{{ route('beranda') }}">Beranda</a>
+                    <a class="nav-link text-dark {{ Request::is('/beranda') ? 'active' : '' }}" aria-current="page"
+                        href="{{ route('user.beranda') }}">Beranda</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark {{ Request::is('tugas-belajar*') ? 'active' : '' }}"
@@ -24,8 +25,10 @@
                     <a class="nav-link text-dark {{ Request::is('pengajuanku') ? 'active' : '' }}" aria-current="page"
                         href="{{ route('user.pengajuanku') }}">Pengajuanku</a>
                 </li>
+                @endif
             </ul>
             <div>
+                @if (auth()->check())
                 <div class="dropdown">
                     <div class="text-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -51,14 +54,22 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item notification" href="#"><i
-                                    class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a>
+                        <li>
+                            <a class="dropdown-item notification" href="{{ route('user.logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="fa-solid fa-right-from-bracket me-2"></i>Keluar</a>
+                            <form id="logout-form" action="{{ route('user.logout') }}" method="POST"
+                                style="display: none;">
+                                @csrf
+                            </form>
                         </li>
                     </ul>
                 </div>
-                {{-- <a href="" class="w-100">
+                @else
+                <a href="{{ route('user.login') }}" class="w-100">
                     <button class="btn btn-success w-100">Masuk</button>
-                </a> --}}
+                </a>
+                @endif
             </div>
         </div>
     </div>

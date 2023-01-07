@@ -6,11 +6,15 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
+
+    public function guest_dashboard()
+    {
+        return view('guest-dashboard');
+    }
     public function index()
     {
-        return view('beranda');
+        return view('user.beranda');
     }
-
     public function pengajuanku()
     {
         return view('user.pengajuanku');
