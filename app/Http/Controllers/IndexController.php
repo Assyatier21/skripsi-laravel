@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Notifikasi;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,8 @@ class IndexController extends Controller
     }
     public function notifikasi()
     {
-        return view('user.notifikasi');
+        $notifikasi = Notifikasi::whereNip(auth()->user()->nip)->get();
+        return view('user.notifikasi', compact('notifikasi'));
     }
     public function profil()
     {
