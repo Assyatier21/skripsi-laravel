@@ -45,7 +45,9 @@
                                     <span
                                         class="position-absolute top-0 start-150 translate-middle badge rounded-pill bg-danger"
                                         style="font-size: 6px">
-                                        5
+                                        {{
+                                        \App\Models\Notifikasi::whereNip(auth()->user()->nip)->whereIsActive('1')->count()
+                                        }}
                                     </span>
                                 </i>
                                 Notifikasi
