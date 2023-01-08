@@ -35,6 +35,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/pengajuanku', [IndexController::class, 'pengajuanku'])->name('user.pengajuanku');
     Route::get('/notifikasi', [IndexController::class, 'notifikasi'])->name('user.notifikasi');
     Route::get('/profil', [IndexController::class, 'profil'])->name('user.profil');
+    Route::post('/profil', [IndexController::class, 'update_profil'])->name('user.update.profil');
     //--------------[ ROUTE NAVBAR ]-------------//
 
     //--------------[ ROUTE IZIN BELAJAR ]-------------//

@@ -10,7 +10,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 @if (auth()->check())
                 <li class="nav-item">
-                    <a class="nav-link text-dark {{ Request::is('/beranda') ? 'active' : '' }}" aria-current="page"
+                    <a class="nav-link text-dark {{ Request::is('beranda') ? 'active' : '' }}" aria-current="page"
                         href="{{ route('user.beranda') }}">Beranda</a>
                 </li>
                 <li class="nav-item">
@@ -42,6 +42,9 @@
                                 class="dropdown-item notification {{ Request::is('notifikasi') ? 'active' : '' }}"
                                 href="{{ route('user.notifikasi') }}">
                                 <i class="fa-solid fa-bell me-2 position-relative" type="button">
+                                    @if(
+                                    \App\Models\Notifikasi::whereNip(auth()->user()->nip)->whereIsActive('1')->count()
+                                    > 0)
                                     <span
                                         class="position-absolute top-0 start-150 translate-middle badge rounded-pill bg-danger"
                                         style="font-size: 6px">
@@ -49,6 +52,7 @@
                                         \App\Models\Notifikasi::whereNip(auth()->user()->nip)->whereIsActive('1')->count()
                                         }}
                                     </span>
+                                    @endif
                                 </i>
                                 Notifikasi
                             </a>
