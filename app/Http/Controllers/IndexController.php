@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -25,6 +26,7 @@ class IndexController extends Controller
     }
     public function profil()
     {
-        return view('user.profil');
+        $profil = User::whereNip(auth()->user()->nip)->first();
+        return view('user.profil', compact('profil'));
     }
 }

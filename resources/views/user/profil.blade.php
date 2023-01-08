@@ -33,7 +33,7 @@
                             <label for="" class="col-sm-3 col-form-label">Status</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="status" name="status"
-                                    value="Pegawai Negeri Sipil">
+                                    value="{{ $profil->status_profesi }}">
                             </div>
                         </div>
                         <div class="mb-1 row d-flex align-items-center">
@@ -41,12 +41,14 @@
                             <div class="col-sm-9">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="jk" id="jk_laki"
-                                        value="Laki-Laki" checked>
+                                        value="Laki-Laki" {{ $profil->jenis_kelamin == 'Laki-Laki' ? 'checked' :
+                                    '' }}>
                                     <label class="form-check-label" for="">Laki-Laki</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="jk" id="jk_perempuan"
-                                        value="Perempuan">
+                                        value="Perempuan" {{ $profil->jenis_kelamin == 'Perempuan' ? 'checked' :
+                                    '' }}>
                                     <label class="form-check-label" for="">Perempuan</label>
                                 </div>
                             </div>
@@ -55,40 +57,42 @@
                             <label for="" class="col-sm-3 col-form-label">Tempat Lahir</label>
                             <div class="col-sm-9">
                                 <input type="text" name="tempat_lahir" id="tempat_lahir" class="form-control"
-                                    value="Palembang" />
+                                    value="{{ $profil->tempat_lahir }}" />
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="" class="col-sm-3 col-form-label">Tanggal Lahir</label>
                             <div class="col-sm-9">
                                 <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="form-control"
-                                    value="2000-05-11" />
+                                    value="{{ $profil->tanggal_lahir }}" />
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="" class="col-sm-3 col-form-label">Agama</label>
                             <div class="col-sm-9">
-                                <input type="text" name="agama" id="agama" class="form-control" value="Islam" />
+                                <input type="text" name="agama" id="agama" class="form-control"
+                                    value="{{ $profil->agama }}" />
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="" class="col-sm-3 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="no_telp" name="no_telp"
-                                    value="087786355690">
+                                    value="{{ $profil->no_hp }}">
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="" class="col-sm-3 col-form-label">Email</label>
                             <div class="col-sm-9">
                                 <input type="email" class="form-control" id="email" name="email"
-                                    value="muhammadsholeh.dev@gmail.com">
+                                    value="{{ $profil->email }}">
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="" class="col-sm-3 col-form-label">Usia</label>
                             <div class="col-sm-9">
-                                <input type="number" class="form-control" id="usia" name="usia" value="23">
+                                <input type="number" class="form-control" id="usia" name="usia"
+                                    value="{{ $profil->umur }}">
                             </div>
                         </div>
                         <div class="mb-3 row">
@@ -108,7 +112,8 @@
                         <div class="mb-3 row">
                             <label for="" class="col-sm-3 col-form-label">Nama Lengkap</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="nama" name="nama" value="Muhammad Sholeh">
+                                <input type="text" class="form-control" id="nama" name="nama"
+                                    value="{{ $profil->nama }}">
                             </div>
                         </div>
                         <div class="mb-1 row d-flex align-items-center">
@@ -116,12 +121,15 @@
                             <div class="col-sm-9">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="spesialisasi"
-                                        id="spesialisasi_nakes" value="Tenaga Kesehatan" checked>
+                                        id="spesialisasi_nakes" value="Tenaga Kesehatan" {{ $profil->spesialisasi ==
+                                    'Tenaga Kesehatan' ? 'checked' :'' }}>
                                     <label class="form-check-label" for="">Tenaga Kesehatan</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="spesialisasi"
-                                        id="spesialisasi_non_nakes" value="Non - Tenaga Kesehatan" checked>
+                                        id="spesialisasi_non_nakes" value="Non - Tenaga Kesehatan" {{
+                                        $profil->spesialisasi ==
+                                    'Non - Tenaga Kesehatan' ? 'checked' :'' }}>
                                     <label class="form-check-label" for="">Non - Tenaga Kesehatan</label>
                                 </div>
                             </div>
@@ -129,7 +137,8 @@
                         <div class="mb-3 row">
                             <label for="" class="col-sm-3 col-form-label">Nomor Induk Pegawai</label>
                             <div class="col-sm-9">
-                                <input type="text" name="nip" id="nip" class="form-control" value="1928374774742" />
+                                <input type="text" name="nip" id="nip" class="form-control"
+                                    value="{{ $profil->nip }}" />
                             </div>
                         </div>
                         <div class="mb-1 row d-flex align-items-center">
@@ -137,22 +146,26 @@
                             <div class="col-sm-9">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="jenjang_pendidikan"
-                                        id="jenjang_pendidikan_s1" value="S1" checked>
+                                        id="jenjang_pendidikan_s1" value="S1" {{ $profil->pendidikan_terakhir ==
+                                    'Sarjana I' ? 'checked' :'' }}>
                                     <label class="form-check-label">Strata-1</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="jenjang_pendidikan"
-                                        id="jenjang_pendidikan_s2" value="S2">
+                                        id="jenjang_pendidikan_s2" value="S2" {{ $profil->pendidikan_terakhir ==
+                                    'Sarjana II' ? 'checked' :'' }}>
                                     <label class="form-check-label">Strata-2</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="jenjang_pendidikan"
-                                        id="jenjang_pendidikan_s3" value="S3">
+                                        id="jenjang_pendidikan_s3" value="S3" {{ $profil->pendidikan_terakhir ==
+                                    'Sarjana III' ? 'checked' :'' }}>
                                     <label class="form-check-label">Strata-3</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="jenjang_pendidikan"
-                                        id="jenjang_pendidikan_s3" value="PPDS">
+                                        id="jenjang_pendidikan_s3" value="PPDS" {{ $profil->pendidikan_terakhir ==
+                                    'PPDS' ? 'checked' :'' }}>
                                     <label class="form-check-label">PPDS</label>
                                 </div>
                             </div>
@@ -161,19 +174,20 @@
                             <label for="" class="col-sm-3 col-form-label">Jabatan Pekerjaan</label>
                             <div class="col-sm-9">
                                 <input type="text" name="jabatan" id="jabatan" class="form-control"
-                                    value="Kabag Sumber Daya Manusia" />
+                                    value="{{ $profil->jabatan }}" />
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="" class="col-sm-3 col-form-label">Pangkat/Golongan</label>
                             <div class="col-sm-9">
                                 <input type="text" name="pangkat_golongan" id="pangkat_golongan" class="form-control"
-                                    value="IIA" />
+                                    value="{{ $profil->pangkat_golongan }}" />
                             </div>
                         </div>
                     </div>
                 </div>
                 {{-- DATA KEPROFESIAN --}}
+
                 {{-- BUTTON SUBMIT --}}
                 <div class="w-100 d-flex justify-content-end">
                     <button class="btn btn-success w-10 submit">Simpan Data</button>
