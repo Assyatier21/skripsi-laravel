@@ -8,15 +8,14 @@
 @section('content')
 <main class="p-5">
     {{-- FORM --}}
-    <form action="{{ route('user.update.profil') }}" method="POST">
+    <form action="{{ route('user.update.profil') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row-content">
             {{-- LEFT SIDE --}}
             <div class="mx-5 col-lg-2 col-12">
                 <div class="profil">
                     <div class="card border-0 w-100 h-100">
-                        <img class=" card-img-top"
-                            src="{{ asset('assets/images/3. Pas Foto (3x4) - Muhammad Sholeh (09021281823172).jpg') }}"
+                        <img class=" card-img-top" src="{{ asset('storage/pas_foto/' . $profil->pas_foto) }}"
                             alt="Card image cap" />
                     </div>
                 </div>
@@ -25,25 +24,24 @@
 
             {{-- RIGHT SIDE --}}
             <div class="mx-5 col-lg-10 col-12 w-x">
-                @if (\Session::has('danger'))
-                <div class="alert alert-danger alert-dismissible fade show my-4" role="alert">
-                    <ul class="m-0">
-                        @foreach (\Session::get('danger') as $key => $value)
-                        <li>{{ $value }}</li>
-                        @endforeach
-                    </ul>
+                @if (\Session::has('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <span>{!! \Session::get('success') !!}</span>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-                @elseif(\Session::has('success'))
-                <div class="alert alert-success alert-dismissible fade show my-4" role="alert">
-                    <ul class="m-0">
-                        @foreach (\Session::get('success')->keys() as $key)
-                        <li>{{ \Session::get('danger')->first($key) }}</li>
+                @endif
+
+                @if (\Session::has('errors'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <ul class="mb-0">
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
                         @endforeach
                     </ul>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 @endif
+
                 {{-- DATA PRIBADI --}}
                 <div class="card justify-content-center border-0 mb-5 w-100">
                     <h5 class="card-header px-5">Data Pribadi</h5>
@@ -61,13 +59,13 @@
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="jk" id="jk_laki"
                                         value="Laki-Laki" {{ $profil->jenis_kelamin == 'Laki-Laki' ? 'checked' :
-                                    '' }}>
-                                    <label class="form-check-label">Laki-Laki</label>
+                                    '' }} disabled>
+                                    <label class="form-check-label text-dark">Laki-Laki</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="jk" id="jk_perempuan"
                                         value="Perempuan" {{ $profil->jenis_kelamin == 'Perempuan' ? 'checked' :
-                                    '' }}>
+                                    '' }} disabled>
                                     <label class="form-check-label">Perempuan</label>
                                 </div>
                             </div>
@@ -117,7 +115,11 @@
                         <div class="mb-3 row">
                             <label class="col-sm-3 col-form-label">Pas Foto</label>
                             <div class="col-sm-9">
-                                <input type="file" class="form-control" id="pas_foto" name="pas_foto">
+                                <input type="file" class="form-control" id="pas_foto" name="pas_foto" accept="image/*">
+                                <small class="text-danger mt-2">* Pas Foto Berukuran 300 x 400 Pixel dan Maksimal
+                                    Berukuran
+                                    2
+                                    MB</small>
                             </div>
                         </div>
                     </div>
@@ -165,20 +167,20 @@
                             <div class="col-sm-9">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="jenjang_pendidikan"
-                                        id="jenjang_pendidikan_s1" value="S1" {{ $profil->pendidikan_terakhir ==
-                                    'Sarjana I' ? 'checked' :'' }}>
+                                        id="jenjang_pendidikan_s1" value="Strata 1" {{ $profil->pendidikan_terakhir ==
+                                    'Strata 1' ? 'checked' :'' }}>
                                     <label class="form-check-label">Strata-1</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="jenjang_pendidikan"
-                                        id="jenjang_pendidikan_s2" value="S2" {{ $profil->pendidikan_terakhir ==
-                                    'Sarjana II' ? 'checked' :'' }}>
+                                        id="jenjang_pendidikan_s2" value="Strata 2" {{ $profil->pendidikan_terakhir ==
+                                    'Strata 2' ? 'checked' :'' }}>
                                     <label class="form-check-label">Strata-2</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="jenjang_pendidikan"
-                                        id="jenjang_pendidikan_s3" value="S3" {{ $profil->pendidikan_terakhir ==
-                                    'Sarjana III' ? 'checked' :'' }}>
+                                        id="jenjang_pendidikan_s3" value="Strata 3" {{ $profil->pendidikan_terakhir ==
+                                    'Strata 3' ? 'checked' :'' }}>
                                     <label class="form-check-label">Strata-3</label>
                                 </div>
                                 <div class="form-check form-check-inline">
