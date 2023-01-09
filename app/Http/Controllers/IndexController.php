@@ -25,7 +25,7 @@ class IndexController extends Controller
     public function pengajuanku()
     {
         // 0 : Menunggu, 1 : To Direktur, -1 : Ditolak, 2 : Diterima
-        $pengajuanku = Pengajuanku::whereNip(auth()->user()->nip)->get();
+        $pengajuanku = Pengajuanku::whereNip(auth()->user()->nip)->orderByDesc('id')->get();
         return view('user.pengajuanku', compact('pengajuanku'));
     }
 
@@ -39,7 +39,6 @@ class IndexController extends Controller
         }
         return view('user.notifikasi', compact('notifikasi'));
     }
-
 
     // PROFILE SECTION ---------------------------------------------------------------
     public function profil()
@@ -87,15 +86,15 @@ class IndexController extends Controller
         }
 
         $user = User::whereNip(auth()->user()->nip)->first();
-        $imageName = '';
+        $pasFotoName = '';
         if ($request->hasFile('pas_foto')) {
-            $imageName = Str::random(20) . '.' . $request->pas_foto->extension();
-            $request->pas_foto->storeAs('public/pas_foto', $imageName);
+            $pasFotoName = Str::random(20) . '.' . $request->pas_foto->extension();
+            $request->pas_foto->storeAs('public/pas_foto', $pasFotoName);
             if ($user->pas_foto) {
                 Storage::delete('public/pas_foto/' . $user->pas_foto);
             }
         } else {
-            $imageName = $user->pas_foto;
+            $pasFotoName = $user->pas_foto;
         }
 
 
@@ -107,7 +106,7 @@ class IndexController extends Controller
                 'no_telp' => $request->no_telp,
                 'email' => $request->email,
                 'usia' => $request->usia,
-                'pas_foto' => $imageName,
+                'pas_foto' => $pasFotoName,
                 'nama' => $request->nama,
                 'spesialisasi' => $request->spesialisasi,
                 'pendidikan_terakhir' => $request->jenjang_pendidikan,

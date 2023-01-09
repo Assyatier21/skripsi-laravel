@@ -13,12 +13,12 @@
         </a>
     </div>
     <div class="w-100 d-flex justify-content-start my-4 py-3">
-        <a href="#">
+        <a href="{{ route('user.izin-belajar.informasi') }}">
             <img src="{{ asset('assets/images/banner -1.jpeg') }}" alt="">
         </a>
     </div>
     <div class="w-100 d-flex justify-content-end my-4">
-        <a href="#">
+        <a href="{{ route('user.tugas-belajar.informasi') }}">
             <img src="{{ asset('assets/images/banner -1.jpeg') }}" alt="">
         </a>
     </div>

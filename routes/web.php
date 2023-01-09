@@ -41,6 +41,7 @@ Route::middleware(['auth'])->group(function () {
     //--------------[ ROUTE IZIN BELAJAR ]-------------//
     Route::get('/izin-belajar', [IzinBelajarUserController::class, 'informasi'])->name('user.izin-belajar.informasi');
     Route::get('/izin-belajar/pengajuan', [IzinBelajarUserController::class, 'pengajuan'])->name('user.izin-belajar.pengajuan');
+    Route::post('/izin-belajar/pengajuan', [IzinBelajarUserController::class, 'store_pengajuan'])->name('user.izin-belajar.store');
     Route::get('/izin-belajar/edit', [IzinBelajarUserController::class, 'sunting'])->name('user.izin-belajar.edit');
     //--------------[ ROUTE IZIN BELAJAR ]-------------//
 

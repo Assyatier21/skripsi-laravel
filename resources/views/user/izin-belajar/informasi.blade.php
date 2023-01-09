@@ -7,6 +7,12 @@
 
 @section('content')
 <div class="p-5 main-content">
+    @if (\Session::has('success'))
+    <div class="alert alert-success alert-dismissible fade show my-5" role="alert">
+        <span>{!! \Session::get('success') !!}</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="syarat">
         <div class="card justify-content-center shadow-sm">
             <h5 class="card-header px-5">Syarat Pengajuan Umum</h5>
@@ -60,7 +66,7 @@
     </div>
 
     <div class="ajukan my-4 d-flex justify-content-end">
-        <a href="../user/ib-form-1.html">
+        <a href="{{ route('user.izin-belajar.pengajuan') }}">
             <button type="button" class="btn btn-success ajukan">Ajukan</button>
         </a>
     </div>

@@ -14,12 +14,12 @@
                         href="{{ route('user.beranda') }}">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark {{ Request::is('tugas-belajar*') ? 'active' : '' }}"
-                        aria-current="page" href="{{ route('user.tugas-belajar.informasi') }}">Tugas Belajar</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link text-dark {{ Request::is('izin-belajar*') ? 'active' : '' }}" aria-current="page"
                         href="{{ route('user.izin-belajar.informasi') }}">Izin Belajar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark {{ Request::is('tugas-belajar*') ? 'active' : '' }}"
+                        aria-current="page" href="{{ route('user.tugas-belajar.informasi') }}">Tugas Belajar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark {{ Request::is('pengajuanku') ? 'active' : '' }}" aria-current="page"

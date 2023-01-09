@@ -10,16 +10,34 @@
     {{-- BREADCUMBS --}}
     <div aria-label="breadcrumb p-5">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#" class="text-dark">Izin Belajar</a></li>
-            <li class="breadcrumb-item active"><a href="#" class="text-dark active">Pengajuan</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('user.izin-belajar.informasi') }}" class="text-dark">Izin
+                    Belajar</a></li>
+            <li class="breadcrumb-item active"><a href="#" class="text-dark active">Pengajuan Izin Belajar</a></li>
         </ol>
     </div>
     {{-- BREADCUMBS --}}
 
     {{-- FORM --}}
-    <form action="" autocomplete="off">
+    <form action="{{ route('user.izin-belajar.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
         {{-- DATA INSTITUSI --}}
         <div class="card justify-content-center shadow-sm mb-5">
+            @if (\Session::has('danger'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <span>{!! \Session::get('danger') !!}</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+            @if (\Session::has('errors'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <ul class="mb-0">
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
             <h5 class="card-header px-5">Data Institusi Tujuan</h5>
             <div class="card-body px-5">
                 <div class="mb-3 row">
@@ -33,11 +51,11 @@
                     <label for="" class="col-sm-3 col-form-label">Akreditasi</label>
                     <div class="col-sm-9">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="akreditas" id="akreditasi_a" value="A">
+                            <input class="form-check-input" type="radio" name="akreditasi" id="akreditasi_a" value="A">
                             <label class="form-check-label" for="">A</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="akreditas" id="akreditasi_b" value="B">
+                            <input class="form-check-input" type="radio" name="akreditasi" id="akreditasi_b" value="B">
                             <label class="form-check-label" for="">B</label>
                         </div>
                     </div>
@@ -110,28 +128,29 @@
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Ijazah Terakhir</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="ijazah" name="ijazah" placeholder="Ijazah Terakhir">
+                        <input type="file" accept="application/pdf" class="form-control" id="ijazah" name="ijazah"
+                            placeholder="Ijazah Terakhir">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Transkrip Nilai</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="transkrip_nilai" name="transkrip_nilai"
-                            placeholder="Transkrip Nilai">
+                        <input type="file" accept="application/pdf" class="form-control" id="transkrip_nilai"
+                            name="transkrip_nilai" placeholder="Transkrip Nilai">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Surat Pernyataan</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="surat_pernyataan" name="surat_pernyataan"
-                            placeholder="Surat Pernyataan">
+                        <input type="file" accept="application/pdf" class="form-control" id="surat_pernyataan"
+                            name="surat_pernyataan" placeholder="Surat Pernyataan">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Surat Permohonan</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="surat_permohonan" name="surat_permohonan"
-                            placeholder="Surat Permohonan">
+                        <input type="file" accept="application/pdf" class="form-control" id="surat_permohonan"
+                            name="surat_permohonan" placeholder="Surat Permohonan">
                     </div>
                 </div>
             </div>
@@ -145,29 +164,29 @@
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Surat Keterangan Pegawai Negeri Sipil</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="sk_pns" name="sk_pns"
+                        <input type="file" accept="application/pdf" class="form-control" id="sk_pns" name="sk_pns"
                             placeholder="Surat Keterangan Pegawai Negeri Sipil">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Surat Keterangan Terakhir</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="sk_terakhir" name="sk_terakhir"
-                            placeholder="Surat Keterangan Terakhir">
+                        <input type="file" accept="application/pdf" class="form-control" id="sk_terakhir"
+                            name="sk_terakhir" placeholder="Surat Keterangan Terakhir">
                     </div>
                 </div>
                 <div class="mb-3 row d-flex align-items-center">
                     <label for="" class="col-sm-3 col-form-label">Penilaian Prestasi Kinerja Pegawai</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="ppkp" name="ppkp"
+                        <input type="file" accept="application/pdf" class="form-control" id="ppkp" name="ppkp"
                             placeholder="Penilaian Prestasi Kinerja Pegawai">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Uraian Tugas</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="uraian_tugas" name="uraian_tugas"
-                            placeholder="Uraian Tugas">
+                        <input type="file" accept="application/pdf" class="form-control" id="uraian_tugas"
+                            name="uraian_tugas" placeholder="Uraian Tugas">
                     </div>
                 </div>
             </div>
@@ -181,21 +200,21 @@
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Surat Keterangan Kelas Reguler</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="sk_kelas_reguler" name="sk_kelas_reguler"
-                            placeholder="Surat Keterangan Kelas Reguler">
+                        <input type="file" accept="application/pdf" class="form-control" id="sk_kelas_reguler"
+                            name="sk_kelas_reguler" placeholder="Surat Keterangan Kelas Reguler">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Jadwal Kelas Reguler</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="jadwal_kelas_reguler" name="jadwal_kelas_reguler"
-                            placeholder="Jadwal Kelas Reguler">
+                        <input type="file" accept="application/pdf" class="form-control" id="jadwal_kelas_reguler"
+                            name="jadwal_kelas_reguler" placeholder="Jadwal Kelas Reguler">
                     </div>
                 </div>
                 <div class="mb-3 row d-flex align-items-center">
                     <label for="" class="col-sm-3 col-form-label">Akreditasi Jurusan/Kampus</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="file_akreditasi_institusi"
+                        <input type="file" accept="application/pdf" class="form-control" id="file_akreditasi_institusi"
                             name="file_akreditasi_institusi" placeholder="Akreditasi Jurusan/Kampus">
                     </div>
                 </div>
@@ -205,7 +224,7 @@
 
         {{-- BUTTON SUBMIT --}}
         <div class="w-100 d-flex justify-content-end">
-            <button class="btn btn-success w-10 submit">Submit</button>
+            <button class="btn btn-success w-10 submit" type="submit">Submit</button>
         </div>
         {{-- BUTTON SUBMIT --}}
     </form>
