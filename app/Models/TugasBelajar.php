@@ -12,7 +12,8 @@ class TugasBelajar extends Model
     public $timestamps = false;
     protected $guarded = ['id'];
 
-    public function user(){
-          return $this->belongsTo(User::class, 'nip');
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'nip', 'nip');
     }
 }

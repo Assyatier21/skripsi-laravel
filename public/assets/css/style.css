@@ -39,6 +39,15 @@ a:hover {
     background-color: #00b579 !important;
     border-color: #00b579 !important;
 }
+li.page-item.active {
+    background-color: #00b579 !important;
+}
+
+.page-link.active,
+.active > .page-link {
+    background-color: #00b579 !important;
+    border-color: #00b579 !important;
+}
 .desc-footer {
     padding-right: 3rem;
 }

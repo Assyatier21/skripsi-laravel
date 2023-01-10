@@ -17,14 +17,14 @@
                 <div class="statistik-pengguna">
                     <img src="{{ asset('assets/images/icon13.png') }}" width="130" alt="" />
                     <div class="detail-statistika">
-                        <h6 id="total-akun" class="counter-count">809</h6>
+                        <h6 id="total-akun" class="counter-count">{{ $information['user'] }}</h6>
                         <h6 id="detail-statistik">Total Akun Terdaftar</h6>
                     </div>
                 </div>
                 <div class="statistik-pengguna">
                     <img src="{{ asset('assets/images/icon14.png') }}" width="130" alt="" />
                     <div class="detail-statistika">
-                        <h6 id="total-akun" class="counter-count">809</h6>
+                        <h6 id="total-akun" class="counter-count">{{ $information['total_pengajuan'] }}</h6>
                         <h6 id="detail-statistik">Total Pengajuan</h6>
                     </div>
                 </div>
@@ -33,14 +33,14 @@
                 <div class="statistik-pengguna">
                     <img src="{{ asset('assets/images/icon15.png') }}" width="130" alt="" />
                     <div class="detail-statistika">
-                        <h6 id="total-akun" class="counter-count">809</h6>
+                        <h6 id="total-akun" class="counter-count">{{ $information['total_ib'] }}</h6>
                         <h6 id="detail-statistik">Total Pengajuan Izin Belajar</h6>
                     </div>
                 </div>
                 <div class="statistik-pengguna">
                     <img src="{{ asset('assets/images/icon16.png') }}" width="130" alt="" />
                     <div class="detail-statistika">
-                        <h6 id="total-akun" class="counter-count">809</h6>
+                        <h6 id="total-akun" class="counter-count">{{ $information['total_tb'] }}</h6>
                         <h6 id="detail-statistik">Total Pengajuan Tugas Belajar</h6>
                     </div>
                 </div>
@@ -66,20 +66,37 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @forelse ($ib as $data)
                     <tr class="align-items-center">
-                        <th scope="row">1</th>
-                        <td>Muhammad Sholeh</td>
-                        <td>20 Maret 2023</td>
+                        <th scope="row">{{ $loop->iteration + $ib->firstItem() - 1 }}</th>
+                        <td>{{ $data->user->nama }}</td>
+                        <td>{{ Carbon\Carbon::parse($data->created_at)->format('l, d M Y') }}</td>
                         <td>
                             <a href="#" style="text-decoration: underline">
                                 <i class="fa-solid fa-eye me-2"></i>Lihat</a>
                         </td>
                         <td>
+                            @if($data->status_pengajuan == 0)
+                            <h5><span class="badge bg-secondary w-50">Menunggu</span></h5>
+                            @elseif($data->status_pengajuan == 1)
+                            <h5><span class="badge bg-secondary w-50">Menunggu</span></h5>
+                            @elseif($data->status_pengajuan == 2)
                             <h5><span class="badge bg-success w-50">Diterima</span></h5>
+                            @elseif($data->status_pengajuan == -1)
+                            <h5><span class="badge bg-danger w-50">Ditolak</span></h5>
+                            @endif
                         </td>
                     </tr>
+                    @empty
+                    <tr>
+                        <td colspan="5">Belum Ada Data Pengajuan Izin Belajar</td>
+                    </tr>
+                    @endforelse
                 </tbody>
             </table>
+            <div class="mt-4">
+                {{ $ib->appends(['tb' => $tb->currentPage()])->links() }}
+            </div>
         </div>
     </div>
     {{-- TABEL IZIN BELAJAR --}}
@@ -101,20 +118,37 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @forelse ($tb as $data)
                     <tr class="align-items-center">
-                        <th scope="row">1</th>
-                        <td>Muhammad Sholeh</td>
-                        <td>20 Maret 2023</td>
+                        <th scope="row">{{ $loop->iteration + $tb->firstItem() - 1 }}</th>
+                        <td>{{ $data->user->nama }}</td>
+                        <td>{{ Carbon\Carbon::parse($data->created_at)->format('l, d M Y') }}</td>
                         <td>
                             <a href="#" style="text-decoration: underline">
                                 <i class="fa-solid fa-eye me-2"></i>Lihat</a>
                         </td>
                         <td>
+                            @if($data->status_pengajuan == 0)
+                            <h5><span class="badge bg-secondary w-50">Menunggu</span></h5>
+                            @elseif($data->status_pengajuan == 1)
+                            <h5><span class="badge bg-secondary w-50">Menunggu</span></h5>
+                            @elseif($data->status_pengajuan == 2)
                             <h5><span class="badge bg-success w-50">Diterima</span></h5>
+                            @elseif($data->status_pengajuan == -1)
+                            <h5><span class="badge bg-danger w-50">Ditolak</span></h5>
+                            @endif
                         </td>
                     </tr>
+                    @empty
+                    <tr>
+                        <td colspan="5">Belum Ada Data Pengajuan Tugas Belajar</td>
+                    </tr>
+                    @endforelse
                 </tbody>
             </table>
+            <div class="mt-4">
+                {{ $tb->appends(['ib' => $ib->currentPage()])->links() }}
+            </div>
         </div>
     </div>
     {{-- TABEL TUGAS BELAJAR --}}
