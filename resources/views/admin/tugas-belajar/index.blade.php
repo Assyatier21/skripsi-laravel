@@ -51,7 +51,6 @@
                     @endforelse
                 </tbody>
             </table>
-            {{-- Pagination --}}
             <div class="mt-4">
                 {{ $tb->appends(request()->input())->links() }}
             </div>
