@@ -109,7 +109,6 @@ class IzinBelajarUserController extends Controller
             return redirect()->back()->withErrors($validation->errors())->withInput();
         }
 
-        // dd($request);
         $ib = new IzinBelajar();
         $ib->nip = auth()->user()->nip;
         $ib->nama_institusi = $request->institusi_pendidikan;
@@ -135,7 +134,7 @@ class IzinBelajarUserController extends Controller
         $ib->jadwal_kelas_reguler = $request->file('jadwal_kelas_reguler')->store('izin-belajar/jadwal-kelas-reguler', 'public');
         $ib->file_akreditasi_institusi = $request->file('file_akreditasi_institusi')->store('izin-belajar/file-akreditasi-institusi', 'public');
 
-        $ib->status_pengajuan = '1';
+        $ib->status_pengajuan = '0';
         $ib->created_at = Carbon::now();
         $ib->updated_at = Carbon::now();
 

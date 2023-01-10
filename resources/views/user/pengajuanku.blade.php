@@ -36,7 +36,7 @@
                         Izin Belajar
                         @endif
                     </td>
-                    <td>{{ Carbon\Carbon::parse($p->created_updated_a)->format('l, d M Y') }}</td>
+                    <td>{{ Carbon\Carbon::parse($p->created_updated_at)->format('l, d M Y') }}</td>
                     <td>
                         @if($p->status_pengajuan == 0)
                         <h5><span class="badge bg-secondary w-50">Menunggu</span></h5>

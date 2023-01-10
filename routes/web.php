@@ -48,6 +48,7 @@ Route::middleware(['auth'])->group(function () {
     //--------------[ ROUTE TUGAS BELAJAR ]-------------//
     Route::get('/tugas-belajar', [TugasBelajarUserController::class, 'informasi'])->name('user.tugas-belajar.informasi');
     Route::get('/tugas-belajar/pengajuan', [TugasBelajarUserController::class, 'pengajuan'])->name('user.tugas-belajar.pengajuan');
+    Route::post('/tugas-belajar/pengajuan', [TugasBelajarUserController::class, 'store_pengajuan'])->name('user.tugas-belajar.store');
     Route::get('/tugas-belajar/edit', [TugasBelajarUserController::class, 'sunting'])->name('user.izin-belajar.edit');
     //--------------[ ROUTE TUGAS BELAJAR ]-------------//
 

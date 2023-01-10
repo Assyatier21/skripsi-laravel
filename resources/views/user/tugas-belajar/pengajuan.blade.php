@@ -3,6 +3,11 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/css/user/izin_belajar.css') }}">
+<style>
+    span.text-success {
+        color: #00b579 !important;
+    }
+</style>
 @endsection
 
 @section('content')
@@ -10,16 +15,35 @@
     {{-- BREADCUMBS --}}
     <div aria-label="breadcrumb p-5">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#" class="text-dark">Tugas Belajar</a></li>
-            <li class="breadcrumb-item active"><a href="#" class="text-dark active">Pengajuan</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('user.tugas-belajar.informasi') }}" class="text-dark">Tugas
+                    Belajar</a></li>
+            <li class="breadcrumb-item active"><span class="text-success">Pengajuan Tugas Belajar</span>
+            </li>
         </ol>
     </div>
     {{-- BREADCUMBS --}}
 
     {{-- FORM --}}
-    <form action="" autocomplete="off">
+    <form action="{{ route('user.tugas-belajar.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
         {{-- DATA INSTITUSI --}}
         <div class="card justify-content-center shadow-sm mb-5">
+            @if (\Session::has('danger'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <span>{!! \Session::get('danger') !!}</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+            @if (\Session::has('errors'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <ul class="mb-0">
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
             <h5 class="card-header px-5">Data Institusi Tujuan</h5>
             <div class="card-body px-5">
                 <div class="mb-3 row">
@@ -33,11 +57,11 @@
                     <label for="" class="col-sm-3 col-form-label">Akreditasi</label>
                     <div class="col-sm-9">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="akreditas" id="akreditasi_a" value="A">
+                            <input class="form-check-input" type="radio" name="akreditasi" id="akreditasi_a" value="A">
                             <label class="form-check-label" for="">A</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="akreditas" id="akreditasi_b" value="B">
+                            <input class="form-check-input" type="radio" name="akreditasi" id="akreditasi_b" value="B">
                             <label class="form-check-label" for="">B</label>
                         </div>
                     </div>

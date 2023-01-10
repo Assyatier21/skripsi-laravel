@@ -12,7 +12,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('user.izin-belajar.informasi') }}" class="text-dark">Izin
                     Belajar</a></li>
-            <li class="breadcrumb-item active"><a href="#" class="text-dark active">Pengajuan Izin Belajar</a></li>
+            <li class="breadcrumb-item active"><span class="text-success active">Pengajuan Izin Belajar</span></li>
         </ol>
     </div>
     {{-- BREADCUMBS --}}

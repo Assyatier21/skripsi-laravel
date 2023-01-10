@@ -26,6 +26,7 @@ class IndexController extends Controller
     {
         // 0 : Menunggu, 1 : To Direktur, -1 : Ditolak, 2 : Diterima
         $pengajuanku = Pengajuanku::whereNip(auth()->user()->nip)->orderByDesc('id')->get();
+        // dd($pengajuanku);
         return view('user.pengajuanku', compact('pengajuanku'));
     }
 
@@ -96,7 +97,6 @@ class IndexController extends Controller
         } else {
             $pasFotoName = $user->pas_foto;
         }
-
 
         if ($user->update(
             [
