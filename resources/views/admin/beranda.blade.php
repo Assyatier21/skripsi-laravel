@@ -72,7 +72,7 @@
                         <td>{{ $data->user->nama }}</td>
                         <td>{{ Carbon\Carbon::parse($data->created_at)->format('l, d M Y') }}</td>
                         <td>
-                            <a href="#" style="text-decoration: underline">
+                            <a href="#" class="text-dark" style="text-decoration: underline">
                                 <i class="fa-solid fa-eye me-2"></i>Lihat</a>
                         </td>
                         <td>
@@ -124,7 +124,7 @@
                         <td>{{ $data->user->nama }}</td>
                         <td>{{ Carbon\Carbon::parse($data->created_at)->format('l, d M Y') }}</td>
                         <td>
-                            <a href="#" style="text-decoration: underline">
+                            <a href="#" class="text-dark" style="text-decoration: underline">
                                 <i class="fa-solid fa-eye me-2"></i>Lihat</a>
                         </td>
                         <td>

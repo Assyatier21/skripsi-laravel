@@ -30,7 +30,7 @@
                         <td>{{ Carbon\Carbon::parse($data->created_at)->format('l, d M Y') }}</td>
                         <td>
                             <a href="{{ route('admin.izin-belajar.verifikasi', $data->id) }}"
-                                style="text-decoration: underline">
+                                style="text-decoration: underline" class="text-dark">
                                 <i class="fa-solid fa-eye me-2"></i>Lihat</a>
                         </td>
                         <td>

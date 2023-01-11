@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\IzinBelajar;
+use App\Models\Notifikasi;
+use App\Models\Pengajuanku;
 use Illuminate\Http\Request;
 
 class IzinBelajarAdminController extends Controller
@@ -17,20 +19,55 @@ class IzinBelajarAdminController extends Controller
         $ib = IzinBelajar::whereId($id)->first();
         return view('admin.izin-belajar.verifikasi', compact('ib'));
     }
-    // public function update_verifikasi($id) {
-    //     $ib = IzinBelajar::whereId($id)->first();
-    //     if ($ib->has('setuju')) {
-    //         $ib->update(['status_pengajuan' => 1]);
-    //         LogHelper::instance()->store_log('Menyetujui Pengajuan Renovasi', auth()->user()->id, auth()->user()->role, now());
-    //         return redirect()->back()->with('success', 'Pengajuan Renovasi Disetujui!');
-    //     }
 
-    //     if ($request->has('tolak')) {
-    //         $rp->update(['status_pengajuan' => 0]);
-    //         LogHelper::instance()->store_log('Menolak Pengajuan Renovasi', auth()->user()->id, auth()->user()->role, now());
-    //         return redirect()->back()->with('error', 'Pengajuan Renovasi Ditolak!');
-    //     }
+    public function update_verifikasi(Request $request, $id)
+    {
 
-    //     // return view('admin.izin-belajar.verifikasi', compact('ib'));
-    // }
+        $ib = IzinBelajar::whereId($id)->first();
+        $pengajuanku = Pengajuanku::whereIdPengajuan($id)->whereJenisPengajuan('ib')->first();
+        if ($request->has('terima')) {
+            if (auth()->guard('admin')->user()->role == '1') {
+                $ib->update(['status_pengajuan' => '1']);
+                $pengajuanku->update(['status_pengajuan' => '1']);
+
+                // Create Notification
+                $pesan = "Pengajuan Izin Belajar Anda Berhasil Diteruskan ke Direktur!";
+                $this->create_notification($ib->nip, $pesan);
+
+                return redirect()->back()->with('success', 'Pengajuan Izin Belajar Berhasil Diteruskan ke Direktur!');
+            } else if (auth()->guard('admin')->user()->role == '2') {
+                $ib->update(['status_pengajuan' => '2']);
+                $pengajuanku->update(['status_pengajuan' => '1']);
+
+                // Create Notification
+                $pesan = "Pengajuan Izin Belajar Anda Disetujui Direktur!";
+                $this->create_notification($ib->nip, $pesan);
+
+                return redirect()->back()->with('success', 'Pengajuan Izin Belajar Berhasil Disetujui!');
+            }
+        }
+
+        if ($request->has('tolak')) {
+            $ib->update([
+                'status_pengajuan' => '-1',
+                'alasan_penolakan' => $request->alasan,
+            ]);
+            $pengajuanku->update(['status_pengajuan' => '-1']);
+
+            // Create Notification
+            $this->create_notification($ib->nip, $request->alasan);
+
+
+            return redirect()->back()->with('danger', 'Pengajuan Izin Belajar Berhasil Ditolak!');
+        }
+    }
+
+    public function create_notification($nip, $pesan)
+    {
+        $notifikasi = new Notifikasi();
+        $notifikasi->nip = $nip;
+        $notifikasi->pesan = $pesan;
+        $notifikasi->is_active = 1;
+        $notifikasi->save();
+    }
 }
