@@ -22,7 +22,6 @@ class IzinBelajarAdminController extends Controller
 
     public function update_verifikasi(Request $request, $id)
     {
-
         $ib = IzinBelajar::whereId($id)->first();
         $pengajuanku = Pengajuanku::whereIdPengajuan($id)->whereJenisPengajuan('ib')->first();
         if ($request->has('terima')) {
@@ -56,8 +55,6 @@ class IzinBelajarAdminController extends Controller
 
             // Create Notification
             $this->create_notification($ib->nip, $request->alasan);
-
-
             return redirect()->back()->with('danger', 'Pengajuan Izin Belajar Berhasil Ditolak!');
         }
     }
@@ -67,7 +64,7 @@ class IzinBelajarAdminController extends Controller
         $notifikasi = new Notifikasi();
         $notifikasi->nip = $nip;
         $notifikasi->pesan = $pesan;
-        $notifikasi->is_active = 1;
+        $notifikasi->is_active = '1';
         $notifikasi->save();
     }
 }

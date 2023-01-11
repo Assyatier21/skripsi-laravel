@@ -18,7 +18,7 @@
     {{-- BREADCUMBS --}}
     <div aria-label="breadcrumb p-5">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin.izin-belajar.index') }}" class="text-dark">Izin
+            <li class="breadcrumb-item"><a href="{{ url()->previous() }}" class="text-dark">Izin
                     Belajar</a></li>
             <li class="breadcrumb-item text-success">Verifikasi Pengajuan
             </li>
@@ -191,7 +191,7 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Surat Keterangan Pegawai Negeri Sipil</label>
                 <div class="col-sm-9">
-                    <a href="{{ asset('storage/' . $ib->ijazah_terakhir) }}" target="_blank">
+                    <a href="{{ asset('storage/' . $ib->sk_pns) }}" target="_blank">
                         <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                             <i class="fa-solid fa-eye me-2"></i>
                             <p class="m-0">Lihat Berkas</p>
@@ -202,7 +202,7 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Surat Keterangan Terakhir</label>
                 <div class="col-sm-9">
-                    <a href="{{ asset('storage/' . $ib->sk_pns) }}" target="_blank">
+                    <a href="{{ asset('storage/' . $ib->sk_terakhir) }}" target="_blank">
                         <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                             <i class="fa-solid fa-eye me-2"></i>
                             <p class="m-0">Lihat Berkas</p>

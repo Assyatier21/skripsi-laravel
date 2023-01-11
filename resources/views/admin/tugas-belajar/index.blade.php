@@ -29,14 +29,15 @@
                         <td>{{ $data->user->nama }}</td>
                         <td>{{ Carbon\Carbon::parse($data->created_at)->format('l, d M Y') }}</td>
                         <td>
-                            <a href="#" style="text-decoration: underline">
+                            <a href="{{ route('admin.tugas-belajar.update', $data->id) }}"
+                                style="text-decoration: underline" class="text-dark">
                                 <i class="fa-solid fa-eye me-2"></i>Lihat</a>
                         </td>
                         <td>
                             @if($data->status_pengajuan == 0)
-                            <h5><span class="badge bg-secondary w-50">Menunggu</span></h5>
+                            <h5><span class="badge bg-secondary w-50">Menunggu Admin</span></h5>
                             @elseif($data->status_pengajuan == 1)
-                            <h5><span class="badge bg-secondary w-50">Menunggu</span></h5>
+                            <h5><span class="badge bg-secondary w-50">Menunggu Direktur</span></h5>
                             @elseif($data->status_pengajuan == 2)
                             <h5><span class="badge bg-success w-50">Diterima</span></h5>
                             @elseif($data->status_pengajuan == -1)

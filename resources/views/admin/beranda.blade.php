@@ -72,14 +72,15 @@
                         <td>{{ $data->user->nama }}</td>
                         <td>{{ Carbon\Carbon::parse($data->created_at)->format('l, d M Y') }}</td>
                         <td>
-                            <a href="#" class="text-dark" style="text-decoration: underline">
+                            <a href="{{ route('admin.izin-belajar.update', $data->id) }}" class="text-dark"
+                                style="text-decoration: underline">
                                 <i class="fa-solid fa-eye me-2"></i>Lihat</a>
                         </td>
                         <td>
                             @if($data->status_pengajuan == 0)
-                            <h5><span class="badge bg-secondary w-50">Menunggu</span></h5>
+                            <h5><span class="badge bg-secondary w-50">Menunggu Admin</span></h5>
                             @elseif($data->status_pengajuan == 1)
-                            <h5><span class="badge bg-secondary w-50">Menunggu</span></h5>
+                            <h5><span class="badge bg-secondary w-50">Menunggu Direktur</span></h5>
                             @elseif($data->status_pengajuan == 2)
                             <h5><span class="badge bg-success w-50">Diterima</span></h5>
                             @elseif($data->status_pengajuan == -1)
@@ -124,14 +125,15 @@
                         <td>{{ $data->user->nama }}</td>
                         <td>{{ Carbon\Carbon::parse($data->created_at)->format('l, d M Y') }}</td>
                         <td>
-                            <a href="#" class="text-dark" style="text-decoration: underline">
+                            <a href="{{ route('admin.tugas-belajar.update', $data->id) }}" class="text-dark"
+                                style="text-decoration: underline">
                                 <i class="fa-solid fa-eye me-2"></i>Lihat</a>
                         </td>
                         <td>
                             @if($data->status_pengajuan == 0)
-                            <h5><span class="badge bg-secondary w-50">Menunggu</span></h5>
+                            <h5><span class="badge bg-secondary w-50">Menunggu Admin</span></h5>
                             @elseif($data->status_pengajuan == 1)
-                            <h5><span class="badge bg-secondary w-50">Menunggu</span></h5>
+                            <h5><span class="badge bg-secondary w-50">Menunggu Direktur</span></h5>
                             @elseif($data->status_pengajuan == 2)
                             <h5><span class="badge bg-success w-50">Diterima</span></h5>
                             @elseif($data->status_pengajuan == -1)

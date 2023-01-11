@@ -16,23 +16,30 @@
                     <div class="nav-link text-dark" aria-current="page">|</div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark {{ Request::is('admin/tugas-belajar') ? 'active' : '' }}"
+                    <a class="nav-link text-dark {{ Request::is('admin/tugas-belajar*') ? 'active' : '' }}"
                         aria-current="page" href="{{ route('admin.tugas-belajar.index') }}">Verifikasi Tugas Belajar</a>
                 </li>
                 <li class="nav-item">
                     <div class="nav-link text-dark" aria-current="page">|</div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark {{ Request::is('admin/izin-belajar') ? 'active' : '' }}"
+                    <a class="nav-link text-dark {{ Request::is('admin/izin-belajar*') ? 'active' : '' }}"
                         aria-current="page" href="{{ route('admin.izin-belajar.index') }}">Verifikasi Izin Belajar</a>
                 </li>
             </ul>
             <div>
                 <div class="dropdown-center">
+                    @if(auth()->guard('admin')->user()->role == '1')
                     <div class="text-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         data-bs-display="static" aria-expanded="false" aria-expanded="false">
                         Administrator System
                     </div>
+                    @else
+                    <div class="text-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        data-bs-display="static" aria-expanded="false" aria-expanded="false">
+                        {{ auth()->guard('admin')->user()->nama }}
+                    </div>
+                    @endif
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item notification" href="{{ route('admin.logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

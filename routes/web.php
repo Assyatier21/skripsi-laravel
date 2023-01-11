@@ -64,7 +64,8 @@ Route::prefix('admin')->group(function () {
         Route::put('/izin-belajar/verifikasi/{id}', [IzinBelajarAdminController::class, 'update_verifikasi'])->name('admin.izin-belajar.update');
 
         Route::get('/tugas-belajar', [TugasBelajarAdminController::class, 'index'])->name('admin.tugas-belajar.index');
-        Route::get('/tugas-belajar/verifikasi', [TugasBelajarAdminController::class, 'verifikasi'])->name('admin.tugas-belajar.verifikasi');
+        Route::get('/tugas-belajar/verifikasi/{id}', [TugasBelajarAdminController::class, 'verifikasi'])->name('admin.tugas-belajar.verifikasi');
+        Route::put('/tugas-belajar/verifikasi/{id}', [TugasBelajarAdminController::class, 'update_verifikasi'])->name('admin.tugas-belajar.update');
 
         Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
     });

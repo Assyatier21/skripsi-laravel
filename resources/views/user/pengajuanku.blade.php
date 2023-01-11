@@ -39,9 +39,9 @@
                     <td>{{ Carbon\Carbon::parse($p->created_updated_at)->format('l, d M Y') }}</td>
                     <td>
                         @if($p->status_pengajuan == 0)
-                        <h5><span class="badge bg-secondary w-50">Menunggu</span></h5>
+                        <h5><span class="badge bg-secondary w-50">Menunggu Admin</span></h5>
                         @elseif($p->status_pengajuan == 1)
-                        <h5><span class="badge bg-secondary w-50">Menunggu</span></h5>
+                        <h5><span class="badge bg-secondary w-50">Menunggu Direktur</span></h5>
                         @elseif($p->status_pengajuan == 2)
                         <h5><span class="badge bg-success w-50">Diterima</span></h5>
                         @elseif($p->status_pengajuan == -1)
