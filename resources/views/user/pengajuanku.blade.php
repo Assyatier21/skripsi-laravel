@@ -48,11 +48,17 @@
                         <h5><span class="badge bg-danger w-50">Ditolak</span></h5>
                         @endif
                     </td>
-                    @if($p->status_pengajuan == 0 || $p->status_pengajuan == 1 || $p->status_pengajuan == 2)
+                    @if($p->status_pengajuan != -1)
                     <td class="text-muted">Edit</td>
-                    @elseif($p->status_pengajuan == -1)
+                    @elseif($p->jenis_pengajuan == "tb")
                     <td>
-                        <a href="#" class="text-dark fw-bold">Edit</a>
+                        <a href="{{  route('user.tugas-belajar.edit', $p->id_pengajuan) }}"
+                            class="text-dark fw-bold">Edit</a>
+                    </td>
+                    @elseif($p->jenis_pengajuan == "ib")
+                    <td>
+                        <a href="{{  route('user.izin-belajar.edit', $p->id_pengajuan) }}"
+                            class="text-dark fw-bold">Edit</a>
                     </td>
                     @endif
                 </tr>

@@ -42,14 +42,16 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/izin-belajar', [IzinBelajarUserController::class, 'informasi'])->name('user.izin-belajar.informasi');
     Route::get('/izin-belajar/pengajuan', [IzinBelajarUserController::class, 'pengajuan'])->name('user.izin-belajar.pengajuan');
     Route::post('/izin-belajar/pengajuan', [IzinBelajarUserController::class, 'store_pengajuan'])->name('user.izin-belajar.store');
-    Route::get('/izin-belajar/edit', [IzinBelajarUserController::class, 'sunting'])->name('user.izin-belajar.edit');
+    Route::get('/izin-belajar/edit/{id}', [IzinBelajarUserController::class, 'sunting'])->name('user.izin-belajar.edit');
+    Route::put('/izin-belajar/edit/{id}', [IzinBelajarUserController::class, 'update_sunting'])->name('user.izin-belajar.update');
     //--------------[ ROUTE IZIN BELAJAR ]-------------//
 
     //--------------[ ROUTE TUGAS BELAJAR ]-------------//
     Route::get('/tugas-belajar', [TugasBelajarUserController::class, 'informasi'])->name('user.tugas-belajar.informasi');
     Route::get('/tugas-belajar/pengajuan', [TugasBelajarUserController::class, 'pengajuan'])->name('user.tugas-belajar.pengajuan');
     Route::post('/tugas-belajar/pengajuan', [TugasBelajarUserController::class, 'store_pengajuan'])->name('user.tugas-belajar.store');
-    Route::get('/tugas-belajar/edit', [TugasBelajarUserController::class, 'sunting'])->name('user.izin-belajar.edit');
+    Route::get('/tugas-belajar/edit/{id}', [TugasBelajarUserController::class, 'sunting'])->name('user.tugas-belajar.edit');
+    Route::put('/tugas-belajar/edit/{id}', [TugasBelajarUserController::class, 'update_sunting'])->name('user.tugas-belajar.update');
     //--------------[ ROUTE TUGAS BELAJAR ]-------------//
 
     Route::post('/logout', [LoginController::class, 'logout'])->name('user.logout');

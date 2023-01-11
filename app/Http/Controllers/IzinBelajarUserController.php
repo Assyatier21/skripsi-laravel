@@ -155,8 +155,9 @@ class IzinBelajarUserController extends Controller
         }
     }
 
-    public function sunting()
+    public function sunting($id)
     {
-        return view('user.izin-belajar.sunting');
+        $ib = IzinBelajar::whereId($id)->first();
+        return view('user.izin-belajar.sunting', compact('ib'));
     }
 }
