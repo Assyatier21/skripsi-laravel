@@ -44,8 +44,8 @@
             <div class="card-body px-5">
                 <div class="d-block justify-content-center">
                     <a href="#"><img src="{{ asset('assets/images/Surat Pernyataan.png') }}" alt=""></a>
-                    <a href="#"><img src="{{ asset('assets/images/Surat Pernyataan.png') }}" alt=""></a>
-                    <a href="#"><img src="{{ asset('assets/images/Surat Pernyataan.png') }}" alt=""></a>
+                    <a href="#"><img src="{{ asset('assets/images/Surat Permohonan.png') }}" alt=""></a>
+                    <a href="#"><img src="{{ asset('assets/images/SK Kelas Reguler.png') }}" alt=""></a>
                 </div>
             </div>
         </div>
