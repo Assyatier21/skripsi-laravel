@@ -16,21 +16,29 @@
     </div>
     {{-- BREADCUMBS --}}
 
+    @if ($ib->alasan_penolakan != null)
+    <div class="alert alert-danger alert-dismissible fade show my-4" role="alert">
+        <span><b>Alasan Ditolak :</b> {{ $ib->alasan_penolakan }}</span>
+    </div>
+    @endif
+    @if (\Session::has('errors'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <ul class="mb-0">
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+
     {{-- FORM --}}
-    <form action="" autocomplete="off">
+    <form action="{{ route('user.izin-belajar.update', $ib->id) }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
         @if (\Session::has('danger'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <span>{!! \Session::get('danger') !!}</span>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        @endif
-        @if (\Session::has('errors'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <ul class="mb-0">
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         @endif
@@ -137,7 +145,11 @@
             <div class="card-body px-5">
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Ijazah Terakhir</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-7">
+                        <input type="file" accept="application/pdf" class="form-control" id="ijazah" name="ijazah"
+                            placeholder="Ijazah Terakhir">
+                    </div>
+                    <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $ib->ijazah_terakhir) }}" target="_blank">
                             <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                                 <i class="fa-solid fa-eye me-2"></i>
@@ -148,7 +160,11 @@
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Transkrip Nilai</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-7">
+                        <input type="file" accept="application/pdf" class="form-control" id="transkrip_nilai"
+                            name="transkrip_nilai">
+                    </div>
+                    <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $ib->transkrip_nilai) }}" target="_blank">
                             <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                                 <i class="fa-solid fa-eye me-2"></i>
@@ -159,7 +175,11 @@
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Surat Pernyataan</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-7">
+                        <input type="file" accept="application/pdf" class="form-control" id="surat_pernyataan"
+                            name="surat_pernyataan">
+                    </div>
+                    <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $ib->surat_pernyataan) }}" target="_blank">
                             <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                                 <i class="fa-solid fa-eye me-2"></i>
@@ -170,7 +190,11 @@
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Surat Permohonan</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-7">
+                        <input type="file" accept="application/pdf" class="form-control" id="surat_permohonan"
+                            name="surat_permohonan">
+                    </div>
+                    <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $ib->surat_permohonan) }}" target="_blank">
                             <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                                 <i class="fa-solid fa-eye me-2"></i>
@@ -189,7 +213,10 @@
             <div class="card-body px-5">
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Surat Keterangan Pegawai Negeri Sipil</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-7">
+                        <input type="file" accept="application/pdf" class="form-control" id="sk_pns" name="sk_pns">
+                    </div>
+                    <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $ib->sk_pns) }}" target="_blank">
                             <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                                 <i class="fa-solid fa-eye me-2"></i>
@@ -200,7 +227,11 @@
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Surat Keterangan Terakhir</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-7">
+                        <input type="file" accept="application/pdf" class="form-control" id="sk_terakhir"
+                            name="sk_terakhir">
+                    </div>
+                    <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $ib->sk_terakhir) }}" target="_blank">
                             <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                                 <i class="fa-solid fa-eye me-2"></i>
@@ -211,7 +242,10 @@
                 </div>
                 <div class="mb-3 row d-flex align-items-center">
                     <label class="col-sm-3 col-form-label">Penilaian Prestasi Kinerja Pegawai</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-7">
+                        <input type="file" accept="application/pdf" class="form-control" id="ppkp" name="ppkp">
+                    </div>
+                    <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $ib->ppkp) }}" target="_blank">
                             <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                                 <i class="fa-solid fa-eye me-2"></i>
@@ -222,7 +256,11 @@
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Uraian Tugas</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-7">
+                        <input type="file" accept="application/pdf" class="form-control" id="uraian_tugas"
+                            name="uraian_tugas">
+                    </div>
+                    <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $ib->uraian_tugas) }}" target="_blank">
                             <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                                 <i class="fa-solid fa-eye me-2"></i>
@@ -241,7 +279,11 @@
             <div class="card-body px-5">
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Surat Keterangan Kelas Reguler</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-7">
+                        <input type="file" accept="application/pdf" class="form-control" id="sk_kelas_reguler"
+                            name="sk_kelas_reguler">
+                    </div>
+                    <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $ib->sk_kelas_reguler) }}" target="_blank">
                             <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                                 <i class="fa-solid fa-eye me-2"></i>
@@ -252,7 +294,11 @@
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Jadwal Kelas Reguler</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-7">
+                        <input type="file" accept="application/pdf" class="form-control" id="jadwal_kelas_reguler"
+                            name="jadwal_kelas_reguler">
+                    </div>
+                    <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $ib->jadwal_kelas_reguler) }}" target="_blank">
                             <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                                 <i class="fa-solid fa-eye me-2"></i>
@@ -263,7 +309,11 @@
                 </div>
                 <div class="mb-3 row d-flex align-items-center">
                     <label class="col-sm-3 col-form-label">Akreditasi Jurusan/Kampus</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-7">
+                        <input type="file" accept="application/pdf" class="form-control" id="file_akreditasi_institusi"
+                            name="file_akreditasi_institusi">
+                    </div>
+                    <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $ib->file_akreditasi_institusi) }}" target="_blank">
                             <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                                 <i class="fa-solid fa-eye me-2"></i>
@@ -278,7 +328,7 @@
 
         {{-- BUTTON SUBMIT --}}
         <div class="w-100 d-flex justify-content-end">
-            <button class="btn btn-success w-10 submit">Submit</button>
+            <button class="btn btn-success w-10 submit" type="submit">Submit</button>
         </div>
         {{-- BUTTON SUBMIT --}}
     </form>

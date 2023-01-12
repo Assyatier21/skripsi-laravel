@@ -13,6 +13,12 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
+    @if (\Session::has('danger'))
+    <div class="alert alert-danger alert-dismissible fade show my-5" role="alert">
+        <span>{!! \Session::get('danger') !!}</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="syarat">
         <div class="card justify-content-center shadow-sm">
             <h5 class="card-header px-5">Syarat Pengajuan Umum</h5>
