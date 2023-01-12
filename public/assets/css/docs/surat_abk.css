@@ -1,0 +1,30 @@
+body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    border: solid 1px black;
+    font-family: "TTimes New Roman", Times, serif !important;
+}
+.alamat {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 100%;
+    text-align: center;
+}
+.underline {
+    border-bottom: 6px solid black;
+    width: 100%;
+}
+.title-div .title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 17px;
+}
+
+.pernyataan p {
+    text-align: justify;
+}
+
+.sign {
+    float: right;
+}

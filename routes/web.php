@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\DocumentGeneratorController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\IndexAdminController;
@@ -20,6 +21,8 @@ use App\Http\Controllers\TugasBelajarAdminController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/surat-abk', [DocumentGeneratorController::class, 'surat_abk'])->name('surat.abk');
 
 Route::get('/', [IndexController::class, 'guest_dashboard'])->name('guest.dashboard');
 
