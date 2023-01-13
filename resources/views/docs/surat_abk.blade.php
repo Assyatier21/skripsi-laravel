@@ -42,7 +42,7 @@
             <img src="{{ asset('assets/images/docs/Logo Jendral Ahmad Yani.png') }}" alt="">
         </div>
     </div>
-    <div class="underline mt-2"></div>
+    <div class="underline mt-3"></div>
 
     <div class="title-div mt-4">
         <h5 class="title">SURAT PERNYATAAN KEBUTUHAN <br>

@@ -48,23 +48,29 @@
             <h5 class="card-header px-5">Data Institusi Tujuan</h5>
             <div class="card-body px-5">
                 <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">Nomor Induk Kependudukan</label>
+                    <div class="col-sm-9">
+                        <input required type="text" class="form-control" id="nik" name="nik" value="{{ $tb->nik }}">
+                    </div>
+                </div>
+                <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Nama Institusi Pendidikan</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="institusi_pendidikan" name="institusi_pendidikan"
-                            value="{{ $tb->nama_institusi }}">
+                        <input required type="text" class="form-control" id="institusi_pendidikan"
+                            name="institusi_pendidikan" value="{{ $tb->nama_institusi }}">
                     </div>
                 </div>
                 <div class="mb-1 row d-flex align-items-center">
                     <label class="col-sm-3 col-form-label">Akreditasi</label>
                     <div class="col-sm-9">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="akreditasi" id="akreditasi_a" value="A"
-                                {{ $tb->akreditasi_institusi == 'A' ? 'checked' : '' }}>
+                            <input required class="form-check-input" type="radio" name="akreditasi" id="akreditasi_a"
+                                value="A" {{ $tb->akreditasi_institusi == 'A' ? 'checked' : '' }}>
                             <label class="form-check-label">A</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="akreditasi" id="akreditasi_b" value="B"
-                                {{ $tb->akreditasi_institusi == 'B' ? 'checked' : '' }}>
+                            <input required class="form-check-input" type="radio" name="akreditasi" id="akreditasi_b"
+                                value="B" {{ $tb->akreditasi_institusi == 'B' ? 'checked' : '' }}>
                             <label class="form-check-label">B</label>
                         </div>
                     </div>
@@ -78,27 +84,28 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Nomor Telepon</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="no_telp" name="no_telp"
+                        <input required type="text" class="form-control" id="no_telp" name="no_telp"
                             value="{{ $tb->telp_institusi }}">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Jurusan</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="jurusan" name="jurusan" value="{{ $tb->jurusan }}">
+                        <input required type="text" class="form-control" id="jurusan" name="jurusan"
+                            value="{{ $tb->jurusan }}">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Program Studi</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="program_studi" name="program_studi"
+                        <input required type="text" class="form-control" id="program_studi" name="program_studi"
                             value="{{ $tb->jurusan }}">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Tahun Ajaran</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="tahun_ajaran" name="tahun_ajaran"
+                        <input required type="text" class="form-control" id="tahun_ajaran" name="tahun_ajaran"
                             value="{{ $tb->tahun_ajaran }}">
                     </div>
                 </div>
@@ -106,28 +113,28 @@
                     <label class="col-sm-3 col-form-label">Jenjang Pendidikan</label>
                     <div class="col-sm-9 d-flex align-items-center">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="jenjang_pendidikan"
+                            <input required class="form-check-input" type="radio" name="jenjang_pendidikan"
                                 id="jenjang_pendidikan_s1" value="S1" {{ $tb->jenjang_pendidikan == "S1" ? 'checked' :
                             ''
                             }}>
                             <label class="form-check-label">Strata-1</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="jenjang_pendidikan"
+                            <input required class="form-check-input" type="radio" name="jenjang_pendidikan"
                                 id="jenjang_pendidikan_s2" value="S2" {{ $tb->jenjang_pendidikan == "S2" ? 'checked' :
                             ''
                             }}>
                             <label class="form-check-label">Strata-2</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="jenjang_pendidikan"
+                            <input required class="form-check-input" type="radio" name="jenjang_pendidikan"
                                 id="jenjang_pendidikan_s3" value="S3" {{ $tb->jenjang_pendidikan == "S3" ? 'checked' :
                             ''
                             }}>
                             <label class="form-check-label">Strata-3</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="jenjang_pendidikan"
+                            <input required class="form-check-input" type="radio" name="jenjang_pendidikan"
                                 id="jenjang_pendidikan_s3" value="PPDS" {{ $tb->jenjang_pendidikan == "PPDS" ? 'checked'
                             :
                             '' }}>
@@ -146,8 +153,8 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Ijazah Terakhir</label>
                     <div class="col-sm-7">
-                        <input type="file" accept="application/pdf" class="form-control" id="ijazah" name="ijazah"
-                            placeholder="Ijazah Terakhir">
+                        <input required type="file" accept="application/pdf" class="form-control" id="ijazah"
+                            name="ijazah" placeholder="Ijazah Terakhir">
                     </div>
                     <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $tb->ijazah_terakhir) }}" target="_blank">
@@ -161,7 +168,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Transkrip Nilai</label>
                     <div class="col-sm-7">
-                        <input type="file" accept="application/pdf" class="form-control" id="transkrip_nilai"
+                        <input required type="file" accept="application/pdf" class="form-control" id="transkrip_nilai"
                             name="transkrip_nilai">
                     </div>
                     <div class="col-sm-2">
@@ -176,7 +183,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Surat Pernyataan</label>
                     <div class="col-sm-7">
-                        <input type="file" accept="application/pdf" class="form-control" id="surat_pernyataan"
+                        <input required type="file" accept="application/pdf" class="form-control" id="surat_pernyataan"
                             name="surat_pernyataan">
                     </div>
                     <div class="col-sm-2">
@@ -191,7 +198,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Surat Permohonan</label>
                     <div class="col-sm-7">
-                        <input type="file" accept="application/pdf" class="form-control" id="surat_permohonan"
+                        <input required type="file" accept="application/pdf" class="form-control" id="surat_permohonan"
                             name="surat_permohonan">
                     </div>
                     <div class="col-sm-2">
@@ -214,7 +221,8 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Surat Keterangan Pegawai Negeri Sipil</label>
                     <div class="col-sm-7">
-                        <input type="file" accept="application/pdf" class="form-control" id="sk_pns" name="sk_pns">
+                        <input required type="file" accept="application/pdf" class="form-control" id="sk_pns"
+                            name="sk_pns">
                     </div>
                     <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $tb->sk_pns) }}" target="_blank">
@@ -228,7 +236,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Surat Keterangan Terakhir</label>
                     <div class="col-sm-7">
-                        <input type="file" accept="application/pdf" class="form-control" id="sk_terakhir"
+                        <input required type="file" accept="application/pdf" class="form-control" id="sk_terakhir"
                             name="sk_terakhir">
                     </div>
                     <div class="col-sm-2">
@@ -243,7 +251,7 @@
                 <div class="mb-3 row d-flex align-items-center">
                     <label class="col-sm-3 col-form-label">Penilaian Prestasi Kinerja Pegawai</label>
                     <div class="col-sm-7">
-                        <input type="file" accept="application/pdf" class="form-control" id="ppkp" name="ppkp">
+                        <input required type="file" accept="application/pdf" class="form-control" id="ppkp" name="ppkp">
                     </div>
                     <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $tb->ppkp) }}" target="_blank">
@@ -257,7 +265,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Uraian Tugas</label>
                     <div class="col-sm-7">
-                        <input type="file" accept="application/pdf" class="form-control" id="uraian_tugas"
+                        <input required type="file" accept="application/pdf" class="form-control" id="uraian_tugas"
                             name="uraian_tugas">
                     </div>
                     <div class="col-sm-2">

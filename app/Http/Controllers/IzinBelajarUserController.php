@@ -28,6 +28,7 @@ class IzinBelajarUserController extends Controller
         $validation = Validator::make(
             $request->all(),
             [
+                'nik' => 'required',
                 'institusi_pendidikan' => 'required',
                 'akreditasi' => 'required',
                 'alamat' => 'required',
@@ -52,6 +53,7 @@ class IzinBelajarUserController extends Controller
                 'file_akreditasi_institusi' => 'required|mimes:pdf|max:2048',
             ],
             [
+                'nik.required' => 'Nomor Induk Kependudukan Harus Diisi',
                 'institusi_pendidikan.required' => 'Institusi Pendidikan Harus Diisi',
                 'akreditasi.required' => 'Akreditasi Harus Diisi',
                 'alamat.required' => 'Alamat Harus Diisi',
@@ -111,6 +113,7 @@ class IzinBelajarUserController extends Controller
 
         $ib = new IzinBelajar();
         $ib->nip = auth()->user()->nip;
+        $ib->nik = $request->nik;
         $ib->nama_institusi = $request->institusi_pendidikan;
         $ib->akreditasi_institusi = $request->akreditasi;
         $ib->alamat_institusi = $request->alamat;
@@ -168,6 +171,7 @@ class IzinBelajarUserController extends Controller
         $validation = Validator::make(
             $request->all(),
             [
+                'nik' => 'required',
                 'institusi_pendidikan' => 'required',
                 'akreditasi' => 'required',
                 'alamat' => 'required',
@@ -192,6 +196,7 @@ class IzinBelajarUserController extends Controller
                 'file_akreditasi_institusi' => 'mimes:pdf|max:2048',
             ],
             [
+                'nik.required' => 'Nomor Induk Kependudukan Harus Diisi',
                 'institusi_pendidikan.required' => 'Institusi Pendidikan Harus Diisi',
                 'akreditasi.required' => 'Akreditasi Harus Diisi',
                 'alamat.required' => 'Alamat Harus Diisi',
@@ -238,6 +243,7 @@ class IzinBelajarUserController extends Controller
 
         $ib = IzinBelajar::whereId($id)->first();
         $ib->nip = auth()->user()->nip;
+        $ib->nik = $request->nik;
         $ib->nama_institusi = $request->institusi_pendidikan;
         $ib->akreditasi_institusi = $request->akreditasi;
         $ib->alamat_institusi = $request->alamat;

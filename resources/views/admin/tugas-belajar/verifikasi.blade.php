@@ -42,6 +42,13 @@
         <h5 class="card-header px-5">Data Institusi Tujuan</h5>
         <div class="card-body px-5">
             <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Nomor Induk Kependudukan</label>
+                <div class="col-sm-9">
+                    <input disabled readonly type="text" class="form-control" id="nik" name="nik"
+                        value="{{ $tb->nik }}">
+                </div>
+            </div>
+            <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Nama Institusi Pendidikan</label>
                 <div class="col-sm-9">
                     <input disabled readonly type="text" class="form-control" id="institusi_pendidikan"
