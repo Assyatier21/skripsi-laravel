@@ -22,8 +22,6 @@ use App\Http\Controllers\TugasBelajarAdminController;
 |
 */
 
-Route::get('/surat-abk', [DocumentGeneratorController::class, 'surat_abk'])->name('surat.abk');
-
 Route::get('/', [IndexController::class, 'guest_dashboard'])->name('guest.dashboard');
 
 Route::get('/login', [LoginController::class, 'get_login'])->name('user.login');
@@ -56,6 +54,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/tugas-belajar/edit/{id}', [TugasBelajarUserController::class, 'sunting'])->name('user.tugas-belajar.edit');
     Route::put('/tugas-belajar/edit/{id}', [TugasBelajarUserController::class, 'update_sunting'])->name('user.tugas-belajar.update');
     //--------------[ ROUTE TUGAS BELAJAR ]-------------//
+
+    //--------------[ ROUTE DOCS GENERATED ]-------------//
+    Route::get('/surat-abk', [DocumentGeneratorController::class, 'surat_abk'])->name('user.surat.abk');
+    //--------------[ ROUTE DOCS GENERATED ]-------------//
 
     Route::post('/logout', [LoginController::class, 'logout'])->name('user.logout');
 });
