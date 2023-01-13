@@ -51,7 +51,8 @@
                 <div class="d-block justify-content-center">
                     <a href="{{ route('user.surat.abk') }}"><img src="{{ asset('assets/images/Surat Pernyataan.png') }}"
                             alt=""></a>
-                    <a href="#"><img src="{{ asset('assets/images/Surat Permohonan.png') }}" alt=""></a>
+                    <a href="{{ route('user.surat_permohonan.ib') }}"><img
+                            src="{{ asset('assets/images/Surat Permohonan.png') }}" alt=""></a>
                     <a href="#"><img src="{{ asset('assets/images/SK Kelas Reguler.png') }}" alt=""></a>
                 </div>
             </div>

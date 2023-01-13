@@ -19,4 +19,9 @@ class DocumentGeneratorController extends Controller
         $dompdf->render();
         return $dompdf->stream();
     }
+    public function surat_permohonan_ib()
+    {
+        $user = User::whereNip(auth()->user()->nip)->first();
+        return view('docs.surat_permohonan_ib', compact('user'));
+    }
 }

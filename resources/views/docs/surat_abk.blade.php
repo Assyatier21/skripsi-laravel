@@ -13765,13 +13765,12 @@ fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l
         }
 
         .sign {
-            /* margin-top: 6rem !important; */
             float: right;
         }
     </style>
 </head>
 
-<body class="p-5">
+<body class="px-5">
     <div class="row">
         <div class="col-2">
             {{-- <img src="{{ asset('assets/images/docs/MetroJaya.png') }}" alt=""> --}}
@@ -13799,7 +13798,7 @@ fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l
     </div>
 
     <div class="row nomor-surat text-center">
-        <span>Nomor: 800/ _________ /LL-02/2022</span>
+        <span>Nomor: 800/ _________ /LL-02/2023</span>
     </div>
 
     <div class="detail-direktur mt-4">
@@ -13879,7 +13878,7 @@ fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l
     <div class="sign mt-5">
         <table>
             <tr>
-                <td>Metro, ____ Oktober 2022</td>
+                <td>Metro, ____________ 2023 </td>
             </tr>
             <tr>
                 <td>DIREKTUR <br> RSUD JENDERAL AHMAD YANI METRO</td>
