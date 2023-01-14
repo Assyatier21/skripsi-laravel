@@ -13773,7 +13773,7 @@ fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l
 <body class="px-5">
     <div class="row">
         <div class="col-2">
-            {{-- <img src="{{ asset('assets/images/docs/MetroJaya.png') }}" alt=""> --}}
+            {{-- <img src="{{ storage_path('Metro Jaya.jpg') }}" alt=""> --}}
         </div>
         <div class="col-8">
             <h6 class="fw-bold text-center mb-0">PEMERINTAH KOTA METRO</h6>
