@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Notifikasi;
+use App\Models\Pengajuanku;
 use App\Models\TugasBelajar;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class TugasBelajarAdminController extends Controller
 {

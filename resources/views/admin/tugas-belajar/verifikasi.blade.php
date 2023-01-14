@@ -221,7 +221,7 @@
     {{-- BUTTON SUBMIT --}}
     <div class="w-100 d-flex justify-content-center">
         {{-- FORM TERIMA --}}
-        <form action="{{ route('admin.izin-belajar.update', $tb->id) }}" method="POST" class="text-center">
+        <form action="{{ route('admin.tugas-belajar.update', $tb->id) }}" method="POST" class="text-center">
             @csrf @method('PUT')
             <button class="btn btn-success mx-2"
                 onclick="return confirm('Apakah Anda Yakin Ingin Menyetujui Pengajuan Ini?')" type="submit" id="terima"
@@ -230,7 +230,7 @@
         {{-- FORM TERIMA --}}
 
         {{-- FORM TOLAK --}}
-        <form action="{{ route('admin.izin-belajar.update', $tb->id) }}" method="POST" class="text-center">
+        <form action="{{ route('admin.tugas-belajar.update', $tb->id) }}" method="POST" class="text-center">
             @csrf @method('PUT')
             <button class=" btn btn-danger mx-2" data-bs-toggle="modal" data-bs-target="#menolak">Tolak</button>
             <div class="modal fade" id="menolak" tabindex="-1" aria-labelledby="menolakLabel" aria-hidden="true">

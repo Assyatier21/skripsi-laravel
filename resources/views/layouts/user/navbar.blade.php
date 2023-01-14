@@ -32,7 +32,7 @@
                 <div class="dropdown">
                     <div class="text-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        Muhammad Sholeh
+                        {{ auth()->user()->nama }}
                     </div>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item {{ Request::is('profil') ? 'active' : '' }}"
