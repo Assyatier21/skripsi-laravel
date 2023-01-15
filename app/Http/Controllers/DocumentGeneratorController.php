@@ -30,6 +30,5 @@ class DocumentGeneratorController extends Controller
         $dompdf->loadHtml($html);
         $dompdf->render();
         return $dompdf->stream();
-        // return view('docs.surat_permohonan_ib', compact('user'));
     }
 }
