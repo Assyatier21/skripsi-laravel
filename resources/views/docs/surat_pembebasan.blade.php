@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Surat Permohonan Izin Belajar</title>
+    <title>Surat Pembebasan Sementara Dari jabatan & Tunjangan Fungsional</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
@@ -19,28 +19,9 @@
             font-family: "Times New Roman", Times, serif !important;
         }
 
-        .alamat {
-            margin-top: 8px;
-            font-size: 14px;
-            line-height: 100%;
-            text-align: center;
-        }
-
         .underline {
             border-bottom: 5px solid black;
             width: 100%;
-        }
-
-        .detail-direktur {
-            margin-left: 6rem;
-        }
-
-        .pernyataan p {
-            text-align: justify;
-        }
-
-        .sign {
-            float: right;
         }
     </style>
 </head>
@@ -84,7 +65,8 @@
                     <span>Perihal</span>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span>:</span>
-                    <span style="text-decoration: underline">Permohonan Tugas Belajar Mandiri</span>
+                    <span class="text-decoration-underline">Usul Pembebasan sementara dari jabatan Tunjangan
+                        (Profesi…………………………………)</span>
                 </div>
             </div>
             <div class="col-4">
@@ -98,8 +80,8 @@
 
     <div class="detail-direktur mt-4">
         <h6 class="">Dengan hormat,</h6>
-        <h6 class="mb-0">Bersama ini kami sampaikan berkas permohonan tugas belajar mandiri pegawai
-            RSUD Jenderal Ahmad Yani Metro:</h6>
+        <h6 class="mb-0">Bersama ini kami sampaikan usulan Pembebasan Sementara dalam jabatan fungsional Terapis Wicara
+            pegawai RSUD Jenderal Ahmad Yani Metro:</h6>
         <div class="mt-2">
             <table class="w-100 table table-bordered border-dark">
                 <thead class="text-center">
@@ -124,31 +106,19 @@
         </div>
         <div class="pernyataan mt-2">
             <p>
-                Pada prinsipnya kami tidak berkeberatan yang bersangkutan untuk meningkatkan
-                pendidikannya, maka bersama ini mengajukan permohonan mengikuti tugas belajar
-                mandiri Profesi…………….. di Universitas ……………….. Tahun Akademik
-                ……………….
-                <br>
                 Sebagai bahan pertimbangan Bapak dengan ini disampaikan :
                 <br>
-                1. Formulir Identitas Pegawai<br>
-                2. Surat Permohonan Tugas Belajar Mandiri<br>
-                3. Surat Pernyataan Pribadi Pegawai<br>
-                4. Foto Copy SK CPNS<br>
-                5. Foto Copy SK Pangkat Terakhir<br>
-                6. Foto Copy Karpeg<br>
-                7. Foto Copy SKP terakhir<br>
-                8. Foto Copy Ijazah terakhir<br>
-                9. Pernyataan Akreditasi Kampus minimal B<br>
-            </p>
-            <p>
-                Demikian kami sampaikan, atas perkenan bapak diucapkan terima kasih.
+                1. Foto copy SK terakhir <br>
+                2. Foto copy SK Jabatan Fungsional terakhir <br>
+                3. Foto copy PAK terakhir <br>
+                4. Foto copy Surat Tubel <br>
+                5. Foto copy Penilaian Kinerja (SKP) terakhir
             </p>
         </div>
     </div>
 
 
-    <div class="sign">
+    <div class="sign d-flex justify-content-end">
         <table>
             <tr>
                 <td>DIREKTUR <br> RSUD JENDERAL AHMAD YANI METRO</td>
@@ -180,7 +150,7 @@
                     var element = document.getElementById('print-element');
                     var opt = {
                         margin: 0,
-                        filename: 'Surat Permohonan Izin Belajar.pdf',
+                        filename: 'Surat Pembebasan Sementara Dari jabatan & Tunjangan Fungsional.pdf',
                         image: { type: 'jpeg', quality: 0.98 },
                         // html2canvas: { scale: 2 },
                         jsPDF: { unit: 'in', format: 'A4', orientation: 'portrait' }
