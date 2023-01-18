@@ -16,6 +16,7 @@
     <style>
         body {
             margin: 0;
+            font-size: 13px;
             font-family: "Times New Roman", Times, serif !important;
         }
 
@@ -150,6 +151,14 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+    <div class="mt-2">
+        <span>Keterangan: </span> <br>
+        <ol class="m-0">
+            <li>Mohon dilampirkan pada saat mengirimkan permohonan ke BKPSDM.</li>
+            <li>Mohon dilengkapi dan ditandatangani oleh Kepala Unit Kerja dan PNS yang bersangkutan.</li>
+            <li>Foto berwarna/ hitam putih ukuran 2 x 3 sebanyak 1 lembar.</li>
+        </ol>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"

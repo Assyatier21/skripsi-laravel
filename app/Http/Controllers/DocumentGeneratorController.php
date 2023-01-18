@@ -26,4 +26,10 @@ class DocumentGeneratorController extends Controller
         $time_now = Carbon::now();
         return view('docs.izin-belajar.1', compact('user', 'time_now'));
     }
+    public function ib_2()
+    {
+        $user = User::whereNip(auth()->user()->nip)->first();
+        $time_now = Carbon::now();
+        return view('docs.izin-belajar.2', compact('user', 'time_now'));
+    }
 }
