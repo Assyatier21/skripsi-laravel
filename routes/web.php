@@ -58,6 +58,7 @@ Route::middleware(['auth'])->group(function () {
     //--------------[ ROUTE DOCS GENERATED ]-------------//
     Route::get('/surat-abk', [DocumentGeneratorController::class, 'surat_abk'])->name('user.surat.abk');
     Route::get('/surat-permohonan-ib', [DocumentGeneratorController::class, 'surat_permohonan_ib'])->name('user.surat_permohonan.ib');
+    Route::get('/surat-ib/1', [DocumentGeneratorController::class, 'ib_1'])->name('user.ib.1');
     //--------------[ ROUTE DOCS GENERATED ]-------------//
 
     Route::post('/logout', [LoginController::class, 'logout'])->name('user.logout');

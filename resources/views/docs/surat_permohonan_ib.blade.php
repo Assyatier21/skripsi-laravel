@@ -16,7 +16,7 @@
     <style>
         body {
             margin: 0;
-            font-family: "TTimes New Roman", Times, serif !important;
+            font-family: "Times New Roman", Times, serif !important;
         }
 
         .alamat {
