@@ -56,8 +56,8 @@
             <div class="col-8">
                 <h6 class="fw-bold text-center mb-0">PEMERINTAH KOTA METRO</h6>
                 <h3 class="fw-bold text-center mb-0">DINAS KESEHATAN</h3>
-                <h5 class="fw-bold text-center mb-0">UPTD RSUD JENDERAL AHMAD YANI METRO</h5>
-                <p class="mb-0 alamat" style="">
+                <h6 class="fw-bold text-center mb-0">UPTD RSUD JENDERAL AHMAD YANI METRO</h6>
+                <p class="mb-0 alamat">
                     Jl Jend. A. Yani No.13 Kota Metro Kode Pos 34111 Telp(0725) 41820 <br>
                     Email : rsudayanimetro@ymail.com Website : rsuay.metrokota.go.id
                 </p>
@@ -143,7 +143,7 @@
         <div class="pernyataan mt-2">
             <p>Mengajukan Permohonan untuk dapat diterbitkan surat izin belajar pada jenjang S1 Keperawatan dan Profesi
                 <b>dengan
-                    pertimbangan basic Pendidikan yang akan ditempuh oleh yang bersangkutan (Pendidikan…..) dibutuhkan
+                    pertimbangan dasar Pendidikan yang akan ditempuh oleh yang bersangkutan dibutuhkan
                     sesuai
                     Analisis
                     Jabatan dan Analisis Beban Kerja.</b>
@@ -156,7 +156,7 @@
         <div class="sign mt-3">
             <table>
                 <tr>
-                    <td>Metro, ____________ 2023 </td>
+                    <td>Metro, {{ Carbon\Carbon::parse($time_now)->format('d F Y') }} </td>
                 </tr>
                 <tr>
                     <td>DIREKTUR <br> RSUD JENDERAL AHMAD YANI METRO</td>

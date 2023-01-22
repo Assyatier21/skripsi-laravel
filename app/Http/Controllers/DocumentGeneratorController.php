@@ -12,7 +12,9 @@ class DocumentGeneratorController extends Controller
     public function surat_abk()
     {
         $user = User::whereNip(auth()->user()->nip)->first();
-        return view('docs.surat_abk', compact('user'));
+        $time_now = Carbon::now();
+
+        return view('docs.surat_abk', compact('user', 'time_now'));
     }
     public function surat_rekomendasi_tubel()
     {
