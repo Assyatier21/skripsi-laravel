@@ -263,7 +263,7 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label class="col-sm-3 col-form-label">Uraian Tugas</label>
+                    <label class="col-sm-3 col-form-label">Kartu Pegawai</label>
                     <div class="col-sm-7">
                         <input required type="file" accept="application/pdf" class="form-control" id="uraian_tugas"
                             name="uraian_tugas">

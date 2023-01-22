@@ -150,20 +150,6 @@
                             name="transkrip_nilai" placeholder="Transkrip Nilai">
                     </div>
                 </div>
-                <div class="mb-3 row">
-                    <label for="" class="col-sm-3 col-form-label">Surat Pernyataan</label>
-                    <div class="col-sm-9">
-                        <input required type="file" accept="application/pdf" class="form-control" id="surat_pernyataan"
-                            name="surat_pernyataan" placeholder="Surat Pernyataan">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="" class="col-sm-3 col-form-label">Surat Permohonan</label>
-                    <div class="col-sm-9">
-                        <input required type="file" accept="application/pdf" class="form-control" id="surat_permohonan"
-                            name="surat_permohonan" placeholder="Surat Permohonan">
-                    </div>
-                </div>
             </div>
         </div>
         {{-- BERKAS PRIBADI --}}
@@ -194,10 +180,10 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="" class="col-sm-3 col-form-label">Uraian Tugas</label>
+                    <label for="" class="col-sm-3 col-form-label">Kartu Pegawai</label>
                     <div class="col-sm-9">
                         <input required type="file" accept="application/pdf" class="form-control" id="uraian_tugas"
-                            name="uraian_tugas" placeholder="Uraian Tugas">
+                            name="uraian_tugas" placeholder="Kartu Pegawai">
                     </div>
                 </div>
             </div>

@@ -229,7 +229,7 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Uraian Tugas</label>
+                <label class="col-sm-3 col-form-label">Kartu Pegawai</label>
                 <div class="col-sm-9">
                     <a href="{{ asset('storage/' . $ib->uraian_tugas) }}" target="_blank">
                         <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
