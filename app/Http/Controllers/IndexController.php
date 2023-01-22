@@ -100,7 +100,7 @@ class IndexController extends Controller
         } else {
             $pasFotoName = $user->pas_foto;
         }
-        // dd($request->all());
+
         $ttdName = '';
         if ($request->hasFile('ttd')) {
             $ttdName = Str::random(20) . '.' . $request->ttd->extension();

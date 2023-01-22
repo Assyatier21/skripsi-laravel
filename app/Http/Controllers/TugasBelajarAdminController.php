@@ -36,6 +36,18 @@ class TugasBelajarAdminController extends Controller
 
                 return redirect()->back()->with('success', 'Pengajuan Tugas Belajar Berhasil Diteruskan ke Direktur!');
             } else if (auth()->guard('admin')->user()->role == '2') {
+                $ttdName = '';
+                if ($request->hasFile('ttd')) {
+                    $ttdName = Str::random(20) . '.' . $request->ttd->extension();
+                    $request->ttd->storeAs('public/ttd', $ttdName);
+                    if (auth()->guard('admin')->user()->ttd) {
+                        Storage::delete('public/ttd/' . auth()->guard('admin')->user()->ttd);
+                    }
+                } else {
+                    $ttdName = auth()->guard('admin')->user()->ttd;
+                }
+
+                auth()->guard('admin')->user()->update(['ttd' => $ttdName]);
                 $tb->update(['status_pengajuan' => '2']);
                 $pengajuanku->update(['status_pengajuan' => '1']);
 

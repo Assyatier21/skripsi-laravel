@@ -289,18 +289,42 @@
     {{-- BUTTON SUBMIT --}}
     <div class="w-100 d-flex justify-content-center">
         {{-- FORM TERIMA --}}
-        <form action="{{ route('admin.izin-belajar.update', $ib->id) }}" method="POST" class="text-center">
+        <form action="{{ route('admin.izin-belajar.update', $ib->id) }}" method="POST" class="text-center"
+            enctype="multipart/form-data">
             @csrf @method('PUT')
-            <button class="btn btn-success mx-2"
-                onclick="return confirm('Apakah Anda Yakin Ingin Menyetujui Pengajuan Ini?')" type="submit" id="terima"
-                name="terima">Terima</button>
+            <button class="btn btn-success mx-2" type="button" data-bs-toggle="modal"
+                data-bs-target="#terima">Terima</button>
+            <div class="modal fade" id="terima" tabindex="-1" aria-labelledby="menolakLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-danger" id="menolakModalLabel">Perhatian</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-start">
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label text-start ms-2">Tanda Tangan Digital</label>
+                                <input class="form-control" type="file" id="ttd" name="ttd">
+                            </div>
+                            <small class="text-danger text-start ms-2">* Tanda Tangan Hanya Dikhususkan Bagi Direktur
+                                dan
+                                Bersifat Wajib!</small>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" name="batalkan" id="batalkan"
+                                data-bs-dismiss="modal">Batalkan</button>
+                            <button type="submit" class="btn btn-success" id="terima" name="terima">Terima</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
         {{-- FORM TERIMA --}}
 
         {{-- FORM TOLAK --}}
         <form action="{{ route('admin.izin-belajar.update', $ib->id) }}" method="POST" class="text-center">
             @csrf @method('PUT')
-            <button class=" btn btn-danger mx-2" data-bs-toggle="modal" data-bs-target="#menolak">Tolak</button>
+            <button class="btn btn-danger mx-2" data-bs-toggle="modal" data-bs-target="#menolak">Tolak</button>
             <div class="modal fade" id="menolak" tabindex="-1" aria-labelledby="menolakLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
