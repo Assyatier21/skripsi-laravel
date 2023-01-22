@@ -179,10 +179,10 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="" class="col-sm-3 col-form-label">Surat Keterangan Terakhir</label>
+                    <label for="" class="col-sm-3 col-form-label">Surat Jabatan Fungsional Terakhir</label>
                     <div class="col-sm-9">
                         <input required type="file" class="form-control" id="sk_terakhir" name="sk_terakhir"
-                            placeholder="Surat Keterangan Terakhir">
+                            placeholder="Surat Jabatan Fungsional Terakhir">
                     </div>
                 </div>
                 <div class="mb-3 row d-flex align-items-center">

@@ -180,10 +180,10 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="" class="col-sm-3 col-form-label">Surat Keterangan Terakhir</label>
+                    <label for="" class="col-sm-3 col-form-label">Surat Pangkat Keterangan Terakhir</label>
                     <div class="col-sm-9">
                         <input required type="file" accept="application/pdf" class="form-control" id="sk_terakhir"
-                            name="sk_terakhir" placeholder="Surat Keterangan Terakhir">
+                            name="sk_terakhir" placeholder="Surat Pangkat Keterangan Terakhir">
                     </div>
                 </div>
                 <div class="mb-3 row d-flex align-items-center">

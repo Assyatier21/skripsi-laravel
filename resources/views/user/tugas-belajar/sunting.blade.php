@@ -234,7 +234,7 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label class="col-sm-3 col-form-label">Surat Keterangan Terakhir</label>
+                    <label class="col-sm-3 col-form-label">Surat Jabatan Fungsional Terakhir</label>
                     <div class="col-sm-7">
                         <input required type="file" accept="application/pdf" class="form-control" id="sk_terakhir"
                             name="sk_terakhir">

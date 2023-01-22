@@ -207,7 +207,7 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Surat Keterangan Terakhir</label>
+                <label class="col-sm-3 col-form-label">Surat Keterangan Pangkat Terakhir</label>
                 <div class="col-sm-9">
                     <a href="{{ asset('storage/' . $ib->sk_terakhir) }}" target="_blank">
                         <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
