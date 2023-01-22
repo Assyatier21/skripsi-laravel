@@ -60,6 +60,7 @@ class IndexController extends Controller
                 'email' => 'required',
                 'usia' => 'required',
                 'pas_foto' => 'mimes:jpg,jpeg,png|max:2048',
+                'ttd' => 'mimes:jpg,jpeg,png|max:2048',
                 'nama' => 'required',
                 'spesialisasi' => 'required',
                 'jenjang_pendidikan' => 'required',
@@ -75,6 +76,8 @@ class IndexController extends Controller
                 'usia.required' => 'Usia Harus Diisi',
                 'pas_foto.mimes' => 'Format Pas Foto Harus: PNG/JPG/JPEG',
                 'pas_foto.max' => 'Ukuran Maksimal Pas Foto Adalah 2 MB',
+                'ttd.mimes' => 'Format Tanda Tangan Harus: PNG/JPG/JPEG',
+                'ttd.max' => 'Ukuran Maksimal Tanda Tangan Adalah 2 MB',
                 'spesialisasi.required' => 'Spesialiasi Harus Diisi',
                 'jenjang_pendidikan.required' => 'Jenjang Pendidikan Harus Diisi',
                 'jabatan.required' => 'Jabatan Harus Diisi',
@@ -97,6 +100,17 @@ class IndexController extends Controller
         } else {
             $pasFotoName = $user->pas_foto;
         }
+        // dd($request->all());
+        $ttdName = '';
+        if ($request->hasFile('ttd')) {
+            $ttdName = Str::random(20) . '.' . $request->ttd->extension();
+            $request->ttd->storeAs('public/ttd', $ttdName);
+            if ($user->ttd) {
+                Storage::delete('public/ttd/' . $user->ttd);
+            }
+        } else {
+            $ttdName = $user->ttd;
+        }
 
         if ($user->update(
             [
@@ -107,6 +121,7 @@ class IndexController extends Controller
                 'email' => $request->email,
                 'usia' => $request->usia,
                 'pas_foto' => $pasFotoName,
+                'ttd' => $ttdName,
                 'nama' => $request->nama,
                 'spesialisasi' => $request->spesialisasi,
                 'pendidikan_terakhir' => $request->jenjang_pendidikan,

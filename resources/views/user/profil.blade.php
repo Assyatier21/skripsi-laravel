@@ -122,6 +122,16 @@
                                     MB</small>
                             </div>
                         </div>
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label">Tanda Tangan</label>
+                            <div class="col-sm-9">
+                                <input type="file" class="form-control" id="ttd" name="ttd" accept="image/*">
+                                <small class="text-danger mt-2">* File Tanda Tangan Maksimal
+                                    Berukuran
+                                    2
+                                    MB</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 {{-- DATA PRIBADI --}}
