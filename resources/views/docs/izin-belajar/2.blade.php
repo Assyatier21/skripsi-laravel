@@ -85,12 +85,9 @@
                         <td class="text-center w-50">Yang Bersangkutan</td>
                     </tr>
                     <tr>
-                        <td><br></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><br></td>
-                        <td></td>
+                        <td>
+                            <img src="{{ asset('storage/' . $admin->ttd) }}" alt="">
+                        </td>
                     </tr>
                     <tr>
                         <td class="text-center w-50">
