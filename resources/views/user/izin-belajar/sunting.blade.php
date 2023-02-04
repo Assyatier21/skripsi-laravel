@@ -180,36 +180,6 @@
                         </a>
                     </div>
                 </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-3 col-form-label">Surat Pernyataan</label>
-                    <div class="col-sm-7">
-                        <input required type="file" accept="application/pdf" class="form-control" id="surat_pernyataan"
-                            name="surat_pernyataan">
-                    </div>
-                    <div class="col-sm-2">
-                        <a href="{{ asset('storage/' . $ib->surat_pernyataan) }}" target="_blank">
-                            <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
-                                <i class="fa-solid fa-eye me-2"></i>
-                                <p class="m-0">Lihat Berkas</p>
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-3 col-form-label">Surat Permohonan</label>
-                    <div class="col-sm-7">
-                        <input required type="file" accept="application/pdf" class="form-control" id="surat_permohonan"
-                            name="surat_permohonan">
-                    </div>
-                    <div class="col-sm-2">
-                        <a href="{{ asset('storage/' . $ib->surat_permohonan) }}" target="_blank">
-                            <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
-                                <i class="fa-solid fa-eye me-2"></i>
-                                <p class="m-0">Lihat Berkas</p>
-                            </button>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
         {{-- BERKAS PRIBADI --}}
@@ -236,11 +206,11 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Surat Keterangan Pangkat Terakhir</label>
                     <div class="col-sm-7">
-                        <input required type="file" accept="application/pdf" class="form-control" id="sk_terakhir"
-                            name="sk_terakhir">
+                        <input required type="file" accept="application/pdf" class="form-control"
+                            id="sk_pangkat_terakhir" name="sk_pangkat_terakhir">
                     </div>
                     <div class="col-sm-2">
-                        <a href="{{ asset('storage/' . $ib->sk_terakhir) }}" target="_blank">
+                        <a href="{{ asset('storage/' . $ib->sk_pangkat_terakhir) }}" target="_blank">
                             <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                                 <i class="fa-solid fa-eye me-2"></i>
                                 <p class="m-0">Lihat Berkas</p>
@@ -249,12 +219,13 @@
                     </div>
                 </div>
                 <div class="mb-3 row d-flex align-items-center">
-                    <label class="col-sm-3 col-form-label">Penilaian Prestasi Kinerja Pegawai</label>
+                    <label class="col-sm-3 col-form-label">SKP Terakhir</label>
                     <div class="col-sm-7">
-                        <input required type="file" accept="application/pdf" class="form-control" id="ppkp" name="ppkp">
+                        <input required type="file" accept="application/pdf" class="form-control" id="skp_terakhir"
+                            name="skp_terakhir">
                     </div>
                     <div class="col-sm-2">
-                        <a href="{{ asset('storage/' . $ib->ppkp) }}" target="_blank">
+                        <a href="{{ asset('storage/' . $ib->skp_terakhir) }}" target="_blank">
                             <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                                 <i class="fa-solid fa-eye me-2"></i>
                                 <p class="m-0">Lihat Berkas</p>
@@ -265,11 +236,11 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Kartu Pegawai</label>
                     <div class="col-sm-7">
-                        <input required type="file" accept="application/pdf" class="form-control" id="uraian_tugas"
-                            name="uraian_tugas">
+                        <input required type="file" accept="application/pdf" class="form-control" id="kartu_pegawai"
+                            name="kartu_pegawai">
                     </div>
                     <div class="col-sm-2">
-                        <a href="{{ asset('storage/' . $ib->uraian_tugas) }}" target="_blank">
+                        <a href="{{ asset('storage/' . $ib->kartu_pegawai) }}" target="_blank">
                             <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                                 <i class="fa-solid fa-eye me-2"></i>
                                 <p class="m-0">Lihat Berkas</p>
@@ -293,21 +264,6 @@
                     </div>
                     <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $ib->sk_kelas_reguler) }}" target="_blank">
-                            <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
-                                <i class="fa-solid fa-eye me-2"></i>
-                                <p class="m-0">Lihat Berkas</p>
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-3 col-form-label">Jadwal Kelas Reguler</label>
-                    <div class="col-sm-7">
-                        <input required type="file" accept="application/pdf" class="form-control"
-                            id="jadwal_kelas_reguler" name="jadwal_kelas_reguler">
-                    </div>
-                    <div class="col-sm-2">
-                        <a href="{{ asset('storage/' . $ib->jadwal_kelas_reguler) }}" target="_blank">
                             <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                                 <i class="fa-solid fa-eye me-2"></i>
                                 <p class="m-0">Lihat Berkas</p>

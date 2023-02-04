@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use App\Models\Notifikasi;
 use App\Models\IzinBelajar;
 use App\Models\Pengajuanku;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class IzinBelajarAdminController extends Controller
 {
@@ -47,7 +49,8 @@ class IzinBelajarAdminController extends Controller
                     $ttdName = auth()->guard('admin')->user()->ttd;
                 }
 
-                auth()->guard('admin')->user()->update(['ttd' => $ttdName]);
+                $admin = Admin::whereId(auth()->guard('admin')->user()->id)->get();
+                $admin->update(['ttd' => $ttdName]);
                 $ib->update(['status_pengajuan' => '2']);
                 $pengajuanku->update(['status_pengajuan' => '1']);
 

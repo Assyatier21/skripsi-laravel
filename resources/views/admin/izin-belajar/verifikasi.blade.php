@@ -165,28 +165,6 @@
                     </a>
                 </div>
             </div>
-            <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Surat Pernyataan</label>
-                <div class="col-sm-9">
-                    <a href="{{ asset('storage/' . $ib->surat_pernyataan) }}" target="_blank">
-                        <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
-                            <i class="fa-solid fa-eye me-2"></i>
-                            <p class="m-0">Lihat Berkas</p>
-                        </button>
-                    </a>
-                </div>
-            </div>
-            <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Surat Permohonan</label>
-                <div class="col-sm-9">
-                    <a href="{{ asset('storage/' . $ib->surat_permohonan) }}" target="_blank">
-                        <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
-                            <i class="fa-solid fa-eye me-2"></i>
-                            <p class="m-0">Lihat Berkas</p>
-                        </button>
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
     {{-- BERKAS PRIBADI --}}
@@ -209,7 +187,7 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Surat Keterangan Pangkat Terakhir</label>
                 <div class="col-sm-9">
-                    <a href="{{ asset('storage/' . $ib->sk_terakhir) }}" target="_blank">
+                    <a href="{{ asset('storage/' . $ib->sk_pangkat_terakhir) }}" target="_blank">
                         <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                             <i class="fa-solid fa-eye me-2"></i>
                             <p class="m-0">Lihat Berkas</p>
@@ -218,9 +196,9 @@
                 </div>
             </div>
             <div class="mb-3 row d-flex align-items-center">
-                <label class="col-sm-3 col-form-label">Penilaian Prestasi Kinerja Pegawai</label>
+                <label class="col-sm-3 col-form-label">SKP Terakhir</label>
                 <div class="col-sm-9">
-                    <a href="{{ asset('storage/' . $ib->ppkp) }}" target="_blank">
+                    <a href="{{ asset('storage/' . $ib->skp_terakhir) }}" target="_blank">
                         <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                             <i class="fa-solid fa-eye me-2"></i>
                             <p class="m-0">Lihat Berkas</p>
@@ -231,7 +209,7 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Kartu Pegawai</label>
                 <div class="col-sm-9">
-                    <a href="{{ asset('storage/' . $ib->uraian_tugas) }}" target="_blank">
+                    <a href="{{ asset('storage/' . $ib->kartu_pegawai) }}" target="_blank">
                         <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                             <i class="fa-solid fa-eye me-2"></i>
                             <p class="m-0">Lihat Berkas</p>
@@ -251,17 +229,6 @@
                 <label class="col-sm-3 col-form-label">Surat Keterangan Kelas Reguler</label>
                 <div class="col-sm-9">
                     <a href="{{ asset('storage/' . $ib->sk_kelas_reguler) }}" target="_blank">
-                        <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
-                            <i class="fa-solid fa-eye me-2"></i>
-                            <p class="m-0">Lihat Berkas</p>
-                        </button>
-                    </a>
-                </div>
-            </div>
-            <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Jadwal Kelas Reguler</label>
-                <div class="col-sm-9">
-                    <a href="{{ asset('storage/' . $ib->jadwal_kelas_reguler) }}" target="_blank">
                         <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                             <i class="fa-solid fa-eye me-2"></i>
                             <p class="m-0">Lihat Berkas</p>

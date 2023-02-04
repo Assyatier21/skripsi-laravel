@@ -40,8 +40,6 @@ class IzinBelajarUserController extends Controller
 
                 'ijazah' => 'required|mimes:pdf|max:2048',
                 'transkrip_nilai' => 'required|mimes:pdf|max:2048',
-                'surat_pernyataan' => 'required|mimes:pdf|max:2048',
-                'surat_permohonan' => 'required|mimes:pdf|max:2048',
 
                 'sk_pns' => 'required|mimes:pdf|max:2048',
                 'sk_terakhir' => 'required|mimes:pdf|max:2048',
@@ -65,13 +63,11 @@ class IzinBelajarUserController extends Controller
 
                 'ijazah.required' => 'Ijazah Harus Diisi',
                 'transkrip_nilai.required' => 'Transkrip Nilai Harus Diisi',
-                'surat_pernyataan.required' => 'Surat Pernyataan Harus Diisi',
-                'surat_permohonan.required' => 'Surat Permohonan Harus Diisi',
 
                 'sk_pns.required' => 'Surat Keterangan PNS Harus Diisi',
                 'sk_terakhir.required' => 'Surat Keterangan Terakhir Harus Diisi',
                 'ppkp.required' => 'PPKP Harus Diisi',
-                'uraian_tugas.required' => 'Uraian Tugas Harus Diisi',
+                'uraian_tugas.required' => 'Kartu Pegawai Harus Diisi',
 
                 'sk_kelas_reguler.required' => 'SK Kelas Reguler Harus Diisi',
                 'jadwal_kelas_reguler.required' => 'Jadwal Kelas Reguler Harus Diisi',
@@ -79,13 +75,11 @@ class IzinBelajarUserController extends Controller
 
                 'ijazah.mimes' => 'Format Ijazah Harus Berupa PDF',
                 'transkrip_nilai.mimes' => 'Format Transkrip Nilai Harus Berupa PDF',
-                'surat_pernyataan.mimes' => 'Format Surat Pernyataan Harus Berupa PDF',
-                'surat_permohonan.mimes' => 'Format Surat Permohonan Harus Berupa PDF',
 
                 'sk_pns.mimes' => 'Format Surat Keterangan PNS Harus Berupa PDF',
                 'sk_terakhir.mimes' => 'Format Surat Keterangan Terakhir Harus Berupa PDF',
                 'ppkp.mimes' => 'Format PPKP Harus Berupa PDF',
-                'uraian_tugas.mimes' => 'Format Uraian Tugas Harus Berupa PDF',
+                'uraian_tugas.mimes' => 'Format Kartu Pegawai Harus Berupa PDF',
 
                 'sk_kelas_reguler.mimes' => 'Format SK Kelas Reguler Harus Berupa PDF',
                 'jadwal_kelas_reguler.mimes' => 'Format Jadwal Kelas Reguler Harus Berupa PDF',
@@ -93,13 +87,11 @@ class IzinBelajarUserController extends Controller
 
                 'ijazah.max' => 'Format Ijazah Maksimal Berukuran Maksimal 2 MB',
                 'transkrip_nilai.max' => 'Format Transkrip Nilai Maksimal Berukuran Maksimal 2 MB',
-                'surat_pernyataan.max' => 'Format Surat Pernyataan Maksimal Berukuran Maksimal 2 MB',
-                'surat_permohonan.max' => 'Format Surat Permohonan Maksimal Berukuran Maksimal 2 MB',
 
                 'sk_pns.max' => 'Format Surat Keterangan PNS Maksimal Berukuran Maksimal 2 MB',
                 'sk_terakhir.max' => 'Format Surat Keterangan Terakhir Maksimal Berukuran Maksimal 2 MB',
                 'ppkp.max' => 'Format PPKP Maksimal Berukuran Maksimal 2 MB',
-                'uraian_tugas.max' => 'Format Uraian Tugas Maksimal Berukuran Maksimal 2 MB',
+                'uraian_tugas.max' => 'Format Kartu Pegawai Maksimal Berukuran Maksimal 2 MB',
 
                 'sk_kelas_reguler.max' => 'Format SK Kelas Reguler Maksimal Berukuran Maksimal 2 MB',
                 'jadwal_kelas_reguler.max' => 'Format Jadwal Kelas Reguler Maksimal Berukuran Maksimal 2 MB',
@@ -125,8 +117,6 @@ class IzinBelajarUserController extends Controller
 
         $ib->ijazah_terakhir = $request->file('ijazah')->store('izin-belajar/ijazah', 'public');
         $ib->transkrip_nilai = $request->file('transkrip_nilai')->store('izin-belajar/transkrip-nilai', 'public');
-        $ib->surat_pernyataan = $request->file('surat_pernyataan')->store('izin-belajar/surat-pernyataan', 'public');
-        $ib->surat_permohonan = $request->file('surat_permohonan')->store('izin-belajar/surat-permohonan', 'public');
 
         $ib->sk_pns = $request->file('sk_pns')->store('izin-belajar/sk-pns', 'public');
         $ib->sk_terakhir = $request->file('sk_terakhir')->store('izin-belajar/sk-terakhir', 'public');
@@ -183,8 +173,6 @@ class IzinBelajarUserController extends Controller
 
                 'ijazah' => 'mimes:pdf|max:2048',
                 'transkrip_nilai' => 'mimes:pdf|max:2048',
-                'surat_pernyataan' => 'mimes:pdf|max:2048',
-                'surat_permohonan' => 'mimes:pdf|max:2048',
 
                 'sk_pns' => 'mimes:pdf|max:2048',
                 'sk_terakhir' => 'mimes:pdf|max:2048',
@@ -208,13 +196,11 @@ class IzinBelajarUserController extends Controller
 
                 'ijazah.mimes' => 'Format Ijazah Harus Berupa PDF',
                 'transkrip_nilai.mimes' => 'Format Transkrip Nilai Harus Berupa PDF',
-                'surat_pernyataan.mimes' => 'Format Surat Pernyataan Harus Berupa PDF',
-                'surat_permohonan.mimes' => 'Format Surat Permohonan Harus Berupa PDF',
 
                 'sk_pns.mimes' => 'Format Surat Keterangan PNS Harus Berupa PDF',
                 'sk_terakhir.mimes' => 'Format Surat Keterangan Terakhir Harus Berupa PDF',
                 'ppkp.mimes' => 'Format PPKP Harus Berupa PDF',
-                'uraian_tugas.mimes' => 'Format Uraian Tugas Harus Berupa PDF',
+                'uraian_tugas.mimes' => 'Format Kartu Pegawai Harus Berupa PDF',
 
                 'sk_kelas_reguler.mimes' => 'Format SK Kelas Reguler Harus Berupa PDF',
                 'jadwal_kelas_reguler.mimes' => 'Format Jadwal Kelas Reguler Harus Berupa PDF',
@@ -222,13 +208,11 @@ class IzinBelajarUserController extends Controller
 
                 'ijazah.max' => 'Format Ijazah Maksimal Berukuran Maksimal 2 MB',
                 'transkrip_nilai.max' => 'Format Transkrip Nilai Maksimal Berukuran Maksimal 2 MB',
-                'surat_pernyataan.max' => 'Format Surat Pernyataan Maksimal Berukuran Maksimal 2 MB',
-                'surat_permohonan.max' => 'Format Surat Permohonan Maksimal Berukuran Maksimal 2 MB',
 
                 'sk_pns.max' => 'Format Surat Keterangan PNS Maksimal Berukuran Maksimal 2 MB',
                 'sk_terakhir.max' => 'Format Surat Keterangan Terakhir Maksimal Berukuran Maksimal 2 MB',
                 'ppkp.max' => 'Format PPKP Maksimal Berukuran Maksimal 2 MB',
-                'uraian_tugas.max' => 'Format Uraian Tugas Maksimal Berukuran Maksimal 2 MB',
+                'uraian_tugas.max' => 'Format Kartu Pegawai Maksimal Berukuran Maksimal 2 MB',
 
                 'sk_kelas_reguler.max' => 'Format SK Kelas Reguler Maksimal Berukuran Maksimal 2 MB',
                 'jadwal_kelas_reguler.max' => 'Format Jadwal Kelas Reguler Maksimal Berukuran Maksimal 2 MB',
@@ -260,14 +244,6 @@ class IzinBelajarUserController extends Controller
         if ($request->hasFile('transkrip_nilai')) {
             Storage::delete('public/' . $ib->transkrip_nilai);
             $ib->transkrip_nilai = $request->file('transkrip_nilai')->store('izin-belajar/transkrip_nilai', 'public');
-        }
-        if ($request->hasFile('surat_pernyataan')) {
-            Storage::delete('public/' . $ib->surat_pernyataan);
-            $ib->surat_pernyataan = $request->file('surat_pernyataan')->store('izin-belajar/surat_pernyataan', 'public');
-        }
-        if ($request->hasFile('surat_permohonan')) {
-            Storage::delete('public/' . $ib->surat_permohonan);
-            $ib->surat_permohonan = $request->file('surat_permohonan')->store('izin-belajar/surat_permohonan', 'public');
         }
 
         if ($request->hasFile('sk_pns')) {
