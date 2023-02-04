@@ -7,6 +7,7 @@ use App\Models\Pengajuanku;
 use App\Models\TugasBelajar;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class TugasBelajarUserController extends Controller
@@ -38,12 +39,13 @@ class TugasBelajarUserController extends Controller
                 'jenjang_pendidikan' => 'required',
                 'link_beasiswa' => 'required',
 
-                'ijazah' => 'required|mimes:pdf|max:2048',
+                'ijazah_terakhir' => 'required|mimes:pdf|max:2048',
                 'transkrip_nilai' => 'required|mimes:pdf|max:2048',
 
-                'sk_pns' => 'required|mimes:pdf|max:2048',
+                'sk_jabatan_fungsional' => 'required|mimes:pdf|max:2048',
                 'sk_terakhir' => 'required|mimes:pdf|max:2048',
-                'ppkp' => 'required|mimes:pdf|max:2048',
+                'pak_terakhir' => 'required|mimes:pdf|max:2048',
+                'skp_terakhir' => 'required|mimes:pdf|max:2048',
             ],
             [
                 'nik.required' => 'Nomor Induk Kependudukan Harus Diisi',
@@ -57,26 +59,29 @@ class TugasBelajarUserController extends Controller
                 'jenjang_pendidikan.required' => 'Jenjang Pendidikan Harus Diisi',
                 'link_beasiswa.required' => 'Tautan Beasiswa Harus Diisi',
 
-                'ijazah.required' => 'Ijazah Harus Diisi',
+                'ijazah_terakhir.required' => 'Ijazah Harus Diisi',
                 'transkrip_nilai.required' => 'Transkrip Nilai Harus Diisi',
 
-                'sk_pns.required' => 'Surat Keterangan PNS Harus Diisi',
+                'sk_jabatan_fungsional.required' => 'SK Jabatan Fungsional Harus Diisi',
                 'sk_terakhir.required' => 'Surat Keterangan Terakhir Harus Diisi',
-                'ppkp.required' => 'PPKP Harus Diisi',
+                'pak_terakhir.required' => 'PAK Terakhir Harus Diisi',
+                'skp_terakhir.required' => 'SKP Terakhir Harus Diisi',
 
-                'ijazah.mimes' => 'Format Ijazah Harus Berupa PDF',
+                'ijazah_terakhir.mimes' => 'Format Ijazah Harus Berupa PDF',
                 'transkrip_nilai.mimes' => 'Format Transkrip Nilai Harus Berupa PDF',
 
-                'sk_pns.mimes' => 'Format Surat Keterangan PNS Harus Berupa PDF',
+                'sk_jabatan_fungsional.mimes' => 'Format SK Jabatan Fungsional Harus Berupa PDF',
                 'sk_terakhir.mimes' => 'Format Surat Keterangan Terakhir Harus Berupa PDF',
-                'ppkp.mimes' => 'Format PPKP Harus Berupa PDF',
+                'pak_terakhir.mimes' => 'Format PAK Terakhir Harus Berupa PDF',
+                'skp_terakhir.mimes' => 'Format SAK Terakhir Harus Berupa PDF',
 
-                'ijazah.max' => 'Format Ijazah Maksimal Berukuran Maksimal 2 MB',
+                'ijazah_terakhir.max' => 'Format Ijazah Maksimal Berukuran Maksimal 2 MB',
                 'transkrip_nilai.max' => 'Format Transkrip Nilai Maksimal Berukuran Maksimal 2 MB',
 
-                'sk_pns.max' => 'Format Surat Keterangan PNS Maksimal Berukuran Maksimal 2 MB',
+                'sk_jabatan_fungsional.max' => 'Format SK Jabatan Fungsional Maksimal Berukuran Maksimal 2 MB',
                 'sk_terakhir.max' => 'Format Surat Keterangan Terakhir Maksimal Berukuran Maksimal 2 MB',
-                'ppkp.max' => 'Format PPKP Maksimal Berukuran Maksimal 2 MB',
+                'pak_terakhir.max' => 'Format PAK Terakhir Maksimal Berukuran Maksimal 2 MB',
+                'skp_terakhir.max' => 'Format SKP Terakhir Maksimal Berukuran Maksimal 2 MB',
             ]
         );
 
@@ -100,9 +105,10 @@ class TugasBelajarUserController extends Controller
         $tb->ijazah_terakhir = $request->file('ijazah')->store('tugas-belajar/ijazah', 'public');
         $tb->transkrip_nilai = $request->file('transkrip_nilai')->store('tugas-belajar/transkrip-nilai', 'public');
 
-        $tb->sk_pns = $request->file('sk_pns')->store('tugas-belajar/sk-pns', 'public');
+        $tb->sk_jabatan_fungsional = $request->file('sk_jabatan_fungsional')->store('tugas-belajar/sk-jabatan-fungsional', 'public');
         $tb->sk_terakhir = $request->file('sk_terakhir')->store('tugas-belajar/sk-terakhir', 'public');
-        $tb->ppkp = $request->file('ppkp')->store('tugas-belajar/ppkp', 'public');
+        $tb->pak_terakhir = $request->file('pak_terakhir')->store('tugas-belajar/pak-terakhir', 'public');
+        $tb->skp_terakhir = $request->file('skp_terakhir')->store('tugas-belajar/skp-terakhir', 'public');
 
         $tb->status_pengajuan = '0';
         $tb->created_at = Carbon::now();
@@ -149,12 +155,13 @@ class TugasBelajarUserController extends Controller
                 'jenjang_pendidikan' => 'required',
                 'link_beasiswa' => 'required',
 
-                'ijazah' => 'mimes:pdf|max:2048',
+                'ijazah_terakhir' => 'mimes:pdf|max:2048',
                 'transkrip_nilai' => 'mimes:pdf|max:2048',
 
-                'sk_pns' => 'mimes:pdf|max:2048',
+                'sk_jabatan_fungsional' => 'mimes:pdf|max:2048',
                 'sk_terakhir' => 'mimes:pdf|max:2048',
-                'ppkp' => 'mimes:pdf|max:2048',
+                'pak_terakhir' => 'mimes:pdf|max:2048',
+                'skp_terakhir' => 'mimes:pdf|max:2048',
             ],
             [
                 'nik.required' => 'Nomor Induk Kependudukan Harus Diisi',
@@ -168,26 +175,27 @@ class TugasBelajarUserController extends Controller
                 'jenjang_pendidikan.required' => 'Jenjang Pendidikan Harus Diisi',
                 'link_beasiswa.required' => 'Link Beasiswa Harus Diisi',
 
-                'ijazah.mimes' => 'Format Ijazah Harus Berupa PDF',
+                'ijazah_terakhir.mimes' => 'Format Ijazah Harus Berupa PDF',
                 'transkrip_nilai.mimes' => 'Format Transkrip Nilai Harus Berupa PDF',
 
-                'sk_pns.mimes' => 'Format Surat Keterangan PNS Harus Berupa PDF',
+                'sk_jabatan_fungsional.mimes' => 'Format Surat Keterangan PNS Harus Berupa PDF',
                 'sk_terakhir.mimes' => 'Format Surat Keterangan Terakhir Harus Berupa PDF',
-                'ppkp.mimes' => 'Format PPKP Harus Berupa PDF',
+                'pak_terakhir.mimes' => 'Format PAK Terakhir Harus Berupa PDF',
+                'skp_terakhir.mimes' => 'Format SKP Terakhir Harus Berupa PDF',
 
-                'ijazah.max' => 'Format Ijazah Maksimal Berukuran Maksimal 2 MB',
+                'ijazah_terakhir.max' => 'Format Ijazah Maksimal Berukuran Maksimal 2 MB',
                 'transkrip_nilai.max' => 'Format Transkrip Nilai Maksimal Berukuran Maksimal 2 MB',
 
-                'sk_pns.max' => 'Format Surat Keterangan PNS Maksimal Berukuran Maksimal 2 MB',
+                'sk_jabatan_fungsional.max' => 'Format Surat Keterangan PNS Maksimal Berukuran Maksimal 2 MB',
                 'sk_terakhir.max' => 'Format Surat Keterangan Terakhir Maksimal Berukuran Maksimal 2 MB',
-                'ppkp.max' => 'Format PPKP Maksimal Berukuran Maksimal 2 MB',
+                'pak_terakhir.max' => 'Format PAK Terakhir Maksimal Berukuran Maksimal 2 MB',
+                'skp_terakhir.max' => 'Format SKP Terakhir Maksimal Berukuran Maksimal 2 MB',
             ]
         );
 
         if ($validation->fails()) {
             return redirect()->back()->withErrors($validation->errors())->withInput();
         }
-
 
         $tb = TugasBelajar::whereId($id)->first();
         $tb->nip = auth()->user()->nip;
@@ -210,17 +218,21 @@ class TugasBelajarUserController extends Controller
             $tb->transkrip_nilai = $request->file('transkrip_nilai')->store('tugas-belajar/transkrip_nilai', 'public');
         }
 
-        if ($request->hasFile('sk_pns')) {
-            Storage::delete('public/' . $tb->sk_pns);
-            $tb->sk_pns = $request->file('sk_pns')->store('tugas-belajar/sk_pns', 'public');
+        if ($request->hasFile('sk_jabatan_fungsional')) {
+            Storage::delete('public/' . $tb->sk_jabatan_fungsional);
+            $tb->sk_pns = $request->file('sk_jabatan_fungsional')->store('tugas-belajar/sk-jabatan-fungsional', 'public');
         }
         if ($request->hasFile('sk_terakhir')) {
             Storage::delete('public/' . $tb->sk_terakhir);
-            $tb->sk_terakhir = $request->file('sk_terakhir')->store('tugas-belajar/sk_terakhir', 'public');
+            $tb->sk_terakhir = $request->file('sk_terakhir')->store('tugas-belajar/sk-terakhir', 'public');
         }
-        if ($request->hasFile('ppkp')) {
-            Storage::delete('public/' . $tb->ppkp);
-            $tb->ppkp = $request->file('ppkp')->store('tugas-belajar/ppkp', 'public');
+        if ($request->hasFile('pak_terakhir')) {
+            Storage::delete('public/' . $tb->pak_terakhir);
+            $tb->pak_terakhir = $request->file('pak_terakhir')->store('tugas-belajar/pak-terakhir', 'public');
+        }
+        if ($request->hasFile('skp_terakhir')) {
+            Storage::delete('public/' . $tb->skp_terakhir);
+            $tb->skp_terakhir = $request->file('skp_terakhir')->store('tugas-belajar/skp-terakhir', 'public');
         }
 
         $tb->status_pengajuan = '0';

@@ -153,8 +153,8 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Ijazah Terakhir</label>
                     <div class="col-sm-7">
-                        <input required type="file" accept="application/pdf" class="form-control" id="ijazah"
-                            name="ijazah" placeholder="Ijazah Terakhir">
+                        <input required type="file" accept="application/pdf" class="form-control" id="ijazah_terakhir"
+                            name="ijazah_terakhir" placeholder="Ijazah Terakhir">
                     </div>
                     <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $ib->ijazah_terakhir) }}" target="_blank">

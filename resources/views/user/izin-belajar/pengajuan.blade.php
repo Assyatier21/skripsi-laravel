@@ -139,8 +139,8 @@
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Ijazah Terakhir</label>
                     <div class="col-sm-9">
-                        <input required type="file" accept="application/pdf" class="form-control" id="ijazah"
-                            name="ijazah" placeholder="Ijazah Terakhir">
+                        <input required type="file" accept="application/pdf" class="form-control" id="ijazah_terakhir"
+                            name="ijazah_terakhir" placeholder="Ijazah Terakhir">
                     </div>
                 </div>
                 <div class="mb-3 row">

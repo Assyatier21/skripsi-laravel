@@ -152,7 +152,7 @@
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Ijazah Terakhir</label>
                     <div class="col-sm-9">
-                        <input required type="file" class="form-control" id="ijazah" name="ijazah"
+                        <input required type="file" class="form-control" id="ijazah_terakhir" name="ijazah_terakhir"
                             placeholder="Ijazah Terakhir">
                     </div>
                 </div>
@@ -184,7 +184,7 @@
                         <input required type="file" class="form-control" id="sk_terakhir" name="sk_terakhir"
                             placeholder="Surat Jabatan Fungsional Terakhir">
                     </div>
-                </div>
+                </div>`
                 <div class="mb-3 row d-flex align-items-center">
                     <label for="" class="col-sm-3 col-form-label">PAK Terakhir</label>
                     <div class="col-sm-9">

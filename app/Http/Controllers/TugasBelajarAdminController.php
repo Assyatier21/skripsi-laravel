@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use App\Models\Notifikasi;
 use App\Models\Pengajuanku;
+use Illuminate\Support\Str;
 use App\Models\TugasBelajar;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class TugasBelajarAdminController extends Controller
 {
@@ -47,7 +50,8 @@ class TugasBelajarAdminController extends Controller
                     $ttdName = auth()->guard('admin')->user()->ttd;
                 }
 
-                auth()->guard('admin')->user()->update(['ttd' => $ttdName]);
+                $admin = Admin::whereId(auth()->guard('admin')->user()->id)->get();
+                $admin->update(['ttd' => $ttdName]);
                 $tb->update(['status_pengajuan' => '2']);
                 $pengajuanku->update(['status_pengajuan' => '1']);
 
