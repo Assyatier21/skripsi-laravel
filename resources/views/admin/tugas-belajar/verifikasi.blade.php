@@ -180,9 +180,9 @@
         <h5 class="card-header px-5">Berkas Keprofesian</h5>
         <div class="card-body px-5">
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Surat Keterangan Pegawai Negeri Sipil</label>
+                <label class="col-sm-3 col-form-label">Surat Keterangan Jabatan Fungsional</label>
                 <div class="col-sm-9">
-                    <a href="{{ asset('storage/' . $tb->sk_pns) }}" target="_blank">
+                    <a href="{{ asset('storage/' . $tb->sk_jabatan_fungsional) }}" target="_blank">
                         <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                             <i class="fa-solid fa-eye me-2"></i>
                             <p class="m-0">Lihat Berkas</p>
@@ -191,7 +191,7 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Surat Jabatan Fungsional Terakhir</label>
+                <label class="col-sm-3 col-form-label">SK Terakhir</label>
                 <div class="col-sm-9">
                     <a href="{{ asset('storage/' . $tb->sk_terakhir) }}" target="_blank">
                         <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
@@ -202,9 +202,20 @@
                 </div>
             </div>
             <div class="mb-3 row d-flex align-items-center">
-                <label class="col-sm-3 col-form-label">Penilaian Prestasi Kinerja Pegawai</label>
+                <label class="col-sm-3 col-form-label">PAK Terakhir</label>
                 <div class="col-sm-9">
-                    <a href="{{ asset('storage/' . $tb->ppkp) }}" target="_blank">
+                    <a href="{{ asset('storage/' . $tb->pak_terakhir) }}" target="_blank">
+                        <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
+                            <i class="fa-solid fa-eye me-2"></i>
+                            <p class="m-0">Lihat Berkas</p>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="mb-3 row d-flex align-items-center">
+                <label class="col-sm-3 col-form-label">SKP Terakhir</label>
+                <div class="col-sm-9">
+                    <a href="{{ asset('storage/' . $tb->skp_terakhir) }}" target="_blank">
                         <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                             <i class="fa-solid fa-eye me-2"></i>
                             <p class="m-0">Lihat Berkas</p>

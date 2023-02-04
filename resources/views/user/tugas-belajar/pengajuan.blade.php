@@ -172,24 +172,31 @@
             <h5 class="card-header px-5">Berkas Keprofesian</h5>
             <div class="card-body px-5">
                 <div class="mb-3 row">
-                    <label for="" class="col-sm-3 col-form-label">Surat Keterangan Pegawai Negeri Sipil</label>
+                    <label for="" class="col-sm-3 col-form-label">Surat Keterangan Jabatan Fungsional</label>
                     <div class="col-sm-9">
-                        <input required type="file" class="form-control" id="sk_pns" name="sk_pns"
-                            placeholder="Surat Keterangan Pegawai Negeri Sipil">
+                        <input required type="file" class="form-control" id="sk_jabatan_fungsional"
+                            name="sk_jabatan_fungsional" placeholder="Surat Keterangan Jabatan Fungsional">
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="" class="col-sm-3 col-form-label">Surat Jabatan Fungsional Terakhir</label>
+                    <label for="" class="col-sm-3 col-form-label">SK Terakhir</label>
                     <div class="col-sm-9">
                         <input required type="file" class="form-control" id="sk_terakhir" name="sk_terakhir"
                             placeholder="Surat Jabatan Fungsional Terakhir">
                     </div>
                 </div>
                 <div class="mb-3 row d-flex align-items-center">
-                    <label for="" class="col-sm-3 col-form-label">Penilaian Prestasi Kinerja Pegawai</label>
+                    <label for="" class="col-sm-3 col-form-label">PAK Terakhir</label>
                     <div class="col-sm-9">
-                        <input required type="file" class="form-control" id="ppkp" name="ppkp"
-                            placeholder="Penilaian Prestasi Kinerja Pegawai">
+                        <input required type="file" class="form-control" id="pak_terakhir" name="pak_terakhir"
+                            placeholder="PAK Terakhir">
+                    </div>
+                </div>
+                <div class="mb-3 row d-flex align-items-center">
+                    <label for="" class="col-sm-3 col-form-label">SKP Terakhir</label>
+                    <div class="col-sm-9">
+                        <input required type="file" class="form-control" id="skp_terakhir" name="skp_terakhir"
+                            placeholder="SKP Terakhir">
                     </div>
                 </div>
             </div>

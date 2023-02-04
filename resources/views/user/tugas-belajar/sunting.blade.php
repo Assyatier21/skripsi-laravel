@@ -180,36 +180,6 @@
                         </a>
                     </div>
                 </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-3 col-form-label">Surat Pernyataan</label>
-                    <div class="col-sm-7">
-                        <input required type="file" accept="application/pdf" class="form-control" id="surat_pernyataan"
-                            name="surat_pernyataan">
-                    </div>
-                    <div class="col-sm-2">
-                        <a href="{{ asset('storage/' . $tb->surat_pernyataan) }}" target="_blank">
-                            <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
-                                <i class="fa-solid fa-eye me-2"></i>
-                                <p class="m-0">Lihat Berkas</p>
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-3 col-form-label">Surat Permohonan</label>
-                    <div class="col-sm-7">
-                        <input required type="file" accept="application/pdf" class="form-control" id="surat_permohonan"
-                            name="surat_permohonan">
-                    </div>
-                    <div class="col-sm-2">
-                        <a href="{{ asset('storage/' . $tb->surat_permohonan) }}" target="_blank">
-                            <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
-                                <i class="fa-solid fa-eye me-2"></i>
-                                <p class="m-0">Lihat Berkas</p>
-                            </button>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
         {{-- BERKAS PRIBADI --}}
@@ -234,7 +204,22 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label class="col-sm-3 col-form-label">Surat Jabatan Fungsional Terakhir</label>
+                    <label class="col-sm-3 col-form-label">Surat Keterangan Jabatan Fungsional</label>
+                    <div class="col-sm-7">
+                        <input required type="file" accept="application/pdf" class="form-control"
+                            id="sk_jabatan_fungsional" name="sk_jabatan_fungsional">
+                    </div>
+                    <div class="col-sm-2">
+                        <a href="{{ asset('storage/' . $tb->sk_jabatan_fungsional) }}" target="_blank">
+                            <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
+                                <i class="fa-solid fa-eye me-2"></i>
+                                <p class="m-0">Lihat Berkas</p>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="mb-3 row d-flex align-items-center">
+                    <label class="col-sm-3 col-form-label">SK Terakhir</label>
                     <div class="col-sm-7">
                         <input required type="file" accept="application/pdf" class="form-control" id="sk_terakhir"
                             name="sk_terakhir">
@@ -248,13 +233,14 @@
                         </a>
                     </div>
                 </div>
-                <div class="mb-3 row d-flex align-items-center">
-                    <label class="col-sm-3 col-form-label">Penilaian Prestasi Kinerja Pegawai</label>
+                <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">PAK Terakhir</label>
                     <div class="col-sm-7">
-                        <input required type="file" accept="application/pdf" class="form-control" id="ppkp" name="ppkp">
+                        <input required type="file" accept="application/pdf" class="form-control" id="pak_terakhir"
+                            name="pak_terakhir">
                     </div>
                     <div class="col-sm-2">
-                        <a href="{{ asset('storage/' . $tb->ppkp) }}" target="_blank">
+                        <a href="{{ asset('storage/' . $tb->pak_terakhir) }}" target="_blank">
                             <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                                 <i class="fa-solid fa-eye me-2"></i>
                                 <p class="m-0">Lihat Berkas</p>
@@ -263,13 +249,13 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label class="col-sm-3 col-form-label">Uraian Tugas</label>
+                    <label class="col-sm-3 col-form-label">SKP Terakhir</label>
                     <div class="col-sm-7">
-                        <input required type="file" accept="application/pdf" class="form-control" id="uraian_tugas"
-                            name="uraian_tugas">
+                        <input required type="file" accept="application/pdf" class="form-control" id="skp_terakhir"
+                            name="skp_terakhir">
                     </div>
                     <div class="col-sm-2">
-                        <a href="{{ asset('storage/' . $tb->uraian_tugas) }}" target="_blank">
+                        <a href="{{ asset('storage/' . $tb->skp_terakhir) }}" target="_blank">
                             <button class="btn btn-secondary d-flex flex-col align-items-center" type="button">
                                 <i class="fa-solid fa-eye me-2"></i>
                                 <p class="m-0">Lihat Berkas</p>
