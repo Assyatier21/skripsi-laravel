@@ -1,3 +1,3 @@
 # Skripsi Laravel
-- Need to update some documents logic
-- Dummy Commit
+- Logic Updated
+- TODO: Return Data When Accepted
