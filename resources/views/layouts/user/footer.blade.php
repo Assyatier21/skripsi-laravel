@@ -8,10 +8,10 @@
                         <i class="fas fa-gem text-uppercase me-3"></i>Tentang Kami
                     </h6>
                     <p style="text-align: justify" class="desc-footer">
-                        SI-DILAN merupakan website khusus pegawai didalam rumah sakit
-                        Siti Fatimah yang digunakan dalam rangka mengembangkan mutu dan
-                        kualitas dari pegawai agar bisa membuat rumah sakit bisa
-                        bersaing dengan rumah sakit se-Indonesia
+                        Tubel & Ibel merupakan website khusus pegawai didalam rumah sakit Jend, A Yani yang digunakan
+                        dalam rangka mengembangkan
+                        mutu dan kualitas dari pegawai agar bisa membuat rumah sakit bisa bersaing dengan rumah sakit
+                        se-Indonesia
                     </p>
                 </div>
 
@@ -37,13 +37,12 @@
 
                 <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
                     <h6 class="text-uppercase fw-bold mb-4">Hubungi Kami</h6>
-                    <p><i class="fas fa-home me-3"></i> Jl. Kol.
-                        H. Burlian, Suka Bangun, Kec. Sukarami</p>
+                    <p><i class="fas fa-home me-3"></i>Jl. Jenderal A. Yani No. 13 34111 Metro Lampung</p>
                     <p>
                         <i class="fas fa-envelope me-3"></i>
-                        info@example.com
+                        RSUDayanimetro@ymail.com
                     </p>
-                    <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                    <p><i class="fas fa-phone me-3"></i>(0725) 41820</p>
                 </div>
             </div>
         </div>

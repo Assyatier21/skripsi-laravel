@@ -68,4 +68,13 @@ class DocumentGeneratorController extends Controller
         $time_now = Carbon::now();
         return view('docs.izin-belajar.3', compact('user', 'time_now', 'admin', 'ib'));
     }
+
+    public function download_ib($id)
+    {
+        return view('docs.download.izin_belajar', compact('id'));
+    }
+    public function download_tb($id)
+    {
+        return view('docs.download.tugas_belajar', compact('id'));
+    }
 }

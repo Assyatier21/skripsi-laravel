@@ -56,6 +56,8 @@ Route::middleware(['auth'])->group(function () {
     //--------------[ ROUTE TUGAS BELAJAR ]-------------//
 
     //--------------[ ROUTE DOCS GENERATED ]-------------//
+    Route::get('/download-ib/{id}', [DocumentGeneratorController::class, 'download_ib'])->name('download.ib');
+    Route::get('/download-tb/{id}', [DocumentGeneratorController::class, 'download_tb'])->name('download.tb');
     Route::get('/surat-abk/{id}', [DocumentGeneratorController::class, 'surat_abk'])->name('user.surat.abk');
     Route::get('/surat-permohonan-ib/{id}', [DocumentGeneratorController::class, 'surat_permohonan_ib'])->name('user.surat_permohonan.ib');
     Route::get('/surat-pembebasan-tb/{id}', [DocumentGeneratorController::class, 'surat_pembebasan_tb'])->name('user.surat_pembebasan.tb');

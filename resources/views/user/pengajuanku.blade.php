@@ -7,6 +7,10 @@
         background-color: #198754 !important;
         color: white;
     }
+
+    .hover-pointer {
+        cursor: pointer !important;
+    }
 </style>
 @endsection
 
@@ -50,17 +54,35 @@
                     </td>
                     <td>{{ Carbon\Carbon::parse($p->created_updated_at)->format('l, d M Y') }}</td>
                     <td>
-                        @if($p->status_pengajuan == 0)
+                        @switch($p->status_pengajuan)
+                        @case(0)
                         <h5><span class="badge bg-secondary w-50">Menunggu Admin</span></h5>
-                        @elseif($p->status_pengajuan == 1)
+                        @break
+                        @case(1)
                         <h5><span class="badge bg-secondary w-50">Menunggu Direktur</span></h5>
-                        @elseif($p->status_pengajuan == 2)
+                        @break
+                        @case(2)
                         <h5><span class="badge bg-success w-50">Diterima</span></h5>
-                        @elseif($p->status_pengajuan == -1)
+                        @break
+                        @case(-1)
                         <h5><span class="badge bg-danger w-50">Ditolak</span></h5>
-                        @endif
+                        @break
+                        @default
+                        <h5><span class="badge bg-secondary w-50">Status tidak diketahui</span></h5>
+                        @endswitch
                     </td>
-                    @if($p->status_pengajuan != -1)
+                    @if($p->status_pengajuan == 2 && $p->jenis_pengajuan == "tb")
+                    <td class="text-black fw-bold">
+                        <a href="{{ route('download.tb', $p->jenis_pengajuan) }}" class="text-black fw-bold">Unduh
+                            Berkas</a>
+                    </td>
+                    </a>
+                    @elseif($p->status_pengajuan == 2 && $p->jenis_pengajuan == "ib")
+                    <td class="text-black fw-bold">
+                        <a href="{{ route('download.ib', $p->jenis_pengajuan) }}" class="text-black fw-bold">Unduh
+                            Berkas</a>
+                    </td>
+                    @elseif($p->status_pengajuan != -1)
                     <td class="text-muted">Edit</td>
                     @elseif($p->jenis_pengajuan == "tb")
                     <td>

@@ -33,7 +33,7 @@ class IndexController extends Controller
     // NOTIFIKASI SECTION ---------------------------------------------------------------
     public function notifikasi()
     {
-        $notifikasi = Notifikasi::whereNip(auth()->user()->nip)->get();
+        $notifikasi = Notifikasi::whereNip(auth()->user()->nip)->orderByDesc('id')->get();
         foreach ($notifikasi as $n) {
             $n->is_active = '0';
             $n->save();

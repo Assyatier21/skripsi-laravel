@@ -7,9 +7,6 @@
 
 @section('content')
 <div class="px-5 py-2 mb-4">
-    <div class="w-100 d-flex justify-content-center my-4">
-        <img src="{{ asset('assets/images/banner -1.jpeg') }}" alt="">
-    </div>
     <div class="w-100 d-flex justify-content-start my-4 py-3">
         <a href="{{ route('user.izin-belajar.informasi') }}">
             <img src="{{ asset('assets/images/content-2-ref.png') }}" alt="">

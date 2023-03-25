@@ -44,24 +44,7 @@
         </div>
     </div>
 
-    <div class="pendukung my-4">
-        <div class="card justify-content-center shadow-sm">
-            <h5 class="card-header px-5">Contoh Dokumen Pendukung</h5>
-            <div class="card-body px-5">
-                <div class="d-flex justify-content-start">
-                    <a href="{{ route('user.surat.abk') }}" target="_blank">
-                        <div class="card h-100">
-                            <button class="btn btn-secondary h-100">
-                                <span>Surat Analisis Jabatan (ABK)</span> <i
-                                    class="fa-solid fa-download ms-2"></i></button>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="rekomendasi">
+    <div class="rekomendasi mt-4">
         <div class="card justify-content-center shadow-sm">
             <h5 class="card-header px-5">Rekomendasi Kampus</h5>
             <div class="card-body px-5">

@@ -50,10 +50,10 @@ class TugasBelajarAdminController extends Controller
                     $ttdName = auth()->guard('admin')->user()->ttd;
                 }
 
-                $admin = Admin::whereId(auth()->guard('admin')->user()->id)->get();
+                $admin = Admin::whereId(auth()->guard('admin')->user()->id)->first();
                 $admin->update(['ttd' => $ttdName]);
                 $tb->update(['status_pengajuan' => '2']);
-                $pengajuanku->update(['status_pengajuan' => '1']);
+                $pengajuanku->update(['status_pengajuan' => '2']);
 
                 // Create Notification
                 $pesan = "Pengajuan Tugas Belajar Anda Disetujui Direktur!";

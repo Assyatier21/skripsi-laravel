@@ -102,7 +102,7 @@ class TugasBelajarUserController extends Controller
         $tb->tahun_ajaran = $request->tahun_ajaran;
         $tb->link_beasiswa = $request->link_beasiswa;
 
-        $tb->ijazah_terakhir = $request->file('ijazah')->store('tugas-belajar/ijazah', 'public');
+        $tb->ijazah_terakhir = $request->file('ijazah_terakhir')->store('tugas-belajar/ijazah', 'public');
         $tb->transkrip_nilai = $request->file('transkrip_nilai')->store('tugas-belajar/transkrip-nilai', 'public');
 
         $tb->sk_jabatan_fungsional = $request->file('sk_jabatan_fungsional')->store('tugas-belajar/sk-jabatan-fungsional', 'public');
@@ -209,9 +209,9 @@ class TugasBelajarUserController extends Controller
         $tb->tahun_ajaran = $request->tahun_ajaran;
         $tb->jenjang_pendidikan = $request->jenjang_pendidikan;
 
-        if ($request->hasFile('ijazah')) {
+        if ($request->hasFile('ijazah_terakhir')) {
             Storage::delete('public/' . $tb->ijazah_terakhir);
-            $tb->ijazah_terakhir = $request->file('ijazah')->store('tugas-belajar/ijazah', 'public');
+            $tb->ijazah_terakhir = $request->file('ijazah_terakhir')->store('tugas-belajar/ijazah', 'public');
         }
         if ($request->hasFile('transkrip_nilai')) {
             Storage::delete('public/' . $tb->transkrip_nilai);

@@ -26,6 +26,9 @@ a:hover {
     color: #00b579 !important;
     transition: 0.3s;
 }
+.hover-pointer {
+    cursor: pointer !important;
+}
 .dropdown-item.active {
     color: white !important;
     background-color: #00b579 !important;

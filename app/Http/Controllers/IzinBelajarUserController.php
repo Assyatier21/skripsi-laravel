@@ -111,7 +111,7 @@ class IzinBelajarUserController extends Controller
         $ib->tahun_ajaran = $request->tahun_ajaran;
         $ib->jenjang_pendidikan = $request->jenjang_pendidikan;
 
-        $ib->ijazah_terakhir = $request->file('ijazah')->store('izin-belajar/ijazah', 'public');
+        $ib->ijazah_terakhir = $request->file('ijazah_terakhir')->store('izin-belajar/ijazah', 'public');
         $ib->transkrip_nilai = $request->file('transkrip_nilai')->store('izin-belajar/transkrip-nilai', 'public');
 
         $ib->sk_pns = $request->file('sk_pns')->store('izin-belajar/sk-pns', 'public');
@@ -231,7 +231,7 @@ class IzinBelajarUserController extends Controller
 
         if ($request->hasFile('ijazah_terakhir')) {
             Storage::delete('public/' . $ib->ijazah_terakhir);
-            $ib->ijazah_terakhir = $request->file('ijazah')->store('izin-belajar/ijazah', 'public');
+            $ib->ijazah_terakhir = $request->file('ijazah_terakhir')->store('izin-belajar/ijazah', 'public');
         }
         if ($request->hasFile('transkrip_nilai')) {
             Storage::delete('public/' . $ib->transkrip_nilai);
