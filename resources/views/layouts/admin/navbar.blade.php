@@ -26,6 +26,13 @@
                     <a class="nav-link text-dark {{ Request::is('admin/izin-belajar*') ? 'active' : '' }}"
                         aria-current="page" href="{{ route('admin.izin-belajar.index') }}">Verifikasi Izin Belajar</a>
                 </li>
+                <li class="nav-item">
+                    <div class="nav-link text-dark" aria-current="page">|</div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark {{ Request::is('admin/izin-belajar*') ? 'active' : '' }}"
+                        aria-current="page" href="{{ route('admin.izin-belajar.index') }}">Manajemen User</a>
+                </li>
             </ul>
             <div>
                 <div class="dropdown-center">

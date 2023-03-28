@@ -20,8 +20,14 @@ class IndexAdminController extends Controller
             "total_tb" => TugasBelajar::where('status_pengajuan', '!=', '2')->count(),
         ];
 
-        $ib = IzinBelajar::with('user')->where('status_pengajuan', '!=', '2')->orderByDesc('id')->paginate(5, ['*'], 'ib');
-        $tb = TugasBelajar::with('user')->where('status_pengajuan', '!=', '2')->orderByDesc('id')->paginate(5, ['*'], 'tb');
+        if (auth()->guard('admin')->user()->role == '2') {
+            $ib = IzinBelajar::with('user')->where('status_pengajuan', '1')->orderByDesc('id')->paginate(5, ['*'], 'ib');
+            $tb = TugasBelajar::with('user')->where('status_pengajuan', '1')->orderByDesc('id')->paginate(5, ['*'], 'tb');
+        } else {
+            $ib = IzinBelajar::with('user')->where('status_pengajuan', '!=', '2')->orderByDesc('id')->paginate(5, ['*'], 'ib');
+            $tb = TugasBelajar::with('user')->where('status_pengajuan', '!=', '2')->orderByDesc('id')->paginate(5, ['*'], 'tb');
+        }
+
 
         return view('admin.beranda', compact('information', 'ib', 'tb'));
     }

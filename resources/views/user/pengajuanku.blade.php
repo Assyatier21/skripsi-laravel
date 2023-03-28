@@ -82,18 +82,18 @@
                         <a href="{{ route('download.ib', $p->jenis_pengajuan) }}" class="text-black fw-bold">Unduh
                             Berkas</a>
                     </td>
-                    @elseif($p->status_pengajuan != -1)
-                    <td class="text-muted">Edit</td>
-                    @elseif($p->jenis_pengajuan == "tb")
+                    @elseif($p->status_pengajuan == -1 && $p->jenis_pengajuan == "tb")
                     <td>
                         <a href="{{  route('user.tugas-belajar.edit', $p->id_pengajuan) }}"
                             class="text-dark fw-bold">Edit</a>
                     </td>
-                    @elseif($p->jenis_pengajuan == "ib")
+                    @elseif($p->status_pengajuan == -1 && $p->jenis_pengajuan == "ib")
                     <td>
                         <a href="{{  route('user.izin-belajar.edit', $p->id_pengajuan) }}"
                             class="text-dark fw-bold">Edit</a>
                     </td>
+                    @elseif($p->status_pengajuan != -1)
+                    <td class="text-muted">Edit</td>
                     @endif
                 </tr>
                 @empty
