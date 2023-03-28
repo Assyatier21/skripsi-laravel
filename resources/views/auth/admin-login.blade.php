@@ -42,7 +42,7 @@
                     <form class="card-body cardbody-color p-lg-5" action="{{ route('admin.login') }}" method="POST">
                         @csrf
                         <div class="text-center mb-4">
-                            <img src="{{ asset('assets/images/logo dilan.png') }}" class="img-fluid" alt=" profile">
+                            <img src="{{ asset('assets/images/Login.png') }}" class="img-fluid w-25" alt=" profile">
                         </div>
 
                         <div class="mb-3">
