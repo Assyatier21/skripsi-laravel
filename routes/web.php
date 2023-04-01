@@ -8,6 +8,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\IndexAdminController;
 use App\Http\Controllers\IzinBelajarUserController;
 use App\Http\Controllers\IzinBelajarAdminController;
+use App\Http\Controllers\ManajemenUserController;
 use App\Http\Controllers\TugasBelajarUserController;
 use App\Http\Controllers\TugasBelajarAdminController;
 
@@ -73,6 +74,11 @@ Route::middleware(['auth'])->group(function () {
 Route::prefix('admin')->group(function () {
     Route::middleware(['auth:admin'])->group(function () {
         Route::get('/beranda', [IndexAdminController::class, 'index'])->name('admin.beranda');
+
+        Route::get('/manajemen-user', [ManajemenUserController::class, 'index'])->name('admin.manajemen_user');
+        Route::get('/manajemen-user/delete/{id}', [ManajemenUserController::class, 'delete'])->name('admin.manajemen_user.destroy');
+        Route::get('/manajemen-user/tambah', [ManajemenUserController::class, 'register'])->name('admin.manajemen_user.register');
+        Route::post('/manajemen-user/tambah', [ManajemenUserController::class, 'store'])->name('admin.manajemen_user.store');
 
         Route::get('/izin-belajar', [IzinBelajarAdminController::class, 'index'])->name('admin.izin-belajar.index');
         Route::get('/izin-belajar/verifikasi/{id}', [IzinBelajarAdminController::class, 'verifikasi'])->name('admin.izin-belajar.verifikasi');

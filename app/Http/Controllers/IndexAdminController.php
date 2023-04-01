@@ -28,7 +28,6 @@ class IndexAdminController extends Controller
             $tb = TugasBelajar::with('user')->where('status_pengajuan', '!=', '2')->orderByDesc('id')->paginate(5, ['*'], 'tb');
         }
 
-
         return view('admin.beranda', compact('information', 'ib', 'tb'));
     }
 }

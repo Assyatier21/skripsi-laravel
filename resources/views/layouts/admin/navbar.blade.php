@@ -26,13 +26,15 @@
                     <a class="nav-link text-dark {{ Request::is('admin/izin-belajar*') ? 'active' : '' }}"
                         aria-current="page" href="{{ route('admin.izin-belajar.index') }}">Verifikasi Izin Belajar</a>
                 </li>
+                @if(auth()->guard('admin')->user()->role == '1')
                 <li class="nav-item">
                     <div class="nav-link text-dark" aria-current="page">|</div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark {{ Request::is('admin/izin-belajar*') ? 'active' : '' }}"
-                        aria-current="page" href="{{ route('admin.izin-belajar.index') }}">Manajemen User</a>
+                    <a class="nav-link text-dark {{ Request::is('admin/manajemen-user*') ? 'active' : '' }}"
+                        aria-current="page" href="{{ route('admin.manajemen_user') }}">Manajemen User</a>
                 </li>
+                @endif
             </ul>
             <div>
                 <div class="dropdown-center">
