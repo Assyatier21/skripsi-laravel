@@ -79,6 +79,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/manajemen-user/delete/{id}', [ManajemenUserController::class, 'delete'])->name('admin.manajemen_user.destroy');
         Route::get('/manajemen-user/tambah', [ManajemenUserController::class, 'register'])->name('admin.manajemen_user.register');
         Route::post('/manajemen-user/tambah', [ManajemenUserController::class, 'store'])->name('admin.manajemen_user.store');
+        Route::get('/manajemen-user/edit/{id}', [ManajemenUserController::class, 'edit'])->name('admin.manajemen_user.edit');
+        Route::put('/manajemen-user/edit/{id}', [ManajemenUserController::class, 'update'])->name('admin.manajemen_user.update');
 
         Route::get('/izin-belajar', [IzinBelajarAdminController::class, 'index'])->name('admin.izin-belajar.index');
         Route::get('/izin-belajar/verifikasi/{id}', [IzinBelajarAdminController::class, 'verifikasi'])->name('admin.izin-belajar.verifikasi');

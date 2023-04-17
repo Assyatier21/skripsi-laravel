@@ -44,6 +44,13 @@
                             placeholder="Nama Lengkap">
                     </div>
                 </div>
+                <div class="mb-3 row">
+                    <label for="" class="col-sm-3 col-form-label">Password</label>
+                    <div class="col-sm-9">
+                        <input required type="text" class="form-control" id="password" name="password"
+                            placeholder="Password">
+                    </div>
+                </div>
             </div>
         </div>
         {{-- DATA DIRI --}}

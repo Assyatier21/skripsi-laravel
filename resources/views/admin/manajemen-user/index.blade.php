@@ -45,7 +45,7 @@
                         <td>{{ $u->nip }}</td>
                         <td>{{ $u->nama }}</td>
                         <td>
-                            <a href="#">
+                            <a href="{{ route('admin.manajemen_user.edit', $u->id) }}">
                                 <i class="fa-solid fa-pen-to-square fa-lg text-success me-1"></i>
                             </a>
                             <a href="{{ route('admin.manajemen_user.destroy', $u->id) }}"
