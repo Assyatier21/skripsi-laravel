@@ -115,7 +115,8 @@
                         <div class="mb-3 row">
                             <label class="col-sm-3 col-form-label">Pas Foto</label>
                             <div class="col-sm-9">
-                                <input type="file" class="form-control" id="pas_foto" name="pas_foto" accept="image/*">
+                                <input type="file" accept="application/pdf" class="form-control" id="pas_foto"
+                                    name="pas_foto" accept="image/*">
                                 <small class="text-danger mt-2">* Pas Foto Berukuran 300 x 400 Pixel dan Maksimal
                                     Berukuran
                                     2
@@ -125,7 +126,8 @@
                         <div class="mb-3 row">
                             <label class="col-sm-3 col-form-label">Tanda Tangan</label>
                             <div class="col-sm-9">
-                                <input type="file" class="form-control" id="ttd" name="ttd" accept="image/*">
+                                <input type="file" accept="application/pdf" class="form-control" id="ttd" name="ttd"
+                                    accept="image/*">
                                 <small class="text-danger mt-2">* File Tanda Tangan Maksimal
                                     Berukuran
                                     2

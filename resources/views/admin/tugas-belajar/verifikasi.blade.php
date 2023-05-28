@@ -247,7 +247,7 @@
                         <div class="modal-body text-start">
                             <div class="mb-3">
                                 <label for="formFile" class="form-label text-start ms-2">Tanda Tangan Digital</label>
-                                <input class="form-control" type="file" id="ttd" name="ttd">
+                                <input class="form-control" type="file" accept="application/pdf" id="ttd" name="ttd">
                             </div>
                             <small class="text-danger text-start ms-2">* Tanda Tangan Hanya Dikhususkan Bagi Direktur
                                 dan

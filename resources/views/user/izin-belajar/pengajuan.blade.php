@@ -139,15 +139,17 @@
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Ijazah Terakhir</label>
                     <div class="col-sm-9">
-                        <input required type="file" accept="application/pdf" class="form-control" id="ijazah_terakhir"
-                            name="ijazah_terakhir" placeholder="Ijazah Terakhir">
+                        <input required type="file" accept="application/pdf" accept="application/pdf"
+                            class="form-control" id="ijazah_terakhir" name="ijazah_terakhir"
+                            placeholder="Ijazah Terakhir">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Transkrip Nilai</label>
                     <div class="col-sm-9">
-                        <input required type="file" accept="application/pdf" class="form-control" id="transkrip_nilai"
-                            name="transkrip_nilai" placeholder="Transkrip Nilai">
+                        <input required type="file" accept="application/pdf" accept="application/pdf"
+                            class="form-control" id="transkrip_nilai" name="transkrip_nilai"
+                            placeholder="Transkrip Nilai">
                     </div>
                 </div>
             </div>
@@ -161,30 +163,31 @@
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Surat Keterangan Pegawai Negeri Sipil</label>
                     <div class="col-sm-9">
-                        <input required type="file" accept="application/pdf" class="form-control" id="sk_pns"
-                            name="sk_pns" placeholder="Surat Keterangan Pegawai Negeri Sipil">
+                        <input required type="file" accept="application/pdf" accept="application/pdf"
+                            class="form-control" id="sk_pns" name="sk_pns"
+                            placeholder="Surat Keterangan Pegawai Negeri Sipil">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Surat Keterangan Pangkat Terakhir</label>
                     <div class="col-sm-9">
-                        <input required type="file" accept="application/pdf" class="form-control"
-                            id="sk_pangkat_terakhir" name="sk_pangkat_terakhir"
+                        <input required type="file" accept="application/pdf" accept="application/pdf"
+                            class="form-control" id="sk_pangkat_terakhir" name="sk_pangkat_terakhir"
                             placeholder="Surat Keterangan Pangkat Terakhir">
                     </div>
                 </div>
                 <div class="mb-3 row d-flex align-items-center">
                     <label for="" class="col-sm-3 col-form-label">SKP Terakhir</label>
                     <div class="col-sm-9">
-                        <input required type="file" accept="application/pdf" class="form-control" id="skp_terakhir"
-                            name="skp_terakhir" placeholder="SKP Terakhir">
+                        <input required type="file" accept="application/pdf" accept="application/pdf"
+                            class="form-control" id="skp_terakhir" name="skp_terakhir" placeholder="SKP Terakhir">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Kartu Pegawai</label>
                     <div class="col-sm-9">
-                        <input required type="file" accept="application/pdf" class="form-control" id="kartu_pegawai"
-                            name="kartu_pegawai" placeholder="Kartu Pegawai">
+                        <input required type="file" accept="application/pdf" accept="application/pdf"
+                            class="form-control" id="kartu_pegawai" name="kartu_pegawai" placeholder="Kartu Pegawai">
                     </div>
                 </div>
             </div>
@@ -198,15 +201,16 @@
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Surat Keterangan Kelas Reguler</label>
                     <div class="col-sm-9">
-                        <input required type="file" accept="application/pdf" class="form-control" id="sk_kelas_reguler"
-                            name="sk_kelas_reguler" placeholder="Surat Keterangan Kelas Reguler">
+                        <input required type="file" accept="application/pdf" accept="application/pdf"
+                            class="form-control" id="sk_kelas_reguler" name="sk_kelas_reguler"
+                            placeholder="Surat Keterangan Kelas Reguler">
                     </div>
                 </div>
                 <div class="mb-3 row d-flex align-items-center">
                     <label for="" class="col-sm-3 col-form-label">Akreditasi Jurusan/Kampus</label>
                     <div class="col-sm-9">
-                        <input required type="file" accept="application/pdf" class="form-control"
-                            id="file_akreditasi_institusi" name="file_akreditasi_institusi"
+                        <input required type="file" accept="application/pdf" accept="application/pdf"
+                            class="form-control" id="file_akreditasi_institusi" name="file_akreditasi_institusi"
                             placeholder="Akreditasi Jurusan/Kampus">
                     </div>
                 </div>

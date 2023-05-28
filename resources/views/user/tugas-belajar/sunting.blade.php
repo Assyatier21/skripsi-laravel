@@ -153,8 +153,9 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Ijazah Terakhir</label>
                     <div class="col-sm-7">
-                        <input required type="file" accept="application/pdf" class="form-control" id="ijazah_terakhir"
-                            name="ijazah_terakhir" placeholder="Ijazah Terakhir">
+                        <input required type="file" accept="application/pdf" accept="application/pdf"
+                            class="form-control" id="ijazah_terakhir" name="ijazah_terakhir"
+                            placeholder="Ijazah Terakhir">
                     </div>
                     <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $tb->ijazah_terakhir) }}" target="_blank">
@@ -168,8 +169,8 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Transkrip Nilai</label>
                     <div class="col-sm-7">
-                        <input required type="file" accept="application/pdf" class="form-control" id="transkrip_nilai"
-                            name="transkrip_nilai">
+                        <input required type="file" accept="application/pdf" accept="application/pdf"
+                            class="form-control" id="transkrip_nilai" name="transkrip_nilai">
                     </div>
                     <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $tb->transkrip_nilai) }}" target="_blank">
@@ -191,8 +192,8 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Surat Keterangan Pegawai Negeri Sipil</label>
                     <div class="col-sm-7">
-                        <input required type="file" accept="application/pdf" class="form-control" id="sk_pns"
-                            name="sk_pns">
+                        <input required type="file" accept="application/pdf" accept="application/pdf"
+                            class="form-control" id="sk_pns" name="sk_pns">
                     </div>
                     <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $tb->sk_pns) }}" target="_blank">
@@ -206,8 +207,8 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Surat Keterangan Jabatan Fungsional</label>
                     <div class="col-sm-7">
-                        <input required type="file" accept="application/pdf" class="form-control"
-                            id="sk_jabatan_fungsional" name="sk_jabatan_fungsional">
+                        <input required type="file" accept="application/pdf" accept="application/pdf"
+                            class="form-control" id="sk_jabatan_fungsional" name="sk_jabatan_fungsional">
                     </div>
                     <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $tb->sk_jabatan_fungsional) }}" target="_blank">
@@ -221,8 +222,8 @@
                 <div class="mb-3 row d-flex align-items-center">
                     <label class="col-sm-3 col-form-label">SK Terakhir</label>
                     <div class="col-sm-7">
-                        <input required type="file" accept="application/pdf" class="form-control" id="sk_terakhir"
-                            name="sk_terakhir">
+                        <input required type="file" accept="application/pdf" accept="application/pdf"
+                            class="form-control" id="sk_terakhir" name="sk_terakhir">
                     </div>
                     <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $tb->sk_terakhir) }}" target="_blank">
@@ -236,8 +237,8 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">PAK Terakhir</label>
                     <div class="col-sm-7">
-                        <input required type="file" accept="application/pdf" class="form-control" id="pak_terakhir"
-                            name="pak_terakhir">
+                        <input required type="file" accept="application/pdf" accept="application/pdf"
+                            class="form-control" id="pak_terakhir" name="pak_terakhir">
                     </div>
                     <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $tb->pak_terakhir) }}" target="_blank">
@@ -251,8 +252,8 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">SKP Terakhir</label>
                     <div class="col-sm-7">
-                        <input required type="file" accept="application/pdf" class="form-control" id="skp_terakhir"
-                            name="skp_terakhir">
+                        <input required type="file" accept="application/pdf" accept="application/pdf"
+                            class="form-control" id="skp_terakhir" name="skp_terakhir">
                     </div>
                     <div class="col-sm-2">
                         <a href="{{ asset('storage/' . $tb->skp_terakhir) }}" target="_blank">

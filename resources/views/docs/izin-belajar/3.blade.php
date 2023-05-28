@@ -66,7 +66,7 @@
         <div class="mt-2">
             <p>Bersama ini saya mengajukan permohonan izin belajar kepada Bapak/ Ibu untuk melanjutkan pendidikan
                 program
-                studi …………………………………… di Universitas …………………</p>
+                studi {{ $ib->program_studi }} di Universitas {{ $ib->nama_institusi }}</p>
             <p>Sebagai bahan pertimbangan saya lampirkan: <br>
             <ol>
                 <li>Fotocopy SK Terakhir</li>

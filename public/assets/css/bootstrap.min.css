@@ -2002,10 +2002,12 @@ progress {
         transition: none;
     }
 }
-.form-control[type="file"] {
+.form-control[type="file" accept="application/pdf"] {
     overflow: hidden;
 }
-.form-control[type="file"]:not(:disabled):not([readonly]) {
+.form-control[type="file" accept="application/pdf"]:not(:disabled):not(
+        [readonly]
+    ) {
     cursor: pointer;
 }
 .form-control:focus {

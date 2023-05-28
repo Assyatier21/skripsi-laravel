@@ -50,7 +50,7 @@
                     <label for="" class="col-sm-3 col-form-label">Nomor Induk Kependudukan</label>
                     <div class="col-sm-9">
                         <input required type="text" class="form-control" id="nik" name="nik"
-                            placeholder="Nomor Induk Kependudukan">
+                            placeholder="Nomor Induk Kependudukan" oninput="validateNumericInput(this)">
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -106,7 +106,7 @@
                     <label for="" class="col-sm-3 col-form-label">Tahun Ajaran</label>
                     <div class="col-sm-9">
                         <input required type="text" class="form-control" id="tahun_ajaran" name="tahun_ajaran"
-                            placeholder="Tahun Ajaran">
+                            placeholder="Tahun Ajaran" oninput="validateNumericInput(this)">
                     </div>
                 </div>
                 <div class="mb-1 row">
@@ -152,15 +152,15 @@
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Ijazah Terakhir</label>
                     <div class="col-sm-9">
-                        <input required type="file" class="form-control" id="ijazah_terakhir" name="ijazah_terakhir"
-                            placeholder="Ijazah Terakhir">
+                        <input required type="file" accept="application/pdf" class="form-control" id="ijazah_terakhir"
+                            name="ijazah_terakhir" placeholder="Ijazah Terakhir">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Transkrip Nilai</label>
                     <div class="col-sm-9">
-                        <input required type="file" class="form-control" id="transkrip_nilai" name="transkrip_nilai"
-                            placeholder="Transkrip Nilai">
+                        <input required type="file" accept="application/pdf" class="form-control" id="transkrip_nilai"
+                            name="transkrip_nilai" placeholder="Transkrip Nilai">
                     </div>
                 </div>
             </div>
@@ -174,29 +174,30 @@
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">Surat Keterangan Jabatan Fungsional</label>
                     <div class="col-sm-9">
-                        <input required type="file" class="form-control" id="sk_jabatan_fungsional"
-                            name="sk_jabatan_fungsional" placeholder="Surat Keterangan Jabatan Fungsional">
+                        <input required type="file" accept="application/pdf" class="form-control"
+                            id="sk_jabatan_fungsional" name="sk_jabatan_fungsional"
+                            placeholder="Surat Keterangan Jabatan Fungsional">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="" class="col-sm-3 col-form-label">SK Terakhir</label>
                     <div class="col-sm-9">
-                        <input required type="file" class="form-control" id="sk_terakhir" name="sk_terakhir"
-                            placeholder="Surat Jabatan Fungsional Terakhir">
+                        <input required type="file" accept="application/pdf" class="form-control" id="sk_terakhir"
+                            name="sk_terakhir" placeholder="Surat Jabatan Fungsional Terakhir">
                     </div>
                 </div>`
                 <div class="mb-3 row d-flex align-items-center">
                     <label for="" class="col-sm-3 col-form-label">PAK Terakhir</label>
                     <div class="col-sm-9">
-                        <input required type="file" class="form-control" id="pak_terakhir" name="pak_terakhir"
-                            placeholder="PAK Terakhir">
+                        <input required type="file" accept="application/pdf" class="form-control" id="pak_terakhir"
+                            name="pak_terakhir" placeholder="PAK Terakhir">
                     </div>
                 </div>
                 <div class="mb-3 row d-flex align-items-center">
                     <label for="" class="col-sm-3 col-form-label">SKP Terakhir</label>
                     <div class="col-sm-9">
-                        <input required type="file" class="form-control" id="skp_terakhir" name="skp_terakhir"
-                            placeholder="SKP Terakhir">
+                        <input required type="file" accept="application/pdf" class="form-control" id="skp_terakhir"
+                            name="skp_terakhir" placeholder="SKP Terakhir">
                     </div>
                 </div>
             </div>
@@ -211,4 +212,12 @@
     </form>
     {{-- FORM --}}
 </div>
+@endsection
+
+@section('script')
+<script>
+    function validateNumericInput(input) {
+    input.value = input.value.replace(/\D/g, '');
+}
+</script>
 @endsection
