@@ -44,7 +44,7 @@
                     <label for="" class="col-sm-3 col-form-label">Nomor Induk Kependudukan</label>
                     <div class="col-sm-9">
                         <input required type="text" class="form-control" id="nik" name="nik"
-                            placeholder="Nomor Induk Kependudukan">
+                            placeholder="Nomor Induk Kependudukan" oninput="validateNumericInput(this)">
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -100,7 +100,7 @@
                     <label for="" class="col-sm-3 col-form-label">Tahun Ajaran</label>
                     <div class="col-sm-9">
                         <input required type="text" class="form-control" id="tahun_ajaran" name="tahun_ajaran"
-                            placeholder="Tahun Ajaran">
+                            placeholder="Tahun Ajaran" oninput="validateNumericInput(this)">
                     </div>
                 </div>
                 <div class="mb-1 row">
@@ -226,4 +226,12 @@
     </form>
     {{-- FORM --}}
 </div>
+@endsection
+
+@section('script')
+<script>
+    function validateNumericInput(input) {
+    input.value = input.value.replace(/\D/g, '');
+}
+</script>
 @endsection
