@@ -85,7 +85,7 @@
                     <label for="" class="col-sm-3 col-form-label">Nomor Telepon</label>
                     <div class="col-sm-9">
                         <input required type="text" class="form-control" id="no_telp" name="no_telp"
-                            placeholder="Nomor Telepon">
+                            placeholder="Nomor Telepon" oninput="validateNumericInput(this)">
                     </div>
                 </div>
                 <div class="mb-3 row">
